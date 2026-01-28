@@ -2,8 +2,25 @@ from src.infrastructure.database.session import SessionLocal, engine
 from src.infrastructure.database.models import Base, AssetModel
 import uuid
 
+from sqlalchemy import text
+import os
+
 def init_assets():
-    # Create tables if they don't exist
+    # 1. Execute Master Schema (creates crypto_forwards schema and tables)
+    schema_path = os.path.join("src", "infrastructure", "database", "master_schema.sql")
+    if os.path.exists(schema_path):
+        print(f"Executing schema from {schema_path}...")
+        with open(schema_path, "r") as f:
+            sql_statements = f.read()
+            # Split by command to execute properly if needed, but often execute(text()) works for blocks
+            # For simplicity with SQLAlchemy and postgres, we might need a connection
+            with engine.connect() as connection:
+                connection.execute(text(sql_statements))
+                connection.commit()
+    else:
+        print(f"Warning: Schema file not found at {schema_path}")
+
+    # 2. Create tables for ORM models (e.g. assets) if they don't exist
     Base.metadata.create_all(bind=engine)
     
     db = SessionLocal()
