@@ -5,7 +5,9 @@
 echo "Applying Master Schema..."
 # Wait for DB to be ready
 sleep 5
-PGPASSWORD=$DB_PASSWORD psql -h db -U $DB_USER -d $DB_NAME -f src/infrastructure/database/master_schema.sql || echo "Schema application warning (ignore if exists)"
+# Apply Database Migrations / Seed
+echo "Checking Database..."
+python seed.py
 
 # Start Scheduler in Background
 echo "Starting Scheduler..."

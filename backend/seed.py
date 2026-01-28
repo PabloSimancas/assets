@@ -3,12 +3,18 @@ from src.infrastructure.database.models import Base, AssetModel
 import uuid
 
 def init_assets():
-    # recreate tables to clean up schema
-    Base.metadata.drop_all(bind=engine)
+    # Create tables if they don't exist
     Base.metadata.create_all(bind=engine)
     
     db = SessionLocal()
     
+    # Check if we already have assets
+    existing_count = db.query(AssetModel).count()
+    if existing_count > 0:
+        print(f"Database already has {existing_count} assets. Skipping seed.")
+        db.close()
+        return
+
     # Static data only (Symbol, Name, Category)
     assets_data = [
         {"symbol": "BTC", "name": "Bitcoin", "category": "Crypto"},
