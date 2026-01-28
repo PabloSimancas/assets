@@ -14,10 +14,10 @@ RUN pip install requests schedule sqlalchemy psycopg2-binary
 
 COPY . .
 
-# Install postgresql-client for psql command in start.sh
-RUN apt-get update && apt-get install -y postgresql-client && rm -rf /var/lib/apt/lists/*
+# Install postgresql-client and dos2unix
+RUN apt-get update && apt-get install -y postgresql-client dos2unix && rm -rf /var/lib/apt/lists/*
 
-# Grant execution permissions
-RUN chmod +x start.sh
+# Grant execution permissions and fix line endings
+RUN dos2unix start.sh && chmod +x start.sh
 
 CMD ["./start.sh"]

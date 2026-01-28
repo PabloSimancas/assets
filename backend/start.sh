@@ -13,4 +13,4 @@ python src/scripts/scheduler.py &
 
 # Start Main API
 echo "Starting API..."
-uvicorn src.interfaces.api.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn src.interfaces.api.main:app --host 0.0.0.0 --port 8000
