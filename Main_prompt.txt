@@ -1,0 +1,192 @@
+You are a senior full-stack engineer and product architect.
+
+I want to build an app iteratively because the full feature set is NOT yet clear.
+Your job is to:
+1) Create a rock-solid technical skeleton
+2) Implement ONE complete vertical slice end-to-end
+3) Prepare the system to safely evolve feature-by-feature
+
+IMPORTANT RULES
+- Do NOT assume a full spec.
+- Do NOT overbuild features.
+- Ask at most 5 clarifying questions.
+- Make reasonable assumptions and state them clearly.
+- Optimize for clarity, scalability, and visual quality.
+
+────────────────────────────────────────
+APP CONTEXT (MINIMAL ON PURPOSE)
+
+App name: <ASSETS>
+One-sentence goal (North Star): Develop a multiple assets analytic dashboard gradually,t includs BTC, ETH, GOld, silver, SPX, and the main american stocks
+<Example: “Help managers value the wotrh of the asets and take trad decistions.”>
+
+App type (choose one and adapt architecture/UI):
+- DASHBOARD (analytics, KPIs, charts, filters)
+
+
+Primary users (max 3 roles):
+- <Role 1> Editor (me)
+- <Role 2> Managers
+
+Unknowns:
+- Many features will be discovered later.
+- Data model may evolve.
+- UX will be refined incrementally.
+-Use the screenshot in root to build the UI
+
+────────────────────────────────────────
+MANDATORY STACK (DO NOT CHANGE)
+
+BACKEND
+- Python + FastAPI
+- SQLAlchemy + Alembic
+- PostgreSQL
+- Optional Redis (cache / jobs)
+- ORM
+
+FRONTEND
+- Next.js + TypeScript
+- Tailwind CSS
+- shadcn/ui
+- TanStack Query
+- Recharts (only if dashboard)
+
+DEPLOYMENT
+- Docker-first
+- docker-compose
+- Reverse proxy: Caddy (preferred)
+- .env based configuration
+
+────────────────────────────────────────
+ARCHITECTURE REQUIREMENTS
+
+Use Clean Architecture.
+
+Backend layers:
+- domain/
+  - entities
+  - domain rules (no frameworks)
+- application/
+  - use cases
+  - DTOs / schemas
+  - ports (interfaces)
+- infrastructure/
+  - database models
+  - repositories
+  - external services
+- interfaces/
+  - API routers
+  - dependency injection
+  - auth middleware
+
+Frontend structure:
+- app/ (routes/pages)
+- components/ (reusable UI)
+- features/ (feature-based modules)
+- lib/ (api client, auth, utils)
+- styles/ (design tokens)
+
+RULE:
+Architecture must stay stable even if features change.
+
+────────────────────────────────────────
+WHAT TO BUILD NOW (VERY IMPORTANT)
+
+PHASE 1 — FOUNDATION
+Create:
+- Project folder structure (frontend + backend)
+- Docker setup (dev-ready)
+- Health endpoints
+- Auth placeholder (fake user or simple JWT)
+- Logging + error handling conventions
+
+PHASE 2 — FIRST VERTICAL SLICE
+Implement ONE meaningful end-to-end slice:
+
+Slice definition:
+- One core entity
+- One backend use-case
+- One API endpoint
+- One UI page
+- One form or one chart
+- Validation + error states
+- Persisted data
+- Deployable via Docker
+
+Choose the slice that best supports the North Star.
+
+DO NOT implement:
+- Full RBAC
+- Full workflows
+- Multiple entities
+- Complex analytics
+
+────────────────────────────────────────
+API DESIGN REQUIREMENTS
+
+- REST API
+- Versioned: /api/v1
+- Explicit schemas
+- Consistent error format:
+  { code, message, details, trace_id }
+- Pagination even if dataset is small
+
+────────────────────────────────────────
+UI / UX REQUIREMENTS
+
+Design system:
+- Modern, clean, professional
+- Light + dark mode
+- Default palette if not specified:
+  - Primary: Indigo
+  - Accent: Emerald
+  - Neutral: Slate
+- Typography: Inter
+
+Layout:
+- App shell (sidebar + header)
+- Responsive (mobile friendly)
+- Clear empty states
+- Clear loading states
+- Clear error states
+
+If DASHBOARD:
+- KPI card
+- Chart
+- Filter control
+
+If OPERATIONAL:
+- List view
+- Detail / form view
+- Validation feedback
+
+────────────────────────────────────────
+DOCKER REQUIREMENTS (NON-NEGOTIABLE)
+
+Provide:
+- docker-compose.yml
+- Backend Dockerfile
+- Frontend Dockerfile
+- Postgres service
+- Named volumes
+- Health checks
+- .env.example
+- One-command startup: docker compose up
+
+────────────────────────────────────────
+OUTPUT FORMAT (STRICT ORDER)
+
+1) Assumptions made
+2) High-level architecture explanation
+3) Folder tree (frontend + backend)
+4) Database schema for first slice
+5) API contract for first slice
+6) UI structure for first slice
+7) Code generation:
+   - backend (domain → application → infra → interfaces)
+   - frontend
+8) Docker files
+9) How to run locally
+10) How to safely add the NEXT feature
+
+START NOW.

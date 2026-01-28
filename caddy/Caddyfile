@@ -1,0 +1,6 @@
+{$DOMAIN_NAME} {
+    encode gzip
+    
+    reverse_proxy /api/* assets_backend:8000
+    reverse_proxy * assets_frontend:3000
+}
