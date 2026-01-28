@@ -1,3 +1,4 @@
+
 # ASSETS Dashboard
 
 A modern, real-time assets analytics dashboard for tracking cryptocurrencies, commodities, and market indices. Built with Next.js, FastAPI, and PostgreSQL.
@@ -642,3 +643,4 @@ For issues and questions:
 ---
 
 **Built with ❤️ for traders and investors**
+
