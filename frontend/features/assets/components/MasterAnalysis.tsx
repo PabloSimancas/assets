@@ -101,7 +101,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                             <AnalysisTooltip
                                 title="Spot Prices"
                                 definition="The current market price of the asset for immediate delivery (e.g. BTC/USD)."
-                                math="Observed Price from Exchange"
                                 interpretation={[
                                     { label: "Trend", value: "Visualizes the underlying asset's price movement over time.", color: "text-gray-200" }
                                 ]}
@@ -120,7 +119,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                             <AnalysisTooltip
                                 title="Days to Expiry Buckets"
                                 definition="Categorizes forward contracts into standardized time horizons to analyze term structure."
-                                math="Fixed Time Buckets (T1..T360)"
                                 interpretation={[
                                     { label: "Columns", value: "Represents contracts expiring in roughly X days.", color: "text-gray-400" },
                                     { label: "Purpose", value: "Allows comparing contracts with similar maturities over time.", color: "text-gray-200" }
@@ -141,7 +139,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                             <AnalysisTooltip
                                 title="Price Changes (Log Returns)"
                                 definition="Tracks the daily (f1) and 5-day (f5) percentage change in the price of the forward contracts."
-                                math="(CurrentPrice - PreviousPrice) / PreviousPrice"
                                 interpretation={[
                                     { label: "High Volatility", value: "Large spikes indicate the market is pricing in new information aggressively.", color: "text-amber-400" },
                                     { label: "Divergence", value: "If Spot is flat but Forwards are moving, the expectation of the future is changing.", color: "text-cyan-400" }
@@ -168,7 +165,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                             <AnalysisTooltip
                                 title="Annualized Forward Premiums (%)"
                                 definition="This chart displays the annualized cost (or yield) of holding a futures contract compared to the spot price across different expiry dates."
-                                math="((FuturePrice - SpotPrice) / SpotPrice) * (365 / DaysToExpiry) * 100"
                                 interpretation={[
                                     { label: "Green (Positive)", value: "Contango. The market expects prices to rise or there is a cost to carry.", color: "text-emerald-400" },
                                     { label: "Red (Negative)", value: "Backwardation. The market expects prices to fall (or high demand for immediate assets).", color: "text-rose-400" }
@@ -188,7 +184,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                             <AnalysisTooltip
                                 title="Premiums vs Sample Median"
                                 definition="Shows how the current premium deviates from its historical median (typical) value."
-                                math="CurrentPremium - Median(Premium_Last_N_Days)"
                                 interpretation={[
                                     { label: "Near Zero", value: "The market is behaving normally.", color: "text-gray-400" },
                                     { label: "High Positive", value: "Asset is expensive relative to history (Overbought).", color: "text-emerald-400" },
@@ -212,7 +207,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                             <AnalysisTooltip
                                 title="Cross Correlations vs F1"
                                 definition="Measures the correlation between changes in the Forward Premium and the underlying Spot Price (1-day changes)."
-                                math="Correlation(Delta_Premium, Delta_Spot)"
                                 interpretation={[
                                     { label: "Positive (+1)", value: "Premium expands as Spot Price rises (Bullish Sentiment).", color: "text-emerald-400" },
                                     { label: "Negative (-1)", value: "Premium contracts as Spot Price rises (Bearish/Hedging).", color: "text-rose-400" }
@@ -232,7 +226,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                             <AnalysisTooltip
                                 title="Cross Correlations vs F5"
                                 definition="Measures the correlation between changes in the Forward Premium and the underlying Spot Price (5-day changes)."
-                                math="Correlation(Delta_Premium, Delta_Spot)"
                                 interpretation={[
                                     { label: "Positive (+1)", value: "Premium expands as Spot Price rises (Bullish Sentiment).", color: "text-emerald-400" },
                                     { label: "Negative (-1)", value: "Premium contracts as Spot Price rises (Bearish/Hedging).", color: "text-rose-400" }

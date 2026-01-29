@@ -4,7 +4,6 @@ import { HelpCircle } from 'lucide-react';
 interface AnalysisTooltipProps {
     title: string;
     definition: string;
-    math: string;
     interpretation: {
         label: string;
         value: string;
@@ -12,7 +11,7 @@ interface AnalysisTooltipProps {
     }[];
 }
 
-export default function AnalysisTooltip({ title, definition, math, interpretation }: AnalysisTooltipProps) {
+export default function AnalysisTooltip({ title, definition, interpretation }: AnalysisTooltipProps) {
     return (
         <div className="relative group inline-flex items-center gap-2 cursor-help z-50">
             <h3 className="font-bold text-gray-200 text-sm uppercase tracking-wider">{title}</h3>
@@ -25,12 +24,6 @@ export default function AnalysisTooltip({ title, definition, math, interpretatio
                     <div className="mb-3 pb-3 border-b border-white/5">
                         <h4 className="text-sm font-bold text-white mb-1">{title}</h4>
                         <p className="text-xs text-gray-400 leading-relaxed font-sans">{definition}</p>
-                    </div>
-
-                    {/* Math */}
-                    <div className="mb-3 bg-white/[0.03] p-2 rounded-lg border border-white/5">
-                        <p className="text-[10px] text-gray-500 uppercase font-bold mb-1">The Math</p>
-                        <code className="text-xs font-mono text-cyan-300 block break-words">{math}</code>
                     </div>
 
                     {/* Interpretation */}
