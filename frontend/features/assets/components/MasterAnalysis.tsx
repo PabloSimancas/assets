@@ -33,8 +33,8 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
 
         if (symbol) {
             fetchAnalysis();
-            // Poll every 30 seconds
-            intervalId = setInterval(fetchAnalysis, 30000);
+            // Poll every 24 hours
+            intervalId = setInterval(fetchAnalysis, 86400000);
         }
 
         return () => {
@@ -92,18 +92,28 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
         <div className="space-y-6 pb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
             {/* Spot Prices */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <AnalysisTable
-                    title="Spot Prices"
-                    data={data?.spot}
-                    loading={loading}
-                    columns={[dateCol, { key: 'spot', label: 'Spot Price', format: plainNum }]}
-                />
-                <AnalysisTable
-                    title="Price Changes (Log Returns)"
-                    data={data?.price_changes}
-                    loading={loading}
-                    columns={[dateCol, { key: 'f1', label: 'F1 (Next Day)', format: numFormat }, { key: 'f5', label: 'F5 (5 Days)', format: numFormat }]}
-                />
+                <div className="h-96 relative group">
+                    <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">UI-013</span>
+                    <AnalysisTable
+                        title="Spot Prices"
+                        data={data?.spot}
+                        loading={loading}
+                        columns={[dateCol, { key: 'spot', label: 'Spot Price', format: plainNum }]}
+                    />
+                </div>
+                <div className="h-96 relative group">
+                    <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">UI-014</span>
+                    <AnalysisTable
+                        title="Price Changes (Log Returns)"
+                        data={data?.price_changes}
+                        loading={loading}
+                        columns={[
+                            dateCol,
+                            { key: 'f1', label: 'F1 (Next Day)', format: numFormat },
+                            { key: 'f5', label: 'F5 (5 Days)', format: numFormat }
+                        ]}
+                    />
+                </div>
             </div>
 
             {/* Days Buckets */}
