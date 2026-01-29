@@ -10,10 +10,14 @@ declare global {
 }
 
 // Get API URL from Runtime Config (browser) OR Build Time Config (local/static) NOT "undefined" string
+// Get API URL from Runtime Config (browser) OR Build Time Config (local/static) NOT "undefined" string
 const getBaseUrl = () => {
-    if (typeof window !== "undefined" && window.__ENV?.NEXT_PUBLIC_API_URL) {
-        return window.__ENV.NEXT_PUBLIC_API_URL;
+    if (typeof window !== "undefined") {
+        if (window.__ENV?.NEXT_PUBLIC_API_URL) {
+            return window.__ENV.NEXT_PUBLIC_API_URL;
+        }
     }
+    // Fallback to strict empty string if not found, let the interceptor fix it later
     return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8002/api/v1";
 };
 
@@ -25,14 +29,12 @@ const apiClient = axios.create({
 });
 
 // Update base URL dynamically if it changes (e.g. after window load)
-if (typeof window !== "undefined") {
-    apiClient.interceptors.request.use((config) => {
-        const currentUrl = getBaseUrl();
-        if (config.baseURL !== currentUrl) {
-            config.baseURL = currentUrl;
-        }
-        return config;
-    });
-}
+apiClient.interceptors.request.use((config) => {
+    // ALWAYS check for the latest URL on every request
+    if (typeof window !== "undefined" && window.__ENV?.NEXT_PUBLIC_API_URL) {
+        config.baseURL = window.__ENV.NEXT_PUBLIC_API_URL;
+    }
+    return config;
+});
 
 export default apiClient;
