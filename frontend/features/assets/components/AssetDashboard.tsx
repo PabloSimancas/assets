@@ -44,24 +44,24 @@ export default function AssetDashboard({ symbol }: AssetDashboardProps) {
     return (
         <div className="flex flex-col h-full animate-in fade-in slide-in-from-bottom-4 duration-700 relative">
             {/* Asset Header */}
-            <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/[0.06] bg-white/[0.01] relative">
+            <div className="p-4 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/[0.06] bg-white/[0.01] relative">
                 <span className="absolute top-0 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-012</span>
 
                 {/* Identity */}
-                <div className="flex items-center gap-5">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center text-black font-black text-2xl shadow-xl shadow-cyan-500/20">
+                <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center text-black font-black text-xl shadow-xl shadow-cyan-500/20">
                         {asset.symbol[0]}
                     </div>
                     <div>
                         <div className="flex items-center gap-3">
-                            <h2 className="text-3xl font-black text-white tracking-tight leading-none drop-shadow-sm">
+                            <h2 className="text-2xl font-black text-white tracking-tight leading-none drop-shadow-sm">
                                 {asset.name}
                             </h2>
-                            <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-bold text-gray-400">
+                            <span className="px-2 py-0.5 rounded-lg bg-white/5 border border-white/10 text-xs font-bold text-gray-400">
                                 {asset.symbol}
                             </span>
                         </div>
-                        <p className="text-sm font-medium text-gray-500 mt-1.5 uppercase tracking-widest flex items-center gap-2">
+                        <p className="text-xs font-medium text-gray-500 mt-1.5 uppercase tracking-widest flex items-center gap-2">
                             <span className="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
                             {asset.category} Asset
                         </p>
@@ -74,7 +74,7 @@ export default function AssetDashboard({ symbol }: AssetDashboardProps) {
                         <button
                             key={page.id}
                             onClick={() => setActivePageId(page.id)}
-                            className={`px-4 py-2 rounded-lg text-sm font-bold transition-all whitespace-nowrap ${activePageId === page.id
+                            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${activePageId === page.id
                                 ? "bg-cyan-500 text-black shadow-lg shadow-cyan-500/20"
                                 : "bg-white/5 text-gray-400 hover:text-white hover:bg-white/10"
                                 }`}
@@ -84,7 +84,7 @@ export default function AssetDashboard({ symbol }: AssetDashboardProps) {
                     ))}
                     <button
                         onClick={handleAddPage}
-                        className="px-4 py-2 rounded-lg text-sm font-bold bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-dashed border-white/20 hover:border-white/40 transition-all whitespace-nowrap flex items-center gap-2"
+                        className="px-3 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-dashed border-white/20 hover:border-white/40 transition-all whitespace-nowrap flex items-center gap-1"
                     >
                         <span>+</span> Add Analysis
                     </button>
@@ -92,7 +92,7 @@ export default function AssetDashboard({ symbol }: AssetDashboardProps) {
             </div>
 
             {/* Canvas Area (UI-011) */}
-            <div className="p-8 h-full relative">
+            <div className="p-4 md:p-6 h-full relative">
                 <span className="absolute top-0 right-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-011</span>
 
                 {/* Dynamic Content */}
