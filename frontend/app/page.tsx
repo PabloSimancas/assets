@@ -6,7 +6,7 @@ import { useAssets } from "@/features/assets/hooks/useAssets";
 import { Search, Bell, User, LayoutDashboard, BarChart2, Settings } from "lucide-react";
 
 export default function Home() {
-  const { data: assets, isLoading } = useAssets();
+  const { data: assets, isLoading, isError, error } = useAssets();
   const [selectedSymbol, setSelectedSymbol] = useState("BTC");
 
   return (
@@ -79,6 +79,16 @@ export default function Home() {
                 <span className="absolute top-0 right-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-008</span>
                 {isLoading ? (
                   [1, 2, 3, 4].map(i => <div key={i} className="h-16 bg-white/[0.02] rounded-2xl animate-pulse m-2" />)
+                ) : isError ? (
+                  <div className="p-4 m-2 bg-red-500/10 border border-red-500/20 rounded-xl">
+                    <div className="text-red-400 font-bold text-xs mb-1">Connection Error</div>
+                    <div className="text-[10px] text-red-400/70">
+                      {error instanceof Error ? error.message : "Failed to load assets"}
+                    </div>
+                    <div className="text-[9px] text-gray-500 mt-2 font-mono break-all">
+                      Check console for details
+                    </div>
+                  </div>
                 ) : (
                   (assets && assets.length > 0) ? (
                     assets.map((asset) => (
