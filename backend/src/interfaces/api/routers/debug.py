@@ -40,6 +40,9 @@ async def debug_status(db: Session = Depends(get_db)):
             count_runs = db.execute(text("SELECT COUNT(*) FROM crypto_forwards.run_main")).scalar()
             results["count_run_main"] = count_runs
             
+            count_details = db.execute(text("SELECT COUNT(*) FROM crypto_forwards.run_details")).scalar()
+            results["count_run_details"] = count_details
+            
             # Get latest run
             latest_run = db.execute(text("SELECT * FROM crypto_forwards.run_main ORDER BY ran_at_utc DESC LIMIT 1")).mappings().all()
             if latest_run:
@@ -53,6 +56,15 @@ async def debug_status(db: Session = Depends(get_db)):
         results["global_error"] = str(e)
         
     return results
+
+@router.post("/trigger-fetch/{symbol}")
+async def trigger_fetch(symbol: str):
+    from src.scripts.fetch_market_data import process_asset
+    try:
+        process_asset(symbol)
+        return {"status": "success", "message": f"Processed {symbol}"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
 
 @router.get("/logs/scheduler")
 async def get_scheduler_logs():
