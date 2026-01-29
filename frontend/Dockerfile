@@ -25,7 +25,13 @@ COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
+# Copy env script
+COPY env.sh ./env.sh
+USER root
+RUN chmod +x ./env.sh
 USER nextjs
+
 EXPOSE 3000
 ENV PORT 3000
+ENTRYPOINT ["./env.sh"]
 CMD ["node", "server.js"]
