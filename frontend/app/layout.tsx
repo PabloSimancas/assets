@@ -19,6 +19,8 @@ export const metadata: Metadata = {
 
 import QueryProvider from "./providers";
 
+import Script from "next/script";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,12 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script src="/__env.js" />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script src="/__env.js" strategy="beforeInteractive" />
         <QueryProvider>
           {children}
         </QueryProvider>
