@@ -95,7 +95,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
             <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                 {/* Spot Prices */}
                 <div className="h-72 relative group xl:col-span-1">
-                    <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">UI-013</span>
                     <AnalysisTable
                         title={
                             <AnalysisTooltip
@@ -133,7 +132,6 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
 
                 {/* Price Changes */}
                 <div className="h-72 relative group xl:col-span-1">
-                    <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">UI-014</span>
                     <AnalysisTable
                         title={
                             <AnalysisTooltip

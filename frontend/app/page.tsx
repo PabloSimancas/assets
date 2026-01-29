@@ -14,10 +14,8 @@ export default function Home() {
     <main className="min-h-screen bg-[#0C0E12] text-gray-300 selection:bg-cyan-500/20 relative">
       {/* Top Navigation */}
       <header className="border-b border-white/[0.06] p-4 sticky top-0 bg-[#0C0E12]/80 backdrop-blur-xl z-50 relative">
-        <span className="absolute top-0 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-001</span>
         <div className="max-w-[1600px] mx-auto flex items-center justify-between">
           <div className="flex items-center gap-10 relative">
-            <span className="absolute -top-2 -left-2 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-002</span>
             <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2.5">
               <span className="bg-gradient-to-br from-cyan-400 to-teal-500 w-8 h-8 rounded-lg flex items-center justify-center text-black shadow-lg shadow-cyan-500/20">
                 <LayoutDashboard size={18} strokeWidth={2.5} />
@@ -25,7 +23,6 @@ export default function Home() {
               ASSETS
             </h1>
             <nav className="hidden md:flex items-center gap-8 text-sm font-medium relative">
-              <span className="absolute -top-3 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-003</span>
               <span className="text-cyan-400 flex items-center gap-2 cursor-pointer pt-1 relative after:content-[''] after:absolute after:bottom-[-21px] after:left-0 after:w-full after:h-[2px] after:bg-cyan-400">
                 Dashboard
               </span>
@@ -40,7 +37,6 @@ export default function Home() {
 
           <div className="flex items-center gap-6">
             <div className="relative hidden lg:block group">
-              <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-004</span>
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-cyan-400 transition-colors" size={16} />
               <input
                 type="text"
@@ -51,7 +47,6 @@ export default function Home() {
               />
             </div>
             <div className="flex items-center gap-4 text-gray-400 relative">
-              <span className="absolute -top-3 right-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-005</span>
               <div className="p-2 hover:bg-white/5 rounded-full cursor-pointer transition-colors relative">
                 <Bell size={20} />
                 <span className="absolute top-2 right-2.5 w-2 h-2 bg-rose-500 rounded-full border-2 border-[#0C0E12]"></span>
@@ -70,15 +65,12 @@ export default function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left Sidebar - Watchlist */}
           <div className="lg:col-span-3 space-y-4 relative">
-            <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-006</span>
             <div className="bg-[#151921]/50 backdrop-blur-md rounded-3xl border border-white/[0.06] overflow-hidden shadow-2xl shadow-black/20 flex flex-col h-[600px]">
               <div className="p-4 border-b border-white/[0.06] flex items-center justify-between bg-white/[0.01] relative">
-                <span className="absolute top-0 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-007</span>
                 <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Assets</h3>
               </div>
 
               <div className="p-2 space-y-1 relative overflow-y-auto custom-scrollbar flex-1">
-                <span className="absolute top-0 right-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-008</span>
                 {isLoading ? (
                   [1, 2, 3, 4].map(i => <div key={i} className="h-16 bg-white/[0.02] rounded-2xl animate-pulse m-2" />)
                 ) : isError ? (
@@ -107,7 +99,6 @@ export default function Home() {
                             : 'hover:bg-white/[0.03] border border-transparent'
                             }`}
                         >
-                          <span className="absolute top-0 right-0 bg-red-500/50 text-white text-[8px] px-0.5 z-[60] font-mono pointer-events-none hidden group-hover:block">UI-009</span>
                           <div className="flex items-center gap-3">
                             <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow-inner ${selectedSymbol === asset.symbol
                               ? 'bg-cyan-400 text-black shadow-cyan-500/20'
@@ -141,7 +132,6 @@ export default function Home() {
 
           {/* Main Content - Dashboard */}
           <section className="lg:col-span-9 space-y-6 relative">
-            <span className="absolute -top-2 right-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-011</span>
             <div className="bg-[#151921]/30 backdrop-blur-sm p-1 rounded-3xl border border-white/[0.06] min-h-[600px] shadow-2xl">
               <AssetDashboard symbol={selectedSymbol} />
             </div>

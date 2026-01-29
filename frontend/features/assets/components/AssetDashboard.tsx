@@ -45,7 +45,6 @@ export default function AssetDashboard({ symbol }: AssetDashboardProps) {
         <div className="flex flex-col h-full animate-in fade-in slide-in-from-bottom-4 duration-700 relative">
             {/* Asset Header */}
             <div className="p-4 md:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/[0.06] bg-white/[0.01] relative">
-                <span className="absolute top-0 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-012</span>
 
                 {/* Identity */}
                 <div className="flex items-center gap-4">
@@ -87,7 +86,6 @@ export default function AssetDashboard({ symbol }: AssetDashboardProps) {
 
             {/* Canvas Area (UI-011) */}
             <div className="p-4 md:p-6 h-full relative">
-                <span className="absolute top-0 right-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-011</span>
 
                 {/* Dynamic Content */}
                 {activePageId === "1" ? (
