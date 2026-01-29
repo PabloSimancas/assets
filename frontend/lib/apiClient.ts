@@ -18,7 +18,7 @@ const getBaseUrl = () => {
         }
     }
     // Fallback to strict empty string if not found, let the interceptor fix it later
-    return process.env.NEXT_PUBLIC_API_URL || "http://localhost:8002/api/v1";
+    return process.env.NEXT_PUBLIC_API_URL || "https://assets-backend.kqhsmi.easypanel.host/api/v1";
 };
 
 const apiClient = axios.create({
