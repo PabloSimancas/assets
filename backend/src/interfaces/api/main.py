@@ -1,8 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from uvicorn.middleware.proxy_headers import ProxyHeadersMiddleware
 from src.interfaces.api.routers import health, assets, analysis, debug
 
 app = FastAPI(title="Assets Dashboard API")
+
+# Trust Proxy Headers (Critical for EasyPanel/SSL Termination)
+app.add_middleware(ProxyHeadersMiddleware, trusted_hosts=["*"])
 
 # CORS
 app.add_middleware(

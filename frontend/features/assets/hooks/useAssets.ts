@@ -6,7 +6,7 @@ export const useAssets = () => {
     return useQuery<AssetSummary[]>({
         queryKey: ["assets"],
         queryFn: async () => {
-            const { data } = await apiClient.get("/assets");
+            const { data } = await apiClient.get("/assets/");
             return data;
         },
     });
