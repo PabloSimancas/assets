@@ -8,8 +8,8 @@ router = APIRouter(
     tags=["debug"]
 )
 
-@router.get("/db")
-async def debug_db(db: Session = Depends(get_db)):
+@router.get("/status")
+async def debug_status(db: Session = Depends(get_db)):
     results = {}
     
     try:
@@ -39,10 +39,38 @@ async def debug_db(db: Session = Depends(get_db)):
         try:
             count_runs = db.execute(text("SELECT COUNT(*) FROM crypto_forwards.run_main")).scalar()
             results["count_run_main"] = count_runs
+            
+            # Get latest run
+            latest_run = db.execute(text("SELECT * FROM crypto_forwards.run_main ORDER BY ran_at_utc DESC LIMIT 1")).mappings().all()
+            if latest_run:
+                results["latest_run"] = str(latest_run[0])
+            else:
+                results["latest_run"] = "None"
         except Exception as e:
-            results["count_run_main"] = str(e)
+            results["count_run_main_error"] = str(e)
             
     except Exception as e:
         results["global_error"] = str(e)
         
     return results
+
+@router.get("/logs/scheduler")
+async def get_scheduler_logs():
+    return read_logs("logs/scheduler.log")
+
+@router.get("/logs/fetch")
+async def get_fetch_logs():
+    return read_logs("logs/fetch_market.log")
+
+def read_logs(filepath):
+    import os
+    if not os.path.exists(filepath):
+        return {"error": f"Log file not found at {filepath}"}
+    
+    try:
+        with open(filepath, "r") as f:
+            # Read last 100 lines
+            lines = f.readlines()
+            return {"lines": lines[-100:]}
+    except Exception as e:
+        return {"error": str(e)}
