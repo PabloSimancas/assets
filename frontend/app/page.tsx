@@ -8,6 +8,7 @@ import { Search, Bell, User, LayoutDashboard, BarChart2, Settings } from "lucide
 export default function Home() {
   const { data: assets, isLoading, isError, error } = useAssets();
   const [selectedSymbol, setSelectedSymbol] = useState("BTC");
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <main className="min-h-screen bg-[#0C0E12] text-gray-300 selection:bg-cyan-500/20 relative">
@@ -44,6 +45,8 @@ export default function Home() {
               <input
                 type="text"
                 placeholder="Search assets..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="bg-white/[0.03] border border-white/[0.06] rounded-xl py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-cyan-500/30 focus:bg-white/[0.05] w-64 transition-all placeholder:text-gray-600"
               />
             </div>
@@ -66,16 +69,15 @@ export default function Home() {
       <div className="max-w-[1600px] mx-auto p-4 md:p-6 lg:p-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left Sidebar - Watchlist */}
-          <aside className="lg:col-span-3 space-y-4 relative">
+          <div className="lg:col-span-3 space-y-4 relative">
             <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-006</span>
-            <div className="bg-[#151921]/50 backdrop-blur-md rounded-3xl border border-white/[0.06] overflow-hidden shadow-2xl shadow-black/20">
+            <div className="bg-[#151921]/50 backdrop-blur-md rounded-3xl border border-white/[0.06] overflow-hidden shadow-2xl shadow-black/20 flex flex-col h-[600px]">
               <div className="p-4 border-b border-white/[0.06] flex items-center justify-between bg-white/[0.01] relative">
                 <span className="absolute top-0 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-007</span>
-                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Watchlist</h3>
-                <span className="text-[10px] bg-cyan-500/10 text-cyan-400 px-2.5 py-1 rounded-full font-bold uppercase tracking-wide border border-cyan-500/10">Live Market</span>
+                <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-2">Assets</h3>
               </div>
 
-              <div className="p-2 space-y-1 relative">
+              <div className="p-2 space-y-1 relative overflow-y-auto custom-scrollbar flex-1">
                 <span className="absolute top-0 right-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-008</span>
                 {isLoading ? (
                   [1, 2, 3, 4].map(i => <div key={i} className="h-16 bg-white/[0.02] rounded-2xl animate-pulse m-2" />)
@@ -91,37 +93,42 @@ export default function Home() {
                   </div>
                 ) : (
                   (assets && assets.length > 0) ? (
-                    assets.map((asset) => (
-                      <div
-                        key={asset.symbol}
-                        onClick={() => setSelectedSymbol(asset.symbol)}
-                        className={`relative flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all duration-300 group ${selectedSymbol === asset.symbol
-                          ? 'bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20'
-                          : 'hover:bg-white/[0.03] border border-transparent'
-                          }`}
-                      >
-                        <span className="absolute top-0 right-0 bg-red-500/50 text-white text-[8px] px-0.5 z-[60] font-mono pointer-events-none hidden group-hover:block">UI-009</span>
-                        <div className="flex items-center gap-3">
-                          <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow-inner ${selectedSymbol === asset.symbol
-                            ? 'bg-cyan-400 text-black shadow-cyan-500/20'
-                            : 'bg-[#1E232E] text-gray-400'
-                            }`}>
-                            {asset.symbol[0]}
-                          </div>
-                          <div>
-                            <div className={`font-bold transition-colors ${selectedSymbol === asset.symbol ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>
-                              {asset.symbol}
+                    assets
+                      .filter(asset =>
+                        asset.symbol.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                        asset.name.toLowerCase().includes(searchQuery.toLowerCase())
+                      )
+                      .map((asset) => (
+                        <div
+                          key={asset.symbol}
+                          onClick={() => setSelectedSymbol(asset.symbol)}
+                          className={`relative flex items-center justify-between p-3 rounded-2xl cursor-pointer transition-all duration-300 group ${selectedSymbol === asset.symbol
+                            ? 'bg-gradient-to-r from-cyan-500/10 to-transparent border border-cyan-500/20'
+                            : 'hover:bg-white/[0.03] border border-transparent'
+                            }`}
+                        >
+                          <span className="absolute top-0 right-0 bg-red-500/50 text-white text-[8px] px-0.5 z-[60] font-mono pointer-events-none hidden group-hover:block">UI-009</span>
+                          <div className="flex items-center gap-3">
+                            <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm shadow-inner ${selectedSymbol === asset.symbol
+                              ? 'bg-cyan-400 text-black shadow-cyan-500/20'
+                              : 'bg-[#1E232E] text-gray-400'
+                              }`}>
+                              {asset.symbol[0]}
                             </div>
-                            <div className="text-[11px] text-gray-500 font-medium">{asset.name}</div>
+                            <div>
+                              <div className={`font-bold transition-colors ${selectedSymbol === asset.symbol ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>
+                                {asset.symbol}
+                              </div>
+                              <div className="text-[11px] text-gray-500 font-medium">{asset.name}</div>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            {selectedSymbol === asset.symbol && (
+                              <div className="text-[10px] text-cyan-400 font-bold animate-in fade-in slide-in-from-right-2">Active</div>
+                            )}
                           </div>
                         </div>
-                        <div className="text-right">
-                          {selectedSymbol === asset.symbol && (
-                            <div className="text-[10px] text-cyan-400 font-bold animate-in fade-in slide-in-from-right-2">Active</div>
-                          )}
-                        </div>
-                      </div>
-                    ))
+                      ))
                   ) : (
                     <div className="p-4 text-center text-xs text-gray-500">
                       No assets found.
@@ -129,16 +136,8 @@ export default function Home() {
                   )
                 )}
               </div>
-
-              <div className="p-2 border-t border-white/[0.06] relative">
-                <span className="absolute top-0 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none">UI-010</span>
-                <button className="w-full py-3 rounded-xl text-xs font-bold text-gray-400 hover:text-white hover:bg-white/[0.05] transition-all flex items-center justify-center gap-2 group">
-                  <span className="w-4 h-4 rounded-full border border-gray-600 flex items-center justify-center group-hover:border-white group-hover:bg-white group-hover:text-black transition-all">+</span>
-                  Add Asset
-                </button>
-              </div>
             </div>
-          </aside>
+          </div>
 
           {/* Main Content - Dashboard */}
           <section className="lg:col-span-9 space-y-6 relative">

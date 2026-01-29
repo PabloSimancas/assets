@@ -82,12 +82,6 @@ export default function AssetDashboard({ symbol }: AssetDashboardProps) {
                             {page.name}
                         </button>
                     ))}
-                    <button
-                        onClick={handleAddPage}
-                        className="px-3 py-1.5 rounded-lg text-xs font-bold bg-white/5 text-gray-400 hover:text-white hover:bg-white/10 border border-dashed border-white/20 hover:border-white/40 transition-all whitespace-nowrap flex items-center gap-1"
-                    >
-                        <span>+</span> Add Analysis
-                    </button>
                 </div>
             </div>
 

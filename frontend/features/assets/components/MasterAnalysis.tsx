@@ -92,9 +92,9 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
     return (
         <div className="space-y-6 pb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
             {/* Row 1: Core Data (Spot, Expiry, Returns) */}
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                 {/* Spot Prices */}
-                <div className="h-72 relative group">
+                <div className="h-72 relative group xl:col-span-1">
                     <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">UI-013</span>
                     <AnalysisTable
                         title={
@@ -113,7 +113,7 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                 </div>
 
                 {/* Days to Expiry Buckets */}
-                <div className="h-72">
+                <div className="h-72 xl:col-span-2">
                     <AnalysisTable
                         title={
                             <AnalysisTooltip
@@ -132,7 +132,7 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                 </div>
 
                 {/* Price Changes */}
-                <div className="h-72 relative group">
+                <div className="h-72 relative group xl:col-span-1">
                     <span className="absolute -top-2 left-0 bg-red-500/50 text-white text-[10px] px-1 z-[60] font-mono pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">UI-014</span>
                     <AnalysisTable
                         title={
@@ -140,8 +140,8 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                                 title="Price Changes (Log Returns)"
                                 definition="Tracks the daily (f1) and 5-day (f5) percentage change in the price of the forward contracts."
                                 interpretation={[
-                                    { label: "High Volatility", value: "Large spikes indicate the market is pricing in new information aggressively.", color: "text-amber-400" },
-                                    { label: "Divergence", value: "If Spot is flat but Forwards are moving, the expectation of the future is changing.", color: "text-cyan-400" }
+                                    { label: "High Volatility", value: "Large spikes indicate the market is pricing in new information aggressively.", color: "text-rose-400" },
+                                    { label: "Divergence", value: "If Spot is flat but Forwards are moving, the expectation of the future is changing.", color: "text-emerald-400" }
                                 ]}
                             />
                         }
