@@ -94,7 +94,7 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
             {/* Row 1: Core Data (Spot, Expiry, Returns) */}
             <div className="grid grid-cols-1 xl:grid-cols-4 gap-4">
                 {/* Spot Prices */}
-                <div className="h-72 relative group xl:col-span-1">
+                <div className="h-72 xl:col-span-1">
                     <AnalysisTable
                         title={
                             <AnalysisTooltip
@@ -131,7 +131,7 @@ export default function MasterAnalysis({ symbol }: MasterAnalysisProps) {
                 </div>
 
                 {/* Price Changes */}
-                <div className="h-72 relative group xl:col-span-1">
+                <div className="h-72 xl:col-span-1">
                     <AnalysisTable
                         title={
                             <AnalysisTooltip
