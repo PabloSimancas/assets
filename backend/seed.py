@@ -20,7 +20,19 @@ def init_assets():
     else:
         print(f"Warning: Schema file not found at {schema_path}")
 
-    # 2. Create tables for ORM models (e.g. assets) if they don't exist
+    # 2. Check for schema mismatch and Create tables
+    from sqlalchemy import inspect, Integer
+    inspector = inspect(engine)
+    if inspector.has_table("assets"):
+        columns = inspector.get_columns("assets")
+        id_column = next((c for c in columns if c["name"] == "id"), None)
+        # Check if ID is Integer (Old Schema) instead of UUID
+        if id_column and isinstance(id_column["type"], Integer):
+            print("DETECTED OLD SCHEMA (ID is Integer). Dropping table 'assets' to migrate to UUID...")
+            AssetModel.__table__.drop(engine)
+            print("Table dropped.")
+
+    # Create tables for ORM models (e.g. assets) if they don't exist
     Base.metadata.create_all(bind=engine)
     
     db = SessionLocal()
