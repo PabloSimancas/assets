@@ -7,7 +7,13 @@ echo "Applying Master Schema..."
 sleep 5
 # Apply Database Migrations / Seed
 echo "Checking Database..."
+# Debug: Print DB URL (Masked)
+echo "Environment DATABASE_URL: $(echo $DATABASE_URL | sed 's/:[^:@]*@/:***@/')"
 python seed.py
+if [ $? -ne 0 ]; then
+    echo "ERROR: Database seed failed. Exiting."
+    exit 1
+fi
 
 # Start Scheduler in Background
 echo "Starting Scheduler..."
