@@ -22,6 +22,8 @@ logger = logging.getLogger(__name__)
 
 # Database Config (Matches fetch_market_data.py)
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@db:5432/assets_db")
+if DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 def job():
     logger.info("Starting scheduled job: Fetch Market Data")
