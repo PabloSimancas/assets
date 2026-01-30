@@ -5,17 +5,8 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- 2. CORE ASSETS SCHEMA (public)
-CREATE TABLE IF NOT EXISTS assets (
-    id SERIAL PRIMARY KEY,
-    symbol VARCHAR(50) UNIQUE NOT NULL,
-    name VARCHAR(100) NOT NULL,
-    category VARCHAR(50) NOT NULL,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-    updated_at TIMESTAMPTZ DEFAULT NOW()
-);
+-- Assets table is managed by SQLAlchemy ORM (models.py) to use UUID primary keys.
 
--- Index for assets
-CREATE INDEX IF NOT EXISTS idx_assets_symbol ON assets(symbol);
 
 -- 3. CRYPTO FORWARDS DATA SCHEMA
 CREATE SCHEMA IF NOT EXISTS crypto_forwards;

@@ -16,21 +16,30 @@ def on_startup():
         pass
     print(f"API Startup - Connecting to Database: {url_str.split('@')[-1] if '@' in url_str else url_str}")
     
+    from sqlalchemy import text, inspect
+    from sqlalchemy.exc import ProgrammingError
+    
     try:
-        # Create Tables
-        Base.metadata.create_all(bind=engine)
-        
-        # Verify Tables
-        from sqlalchemy import inspect
+        # Check if we can query assets
+        with engine.connect() as conn:
+            try:
+                msg = "Checking for 'assets' table..."
+                print(msg)
+                conn.execute(text("SELECT 1 FROM assets LIMIT 1"))
+                print("'assets' table found and accessible.")
+            except ProgrammingError as e:
+                print(f"'assets' table NOT found or not accessible: {e}")
+                print("Attempting to create tables via API Startup...")
+                Base.metadata.create_all(bind=engine)
+                print("Tables created.")
+                
+        # Final Verification
         inspector = inspect(engine)
         tables = inspector.get_table_names()
-        print(f"API Startup - Found tables: {tables}")
-        
-        if "assets" not in tables:
-             print("CRITICAL: 'assets' table missing after create_all!")
+        print(f"API Startup - Final table list: {tables}")
         
     except Exception as e:
-        print(f"API Startup - DB Error: {e}")
+        print(f"API Startup - CRITICAL ERROR: {e}")
 
 # Trust Proxy Headers (Critical for EasyPanel/SSL Termination)
 app.add_middleware(ProxyHeadersMiddleware, trusted_hosts=["*"])

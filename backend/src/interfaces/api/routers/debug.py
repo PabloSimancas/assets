@@ -55,6 +55,18 @@ async def debug_status(db: Session = Depends(get_db)):
     except Exception as e:
         results["global_error"] = str(e)
         
+    # Inspector details
+    try:
+        from sqlalchemy import inspect
+        inspector = inspect(db.get_bind())
+        results["tables_in_public"] = inspector.get_table_names(schema="public")
+        results["tables_in_crypto"] = inspector.get_table_names(schema="crypto_forwards")
+        
+        if "assets" in results["tables_in_public"]:
+            results["assets_columns"] = [c["name"] for c in inspector.get_columns("assets", schema="public")]
+    except Exception as e:
+        results["inspector_error"] = str(e)
+
     return results
 
 @router.post("/trigger-fetch/{symbol}")

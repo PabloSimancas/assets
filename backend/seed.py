@@ -45,10 +45,25 @@ def init_assets():
         print(f"Error checking schema: {e}")
 
     # 3. Ensure Tables Exist
+    print(f"Registered tables in Base.metadata: {Base.metadata.tables.keys()}")
     print("Running Base.metadata.create_all...")
     try:
         Base.metadata.create_all(bind=engine)
         print("create_all completed.")
+        
+        # Verify creation immediately
+        inspector = inspect(engine)
+        if not inspector.has_table("assets"):
+             print("WARNING: 'assets' table not found after create_all! Attempting explicit create...")
+             AssetModel.__table__.create(engine)
+             print("Explicit create called.")
+             if not inspector.has_table("assets"):
+                  print("CRITICAL: 'assets' table STILL not found after explicit create.")
+             else:
+                  print("Explicit create SUCCESSFUL.")
+        else:
+             print("Table 'assets' verified existing.")
+
     except Exception as e:
         print(f"CRITICAL ERROR during create_all: {e}")
         # Identify if we should exit? Let's try to proceed.
@@ -86,18 +101,9 @@ def init_assets():
         print("Static assets initialized successfully!")
     
     except ProgrammingError as e:
+        print(f"Database Error: {e}")
         if "relation \"assets\" does not exist" in str(e):
-             print("CRITICAL: 'assets' table still missing after create_all. Attempting forceful recreation...")
-             try:
-                db.rollback()
-                AssetModel.__table__.create(engine)
-                print("Force creation successful.")
-                # Recursively call or just exit and let restart handle?
-                # Let's just return, next run will seed.
-             except Exception as create_err:
-                 print(f"Force creation failed: {create_err}")
-        else:
-            print(f"Database Error: {e}")
+             print("CRITICAL: 'assets' table still missing after create_all checks.")
     except Exception as e:
         print(f"Unexpected error seeding data: {e}")
         db.rollback()
