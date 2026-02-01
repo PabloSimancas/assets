@@ -107,6 +107,8 @@ def init_assets():
     except Exception as e:
         print(f"Unexpected error seeding data: {e}")
         db.rollback()
+        import sys
+        sys.exit(1)
     finally:
         db.close()
 
