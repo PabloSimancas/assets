@@ -17,7 +17,8 @@ fi
 
 # Start Scheduler in Background
 echo "Starting Scheduler..."
-python src/scripts/scheduler.py &
+mkdir -p logs
+python src/scripts/scheduler.py > logs/scheduler_stdout.log 2> logs/scheduler_stderr.log &
 
 # Start Main API
 echo "Starting API..."

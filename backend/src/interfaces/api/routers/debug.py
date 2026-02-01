@@ -98,3 +98,24 @@ def read_logs(filepath):
             return {"lines": lines[-100:]}
     except Exception as e:
         return {"error": str(e)}
+
+@router.get("/processes")
+async def check_processes():
+    import subprocess
+    try:
+        # ps aux is standard, but ps might not be installed.
+        # Try a few commands
+        cmd = ["ps", "aux"]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode == 0:
+            return {"processes": result.stdout.split("\n")}
+        
+        # If ps failed, try 'top -b -n 1'
+        result = subprocess.run(["top", "-b", "-n", "1"], capture_output=True, text=True)
+        if result.returncode == 0:
+           return {"top": result.stdout.split("\n")}
+           
+        return {"error": "Could not list processes (ps/top missing?)"}
+    except Exception as e:
+        return {"error": str(e)}
+
