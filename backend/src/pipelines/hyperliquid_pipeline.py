@@ -29,7 +29,7 @@ class HyperliquidPipeline:
         # Get unprocessed scrapes
         scrapes = self.db.query(HyperliquidVault).filter(
             HyperliquidVault.processed_to_silver == False
-        ).limit(50).all()
+        ).all()
 
         if not scrapes:
             self.logger.info("No new Hyperliquid data to process.")

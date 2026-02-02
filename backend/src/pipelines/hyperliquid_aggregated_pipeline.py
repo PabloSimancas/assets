@@ -56,7 +56,7 @@ class HyperliquidAggregatedPipeline:
         
         positions = self.db.query(SilverHyperliquidPosition).filter(
             not_(SilverHyperliquidPosition.id.in_(subquery))
-        ).limit(100).all()
+        ).all()
 
         if not positions:
             self.logger.info("No new positions to aggregate.")
