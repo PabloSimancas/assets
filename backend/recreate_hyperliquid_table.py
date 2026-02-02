@@ -31,8 +31,11 @@ def recreate_hyperliquid_tables():
 
     # 5. Create Tables (SQLAlchemy handles schema based on model __table_args__)
     print("Creating tables...")
-    # This will create bronze.raw_vaults (if missing) and silver.hyperliquid_positions
-    Base.metadata.create_all(bind=engine)
+    # Only create the specific tables we want (avoiding legacy ones like web_scrapes/tickers if they are still in Base)
+    # 1. HyperliquidVault (bronze.raw_vaults)
+    HyperliquidVault.__table__.create(bind=engine, checkfirst=True)
+    # 2. SilverHyperliquidPosition (bronze.hyperliquid_positions - model name still Silver...)
+    SilverHyperliquidPosition.__table__.create(bind=engine, checkfirst=True)
     
     print("Tables created.")
 
