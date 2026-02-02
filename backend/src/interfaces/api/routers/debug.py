@@ -105,10 +105,15 @@ async def check_processes():
     try:
         # ps aux is standard, but ps might not be installed.
         # Try a few commands
-        cmd = ["ps", "aux"]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode == 0:
-            return {"processes": result.stdout.split("\n")}
+        # ps aux is standard, but ps might not be installed.
+        # Try a few commands
+        try:
+            cmd = ["ps", "aux"]
+            result = subprocess.run(cmd, capture_output=True, text=True)
+            if result.returncode == 0:
+                return {"processes": result.stdout.split("\n")}
+        except FileNotFoundError:
+            pass # Try next method
         
         # If ps failed, try 'top -b -n 1'
         result = subprocess.run(["top", "-b", "-n", "1"], capture_output=True, text=True)

@@ -6,6 +6,8 @@ import sys
 import os
 from datetime import datetime, timezone, timedelta
 from sqlalchemy import create_engine, text
+from src.scrapers.deribit import DeribitScraper
+from src.pipelines.deribit_pipeline import DeribitPipeline
 
 # Setup Logging
 log_dir = "logs"
@@ -26,17 +28,22 @@ if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 def job():
-    logger.info("Starting scheduled job: Fetch Market Data")
+    logger.info("Starting scheduled job: Medallion Architecture Pipeline")
     try:
-        # Run the fetch script as a subprocess
-        result = subprocess.run([sys.executable, "src/scripts/fetch_market_data.py"], capture_output=True, text=True)
+        # 1. BRONZE: Ingest Raw Data
+        logger.info("Step 1: Running Scrapers (Bronze)")
+        scraper = DeribitScraper(currency="BTC") # Can loop for ETH too
+        scraper.run()
         
-        if result.returncode == 0:
-            logger.info("Job executed successfully.")
-            logger.info("Output:\n" + result.stdout)
-        else:
-            logger.error("Job failed with exit code " + str(result.returncode))
-            logger.error("Error Output:\n" + result.stderr)
+        scraper_eth = DeribitScraper(currency="ETH")
+        scraper_eth.run()
+
+        # 2. SILVER & GOLD: Process and Aggregate
+        logger.info("Step 2: Running Pipelines (Silver -> Gold)")
+        pipeline = DeribitPipeline()
+        pipeline.run()
+
+        logger.info("Job executed successfully.")
             
     except Exception as e:
         logger.error(f"Failed to launch job: {e}")
@@ -72,6 +79,8 @@ def check_missed_run():
     except Exception as e:
         logger.error(f"Error checking missed run: {e}")
 
+# Schedule the job
+# Note: In container, time is usually UTC
 # Schedule the job
 # Note: In container, time is usually UTC
 schedule.every().day.at("08:00").do(job)

@@ -1,5 +1,8 @@
 from src.infrastructure.database.session import SessionLocal, engine
 from src.infrastructure.database.models import Base, AssetModel
+# Register new models for creation
+from src.infrastructure.database.scraping_models import WebScrape
+from src.infrastructure.database.silver_models import SilverTicker
 import uuid
 from sqlalchemy import text, inspect, Integer
 from sqlalchemy.exc import ProgrammingError, OperationalError
@@ -14,22 +17,19 @@ def init_assets():
         pass
     print(f"Seed Script - Database: {url_str.split('@')[-1] if '@' in url_str else url_str}")
 
-    # 1. Execute Master Schema (creates crypto_forwards schema and tables)
-    schema_path = os.path.join("src", "infrastructure", "database", "master_schema.sql")
-    if os.path.exists(schema_path):
-        print(f"Executing schema from {schema_path}...")
-        try:
-            with open(schema_path, "r") as f:
-                sql_statements = f.read()
-                # Use a new connection for schema execution
-                with engine.connect() as connection:
-                    connection.execute(text(sql_statements))
-                    connection.commit()
-            print("Schema executed successfully.")
-        except Exception as e:
-            print(f"ERROR executing schema: {e}")
-    else:
-        print(f"Warning: Schema file not found at {schema_path}")
+    # 1. Ensure Schemas Exists (SQLAlchemy requires it before creating tables in it)
+    print("Ensuring schemas exist...")
+    try:
+        with engine.connect() as connection:
+            connection.execute(text("CREATE SCHEMA IF NOT EXISTS crypto_forwards;"))
+            connection.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
+            connection.execute(text("CREATE SCHEMA IF NOT EXISTS silver;"))
+            connection.execute(text("CREATE SCHEMA IF NOT EXISTS gold;"))
+            connection.commit()
+        print("Schemas ensured.")
+    except Exception as e:
+        print(f"ERROR ensuring schema exists: {e}")
+
 
     # 2. Check for Old Schema (Migration)
     try:
