@@ -1,7 +1,7 @@
 import json
 import logging
 from typing import List, Dict
-from datetime import datetime
+from datetime import datetime, timedelta
 from src.infrastructure.database.session import SessionLocal
 from src.infrastructure.database.scraping_models import HyperliquidVault
 from src.infrastructure.database.silver_models import SilverHyperliquidPosition
@@ -46,14 +46,25 @@ class HyperliquidPipeline:
                 vault_addr = metadata.get("vault_address") or metadata.get("parent_vault") or "unknown"
                 user_addr = metadata.get("user_address") # Child address
 
-                # We primarily want to process position data from 'child_clearinghouse_state'
-                # But 'vault_details' might be useful later. For now, only extract positions if present.
-                
                 # Skip vault_details for position processing to avoid duplication
-                # (We only want child_clearinghouse_state for granular positions)
                 if scrape_type == "vault_details":
                     scrape.processed_to_silver = True
                     continue
+
+                # IDEMPOTENCY CHECK:
+                # Check if we already have data for this vault/user processed very recently (< 5 mins)
+                # This prevents "Scheduler + Manual Debug" double-runs from creating duplicates.
+                if timestamp:
+                    last_processed = self.db.query(SilverHyperliquidPosition).filter(
+                        SilverHyperliquidPosition.vault_address == vault_addr,
+                        SilverHyperliquidPosition.timestamp >= timestamp - timedelta(minutes=5),
+                        SilverHyperliquidPosition.timestamp <= timestamp + timedelta(minutes=5)
+                    ).first()
+                    
+                    if last_processed:
+                        self.logger.info(f"Skipping duplicate scrape for {vault_addr} (Data exists within 5 mins of {timestamp})")
+                        scrape.processed_to_silver = True
+                        continue
 
                 positions = []
                 if "assetPositions" in data:
