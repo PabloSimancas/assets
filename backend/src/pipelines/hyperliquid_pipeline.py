@@ -49,6 +49,12 @@ class HyperliquidPipeline:
                 # We primarily want to process position data from 'child_clearinghouse_state'
                 # But 'vault_details' might be useful later. For now, only extract positions if present.
                 
+                # Skip vault_details for position processing to avoid duplication
+                # (We only want child_clearinghouse_state for granular positions)
+                if scrape_type == "vault_details":
+                    scrape.processed_to_silver = True
+                    continue
+
                 positions = []
                 if "assetPositions" in data:
                     positions = data["assetPositions"]
