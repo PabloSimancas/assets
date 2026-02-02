@@ -11,17 +11,21 @@ def recreate_hyperliquid_tables():
         print("Dropping legacy schema 'hyperliquid_vaults'...")
         conn.execute(text("DROP SCHEMA IF EXISTS hyperliquid_vaults CASCADE"))
         
-        # 2. Ensure Bronze Schema & Tables
-        print("Ensuring 'bronze' schema...")
-        conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze"))
+        # 2. Cleanup unwanted tables (User Request)
+        print("Dropping bronze.web_scrapes...")
+        conn.execute(text("DROP TABLE IF EXISTS bronze.web_scrapes CASCADE"))
+        print("Dropping silver.tickers...")
+        conn.execute(text("DROP TABLE IF EXISTS silver.tickers CASCADE"))
         
-        # 3. Ensure Silver Schema
-        print("Ensuring 'silver' schema...")
-        conn.execute(text("CREATE SCHEMA IF NOT EXISTS silver"))
-        
-        # 4. Clean Silver Table (Restart)
-        print("Dropping silver.hyperliquid_positions...")
+        # 3. Move Positions to Bronze (Drop old silver location)
+        print("Dropping silver.hyperliquid_positions (moving to bronze)...")
         conn.execute(text("DROP TABLE IF EXISTS silver.hyperliquid_positions CASCADE"))
+        print("Dropping bronze.hyperliquid_positions (cleanup)...")
+        conn.execute(text("DROP TABLE IF EXISTS bronze.hyperliquid_positions CASCADE"))
+        
+        # 4. Ensure Schemas
+        conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze"))
+        conn.execute(text("CREATE SCHEMA IF NOT EXISTS silver")) # Keep silver empty but existing
         
         conn.commit()
 
@@ -43,9 +47,16 @@ def recreate_hyperliquid_tables():
         cols = inspector.get_columns('raw_vaults', schema='bronze')
         print(f" - raw_vaults columns: {[c['name'] for c in cols]}")
 
-    print("\nVerifying 'silver' schema:")
-    if 'hyperliquid_positions' in inspector.get_table_names(schema='silver'):
-        columns = inspector.get_columns('hyperliquid_positions', schema='silver')
+    print("\nVerifying 'silver' schema (Should be empty of tickers/positions):")
+    silver_tables = inspector.get_table_names(schema='silver')
+    print(f"Tables: {silver_tables}")
+
+    print("\nVerifying 'bronze' schema (Should have raw_vaults and hyperliquid_positions):")
+    bronze_tables = inspector.get_table_names(schema='bronze')
+    print(f"Tables: {bronze_tables}")
+    
+    if 'hyperliquid_positions' in bronze_tables:
+        columns = inspector.get_columns('hyperliquid_positions', schema='bronze')
         print(" - hyperliquid_positions columns:")
         for col in columns:
             print(f"   - {col['name']} ({col['type']})")

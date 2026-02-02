@@ -20,7 +20,7 @@ class SilverHyperliquidPosition(Base):
     __tablename__ = "hyperliquid_positions"
     __table_args__ = (
         Index("idx_hl_pos_vault_time", "vault_address", "timestamp"),
-        {"schema": "silver"}
+        {"schema": "bronze"}
     )
 
     id = Column(BigInteger, Identity(always=True), primary_key=True)
