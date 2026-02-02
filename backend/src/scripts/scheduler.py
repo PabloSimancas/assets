@@ -14,6 +14,7 @@ from sqlalchemy import create_engine, text
 from src.scrapers.hyperliquid import HyperliquidScraper
 from src.pipelines.hyperliquid_pipeline import HyperliquidPipeline
 from src.pipelines.hyperliquid_aggregated_pipeline import HyperliquidAggregatedPipeline
+from src.pipelines.hyperliquid_gold_pipeline import HyperliquidGoldPipeline
 
 # Setup Logging
 log_dir = "logs"
@@ -80,6 +81,11 @@ def run_hourly_hyperliquid():
         agg_pipeline = HyperliquidAggregatedPipeline()
         agg_pipeline.run()
 
+        # Step 4: Gold Pipeline (timestamp-grouped summaries)
+        logger.info("Step 4: Running Hyperliquid Gold Pipeline")
+        gold_pipeline = HyperliquidGoldPipeline()
+        gold_pipeline.run()
+
         logger.info("Hourly Hyperliquid Job executed successfully.")
     except Exception as e:
         logger.error(f"Failed to run hourly Hyperliquid job: {e}")
@@ -123,10 +129,13 @@ if __name__ == "__main__":
     try:
         from src.infrastructure.database.session import Base
         from src.infrastructure.database.scraping_models import HyperliquidVault
+        from src.infrastructure.database.silver_models import SilverHyperliquidPosition, SilverHyperliquidAggregated
+        from src.infrastructure.database.gold_models import GoldHyperliquidSummary
         engine = create_engine(DATABASE_URL)
         with engine.connect() as conn:
             conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
             conn.execute(text("CREATE SCHEMA IF NOT EXISTS silver;"))
+            conn.execute(text("CREATE SCHEMA IF NOT EXISTS gold;"))
             conn.commit()
         Base.metadata.create_all(bind=engine)
         logger.info("Ensured DB schemas exist.")
