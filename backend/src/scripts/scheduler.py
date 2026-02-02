@@ -5,7 +5,8 @@ import logging
 import sys
 import os
 # Add project root to sys.path to allow imports from src
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
+# Script is in src/scripts/scheduler.py, so we need to go up 2 levels (src, then root)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from datetime import datetime, timezone, timedelta
 from sqlalchemy import create_engine, text
 from src.scrapers.deribit import DeribitScraper
