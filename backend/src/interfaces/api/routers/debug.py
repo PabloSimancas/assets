@@ -97,18 +97,23 @@ async def list_logs():
         return {"error": "logs directory does not exist"}
     return {"files": os.listdir("logs")}
 
-def read_logs(filepath):
+def read_logs(filepath, max_lines=100):
     import os
     if not os.path.exists(filepath):
         return {"error": f"Log file not found at {filepath}"}
     
     try:
         with open(filepath, "r") as f:
-            # Read last 100 lines
+            # Read last N lines
             lines = f.readlines()
-            return {"lines": lines[-100:]}
+            return {"lines": lines[-max_lines:], "total_lines": len(lines)}
     except Exception as e:
         return {"error": str(e)}
+
+@router.get("/logs/scheduler-full")
+async def get_scheduler_logs_full():
+    """Get full scheduler logs (up to 500 lines) for debugging"""
+    return read_logs("logs/scheduler.log", max_lines=500)
 
 @router.get("/processes")
 async def check_processes():
