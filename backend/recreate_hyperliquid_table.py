@@ -22,6 +22,8 @@ def recreate_hyperliquid_tables():
         conn.execute(text("DROP TABLE IF EXISTS silver.hyperliquid_positions CASCADE"))
         print("Dropping bronze.hyperliquid_positions (cleanup)...")
         conn.execute(text("DROP TABLE IF EXISTS bronze.hyperliquid_positions CASCADE"))
+        print("Dropping silver.hyperliquid_aggregated...")
+        conn.execute(text("DROP TABLE IF EXISTS silver.hyperliquid_aggregated CASCADE"))
         
         # 4. Ensure Schemas
         conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze"))
