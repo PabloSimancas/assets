@@ -1,8 +1,9 @@
 from src.infrastructure.database.session import SessionLocal, engine
 from src.infrastructure.database.models import Base, AssetModel
 # Register new models for creation
-from src.infrastructure.database.scraping_models import WebScrape
-from src.infrastructure.database.silver_models import SilverTicker, SilverHyperliquidPosition
+# Register new models for creation
+from src.infrastructure.database.scraping_models import HyperliquidVault
+from src.infrastructure.database.silver_models import SilverHyperliquidPosition
 import uuid
 from sqlalchemy import text, inspect, Integer
 from sqlalchemy.exc import ProgrammingError, OperationalError
