@@ -52,17 +52,21 @@ class HyperliquidPipeline:
                     continue
 
                 # IDEMPOTENCY CHECK:
-                # Check if we already have data for this vault/user processed very recently (< 5 mins)
+                # Check if we already have data for this specific user processed very recently (< 5 mins)
                 # This prevents "Scheduler + Manual Debug" double-runs from creating duplicates.
-                if timestamp:
+                # We check by user_address (unique per child account) for granular deduplication.
+                if timestamp and user_addr:
+                    # Strip timezone info for consistent comparison
+                    ts_naive = timestamp.replace(tzinfo=None) if timestamp.tzinfo else timestamp
+                    
                     last_processed = self.db.query(SilverHyperliquidPosition).filter(
-                        SilverHyperliquidPosition.vault_address == vault_addr,
-                        SilverHyperliquidPosition.timestamp >= timestamp - timedelta(minutes=5),
-                        SilverHyperliquidPosition.timestamp <= timestamp + timedelta(minutes=5)
+                        SilverHyperliquidPosition.user_address == user_addr,
+                        SilverHyperliquidPosition.timestamp >= ts_naive - timedelta(minutes=5),
+                        SilverHyperliquidPosition.timestamp <= ts_naive + timedelta(minutes=5)
                     ).first()
                     
                     if last_processed:
-                        self.logger.info(f"Skipping duplicate scrape for {vault_addr} (Data exists within 5 mins of {timestamp})")
+                        self.logger.info(f"Skipping duplicate scrape for user {user_addr} (Data exists within 5 mins of {timestamp})")
                         scrape.processed_to_silver = True
                         continue
 
@@ -134,6 +138,8 @@ class HyperliquidPipeline:
                     ms += 1
 
                 scrape.processed_to_silver = True
+                # Flush to make these records visible to subsequent deduplication checks in same batch
+                self.db.flush()
             
             except Exception as e:
                 self.logger.error(f"Error processing scrape {scrape.id}: {e}")
