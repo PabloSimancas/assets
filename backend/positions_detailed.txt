@@ -1,0 +1,3444 @@
+﻿
+Processing Address: 0x010461c14e146ac35fe42271bdc1134ee31c703a
+Found 189 positions.
+Margin Summary: {
+  "accountValue": "86699697.9006810039",
+  "totalNtlPos": "15469880.7157949992",
+  "totalRawUsd": "81770127.8740459979",
+  "totalMarginUsed": "773494.035742"
+}
+
+--- [DEBUG] RAW POSITION OBJECT (First found) ---
+{
+  "coin": "BTC",
+  "szi": "16.35843",
+  "leverage": {
+    "type": "cross",
+    "value": 20
+  },
+  "entryPx": "77758.9",
+  "positionValue": "1289273.3020200001",
+  "unrealizedPnl": "17258.269931",
+  "returnOnEquity": "0.2713532387",
+  "liquidationPx": null,
+  "marginUsed": "64463.665101",
+  "maxLeverage": 50,
+  "cumFunding": {
+    "allTime": "-622521.955306",
+    "sinceOpen": "10971.300572",
+    "sinceChange": "0.0"
+  }
+}
+--- [DEBUG] END RAW POSITION OBJECT ---
+
+Position: BTC
+  Size: 16.35843
+  Entry Price: 77758.9
+  Unrealized PnL: 17258.269931
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 64463.665101
+  Cum. Funding: {'allTime': '-622521.955306', 'sinceOpen': '10971.300572', 'sinceChange': '0.0'}
+------------------------------
+Position: ETH
+  Size: 93.949
+  Entry Price: 2351.82
+  Unrealized PnL: -406.176831
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 11027.263875
+  Cum. Funding: {'allTime': '-500427.129405', 'sinceOpen': '-81.671667', 'sinceChange': '0.0'}
+------------------------------
+Position: ATOM
+  Size: 64871.52
+  Entry Price: 2.0079
+  Unrealized PnL: -1475.282114
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6439.147075
+  Cum. Funding: {'allTime': '-26766.218522', 'sinceOpen': '-4875.776273', 'sinceChange': '0.0'}
+------------------------------
+Position: DYDX
+  Size: -403240.2
+  Entry Price: 0.1431
+  Unrealized PnL: 3631.413607
+  Liquidation Px: 212.6330470654
+  Leverage: cross (20x)
+  Margin Used: 2703.725541
+  Cum. Funding: {'allTime': '-18801.036413', 'sinceOpen': '-2057.62935', 'sinceChange': '0.0'}
+------------------------------
+Position: SOL
+  Size: 12568.32
+  Entry Price: 105.2083
+  Unrealized PnL: -8399.611687
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 65694.60864
+  Cum. Funding: {'allTime': '-149828.590107', 'sinceOpen': '8483.210512', 'sinceChange': '0.0'}
+------------------------------
+Position: AVAX
+  Size: 11582.02
+  Entry Price: 10.0515
+  Unrealized PnL: 1105.192501
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 5876.137847
+  Cum. Funding: {'allTime': '-44415.062103', 'sinceOpen': '-400.497843', 'sinceChange': '0.0'}
+------------------------------
+Position: BNB
+  Size: 326.936
+  Entry Price: 763.972
+  Unrealized PnL: 3177.059124
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 12647.355692
+  Cum. Funding: {'allTime': '-13850.93189', 'sinceOpen': '-102.470069', 'sinceChange': '0.0'}
+------------------------------
+Position: APE
+  Size: -92014.9
+  Entry Price: 0.14922
+  Unrealized PnL: 79.211705
+  Liquidation Px: 931.3901253494
+  Leverage: cross (20x)
+  Margin Used: 682.566528
+  Cum. Funding: {'allTime': '-12916.370887', 'sinceOpen': '-0.170955', 'sinceChange': '0.0'}
+------------------------------
+Position: OP
+  Size: 241807.4
+  Entry Price: 0.23149
+  Unrealized PnL: -453.784397
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2776.190759
+  Cum. Funding: {'allTime': '-25665.229124', 'sinceOpen': '-171.607414', 'sinceChange': '0.0'}
+------------------------------
+Position: LTC
+  Size: 3331.56
+  Entry Price: 58.9007
+  Unrealized PnL: 4601.802135
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 10041.654996
+  Cum. Funding: {'allTime': '-1246.541195', 'sinceOpen': '-15.152402', 'sinceChange': '0.0'}
+------------------------------
+Position: ARB
+  Size: 409435.8
+  Entry Price: 0.1371
+  Unrealized PnL: 271.498259
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2820.398508
+  Cum. Funding: {'allTime': '-25358.90207', 'sinceOpen': '1353.568862', 'sinceChange': '0.0'}
+------------------------------
+Position: DOGE
+  Size: 1714959.0
+  Entry Price: 0.106022
+  Unrealized PnL: 4196.819999
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 9301.080136
+  Cum. Funding: {'allTime': '-64787.571622', 'sinceOpen': '546.091149', 'sinceChange': '0.0'}
+------------------------------
+Position: INJ
+  Size: 36933.4
+  Entry Price: 3.62918
+  Unrealized PnL: 2142.640066
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6809.041624
+  Cum. Funding: {'allTime': '-42113.972745', 'sinceOpen': '226.348291', 'sinceChange': '0.0'}
+------------------------------
+Position: SUI
+  Size: 212322.0
+  Entry Price: 1.12472
+  Unrealized PnL: 5090.211601
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 12194.71407
+  Cum. Funding: {'allTime': '-25184.100246', 'sinceOpen': '1220.225514', 'sinceChange': '0.0'}
+------------------------------
+Position: kPEPE
+  Size: 29356184.0
+  Entry Price: 0.004289
+  Unrealized PnL: -824.586164
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6254.335001
+  Cum. Funding: {'allTime': '-69496.587549', 'sinceOpen': '2.513846', 'sinceChange': '0.0'}
+------------------------------
+Position: CRV
+  Size: -395724.7
+  Entry Price: 0.28602
+  Unrealized PnL: -578.424385
+  Liquidation Px: 216.8221614887
+  Leverage: cross (20x)
+  Margin Used: 5688.3447
+  Cum. Funding: {'allTime': '-4316.495747', 'sinceOpen': '-462.434138', 'sinceChange': '0.0'}
+------------------------------
+Position: LDO
+  Size: -130821.0
+  Entry Price: 0.41878
+  Unrealized PnL: -784.942739
+  Liquidation Px: 655.4275641299
+  Leverage: cross (20x)
+  Margin Used: 2778.572629
+  Cum. Funding: {'allTime': '-56647.407631', 'sinceOpen': '-2669.68942', 'sinceChange': '0.0'}
+------------------------------
+Position: LINK
+  Size: 1903.0
+  Entry Price: 9.92372
+  Unrealized PnL: -80.728197
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 940.205695
+  Cum. Funding: {'allTime': '-33981.603996', 'sinceOpen': '-0.676825', 'sinceChange': '0.0'}
+------------------------------
+Position: STX
+  Size: 727952.1
+  Entry Price: 0.27389
+  Unrealized PnL: 9683.156902
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 10453.392156
+  Cum. Funding: {'allTime': '-39850.116058', 'sinceOpen': '-2519.189943', 'sinceChange': '0.0'}
+------------------------------
+Position: CFX
+  Size: 620888.0
+  Entry Price: 0.055643
+  Unrealized PnL: 250.958782
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1739.976531
+  Cum. Funding: {'allTime': '-17653.841297', 'sinceOpen': '-419.770402', 'sinceChange': '0.0'}
+------------------------------
+Position: GMX
+  Size: -6587.15
+  Entry Price: 6.2165
+  Unrealized PnL: -1449.451065
+  Liquidation Px: 13014.8116809459
+  Leverage: cross (20x)
+  Margin Used: 2119.942484
+  Cum. Funding: {'allTime': '1505.587544', 'sinceOpen': '1859.216684', 'sinceChange': '0.0'}
+------------------------------
+Position: SNX
+  Size: 85400.9
+  Entry Price: 0.34508
+  Unrealized PnL: 749.923476
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1511.040824
+  Cum. Funding: {'allTime': '2499.314615', 'sinceOpen': '145.314631', 'sinceChange': '0.0'}
+------------------------------
+Position: XRP
+  Size: 148697.0
+  Entry Price: 1.626685
+  Unrealized PnL: 2039.299278
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 12196.12794
+  Cum. Funding: {'allTime': '-29133.837016', 'sinceOpen': '-269.684865', 'sinceChange': '0.0'}
+------------------------------
+Position: BCH
+  Size: 136.489
+  Entry Price: 530.418
+  Unrealized PnL: 830.015553
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3661.317425
+  Cum. Funding: {'allTime': '-12426.672734', 'sinceOpen': '-6.456191', 'sinceChange': '-0.215127'}
+------------------------------
+Position: APT
+  Size: 4829.21
+  Entry Price: 1.2871
+  Unrealized PnL: -39.031833
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 308.852125
+  Cum. Funding: {'allTime': '-14203.782572', 'sinceOpen': '-0.004084', 'sinceChange': '0.0'}
+------------------------------
+Position: AAVE
+  Size: -282.96
+  Entry Price: 128.918
+  Unrealized PnL: 166.407495
+  Liquidation Px: 302956.0014533979
+  Leverage: cross (20x)
+  Margin Used: 1815.61284
+  Cum. Funding: {'allTime': '-23992.83954', 'sinceOpen': '-2299.682291', 'sinceChange': '0.0'}
+------------------------------
+Position: COMP
+  Size: 3245.45
+  Entry Price: 21.1648
+  Unrealized PnL: -3715.491915
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3248.69545
+  Cum. Funding: {'allTime': '1372.015611', 'sinceOpen': '-3615.843317', 'sinceChange': '0.0'}
+------------------------------
+Position: WLD
+  Size: 181787.4
+  Entry Price: 0.40029
+  Unrealized PnL: 274.522923
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3652.199759
+  Cum. Funding: {'allTime': '-22560.784663', 'sinceOpen': '-197.578658', 'sinceChange': '0.0'}
+------------------------------
+Position: YGG
+  Size: -364423.0
+  Entry Price: 0.046591
+  Unrealized PnL: 47.157788
+  Liquidation Px: 235.1801333502
+  Leverage: cross (20x)
+  Margin Used: 846.591071
+  Cum. Funding: {'allTime': '-1666.555603', 'sinceOpen': '4.56324', 'sinceChange': '0.0'}
+------------------------------
+Position: TRX
+  Size: 340884.0
+  Entry Price: 0.283879
+  Unrealized PnL: -95.434488
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4833.73512
+  Cum. Funding: {'allTime': '-2513.767107', 'sinceOpen': '-813.186479', 'sinceChange': '0.0'}
+------------------------------
+Position: kSHIB
+  Size: -19829364.0
+  Entry Price: 0.00678
+  Unrealized PnL: -2194.613643
+  Liquidation Px: 4.3281651425
+  Leverage: cross (20x)
+  Margin Used: 6832.207366
+  Cum. Funding: {'allTime': '-18584.848175', 'sinceOpen': '-190.38411', 'sinceChange': '0.0'}
+------------------------------
+Position: UNI
+  Size: 13063.9
+  Entry Price: 3.92401
+  Unrealized PnL: 119.983988
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2569.146574
+  Cum. Funding: {'allTime': '-17801.011649', 'sinceOpen': '171.94193', 'sinceChange': '0.613433'}
+------------------------------
+Position: SEI
+  Size: 813231.0
+  Entry Price: 0.086755
+  Unrealized PnL: 1781.747106
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3616.682226
+  Cum. Funding: {'allTime': '-36622.690178', 'sinceOpen': '-170.578397', 'sinceChange': '0.0'}
+------------------------------
+Position: RUNE
+  Size: -185323.2
+  Entry Price: 0.49067
+  Unrealized PnL: 3652.296788
+  Liquidation Px: 462.8422106998
+  Leverage: cross (20x)
+  Margin Used: 4364.083375
+  Cum. Funding: {'allTime': '-15363.707606', 'sinceOpen': '-5900.200482', 'sinceChange': '0.0'}
+------------------------------
+Position: ZRO
+  Size: -46979.9
+  Entry Price: 1.80243
+  Unrealized PnL: -336.613339
+  Liquidation Px: 1825.7410667433
+  Leverage: cross (20x)
+  Margin Used: 4250.741352
+  Cum. Funding: {'allTime': '-16044.315612', 'sinceOpen': '-27.680945', 'sinceChange': '0.0'}
+------------------------------
+Position: DOT
+  Size: 98245.1
+  Entry Price: 1.5529
+  Unrealized PnL: 98.112143
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 7633.153044
+  Cum. Funding: {'allTime': '-7858.26497', 'sinceOpen': '-1629.388658', 'sinceChange': '0.0'}
+------------------------------
+Position: BANANA
+  Size: -3964.8
+  Entry Price: 4.85227
+  Unrealized PnL: -950.077456
+  Liquidation Px: 21617.3088881087
+  Leverage: cross (20x)
+  Margin Used: 1009.418256
+  Cum. Funding: {'allTime': '-2767.332772', 'sinceOpen': '50.663953', 'sinceChange': '0.0'}
+------------------------------
+Position: TRB
+  Size: -57.08
+  Entry Price: 16.3394
+  Unrealized PnL: 10.755108
+  Liquidation Px: 1501209.5272167602
+  Leverage: cross (20x)
+  Margin Used: 46.094954
+  Cum. Funding: {'allTime': '28625.644653', 'sinceOpen': '-0.059869', 'sinceChange': '0.0'}
+------------------------------
+Position: FTT
+  Size: 25669.3
+  Entry Price: 0.39075
+  Unrealized PnL: -606.672309
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 471.18567
+  Cum. Funding: {'allTime': '-6154.57687', 'sinceOpen': '-195.577722', 'sinceChange': '0.117927'}
+------------------------------
+Position: ARK
+  Size: -104640.0
+  Entry Price: 0.215779
+  Unrealized PnL: -49.184226
+  Liquidation Px: 819.1011689072
+  Leverage: cross (20x)
+  Margin Used: 1131.42
+  Cum. Funding: {'allTime': '7564.863074', 'sinceOpen': '143.236462', 'sinceChange': '0.0'}
+------------------------------
+Position: BIGTIME
+  Size: -184336.0
+  Entry Price: 0.017632
+  Unrealized PnL: -18.82955
+  Liquidation Px: 464.8651761642
+  Leverage: cross (20x)
+  Margin Used: 163.459948
+  Cum. Funding: {'allTime': '-9666.54687', 'sinceOpen': '-0.886219', 'sinceChange': '0.0'}
+------------------------------
+Position: KAS
+  Size: 1831990.0
+  Entry Price: 0.034345
+  Unrealized PnL: -1668.854695
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3062.629282
+  Cum. Funding: {'allTime': '-32124.896649', 'sinceOpen': '365.168627', 'sinceChange': '-0.957044'}
+------------------------------
+Position: BLUR
+  Size: -1647652.0
+  Entry Price: 0.023866
+  Unrealized PnL: 1633.265546
+  Liquidation Px: 52.0290740727
+  Leverage: cross (20x)
+  Margin Used: 1884.501975
+  Cum. Funding: {'allTime': '-13870.164237', 'sinceOpen': '1474.121112', 'sinceChange': '0.0'}
+------------------------------
+Position: TIA
+  Size: 123930.7
+  Entry Price: 0.37113
+  Unrealized PnL: 639.547436
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2331.75612
+  Cum. Funding: {'allTime': '-36508.572338', 'sinceOpen': '-72.892145', 'sinceChange': '0.0'}
+------------------------------
+Position: BSV
+  Size: -7951.98
+  Entry Price: 17.1532
+  Unrealized PnL: 12112.773847
+  Liquidation Px: 10791.3258536683
+  Leverage: cross (20x)
+  Margin Used: 6214.47237
+  Cum. Funding: {'allTime': '25877.382901', 'sinceOpen': '24113.183817', 'sinceChange': '0.0'}
+------------------------------
+Position: ADA
+  Size: 819508.0
+  Entry Price: 0.292873
+  Unrealized PnL: 5881.54759
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 12294.66877
+  Cum. Funding: {'allTime': '-16873.508222', 'sinceOpen': '-721.512287', 'sinceChange': '0.0'}
+------------------------------
+Position: TON
+  Size: -67231.7
+  Entry Price: 1.35027
+  Unrealized PnL: -1279.326061
+  Liquidation Px: 1275.8888780332
+  Leverage: cross (20x)
+  Margin Used: 4603.01834
+  Cum. Funding: {'allTime': '-11346.668276', 'sinceOpen': '-3237.780955', 'sinceChange': '0.0'}
+------------------------------
+Position: MINA
+  Size: 986054.0
+  Entry Price: 0.073041
+  Unrealized PnL: -471.61633
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3577.55182
+  Cum. Funding: {'allTime': '-10353.026461', 'sinceOpen': '-810.181039', 'sinceChange': '0.0'}
+------------------------------
+Position: POLYX
+  Size: -967588.0
+  Entry Price: 0.047783
+  Unrealized PnL: -977.993073
+  Liquidation Px: 88.6072692131
+  Leverage: cross (20x)
+  Margin Used: 2360.624443
+  Cum. Funding: {'allTime': '24422.198443', 'sinceOpen': '129.220599', 'sinceChange': '0.0'}
+------------------------------
+Position: GAS
+  Size: 51548.5
+  Entry Price: 1.86616
+  Unrealized PnL: 594.497111
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4839.630922
+  Cum. Funding: {'allTime': '-9110.127305', 'sinceOpen': '-16787.959047', 'sinceChange': '0.0'}
+------------------------------
+Position: PENDLE
+  Size: -95290.0
+  Entry Price: 1.589371
+  Unrealized PnL: -860.366773
+  Liquidation Px: 900.8335549423
+  Leverage: cross (20x)
+  Margin Used: 7615.5768
+  Cum. Funding: {'allTime': '-30216.822245', 'sinceOpen': '-4073.024591', 'sinceChange': '-1.907586'}
+------------------------------
+Position: FET
+  Size: 726197.0
+  Entry Price: 0.187295
+  Unrealized PnL: -1013.670082
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6750.001115
+  Cum. Funding: {'allTime': '-38928.238013', 'sinceOpen': '-2396.219685', 'sinceChange': '0.0'}
+------------------------------
+Position: NEAR
+  Size: -70351.0
+  Entry Price: 1.19543
+  Unrealized PnL: -1721.284291
+  Liquidation Px: 1219.2284274474
+  Leverage: cross (20x)
+  Margin Used: 4291.059245
+  Cum. Funding: {'allTime': '-23628.637012', 'sinceOpen': '-2176.85012', 'sinceChange': '1.410512'}
+------------------------------
+Position: MEME
+  Size: -87428823.0
+  Entry Price: 0.000899
+  Unrealized PnL: 5445.198961
+  Liquidation Px: 0.9809270318
+  Leverage: cross (20x)
+  Margin Used: 3658.896242
+  Cum. Funding: {'allTime': '4726.442288', 'sinceOpen': '7837.139003', 'sinceChange': '0.0'}
+------------------------------
+Position: ORDI
+  Size: 5111.3
+  Entry Price: 3.0965
+  Unrealized PnL: 61.270218
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 794.423802
+  Cum. Funding: {'allTime': '-48568.839129', 'sinceOpen': '28.944883', 'sinceChange': '0.0'}
+------------------------------
+Position: NEO
+  Size: 6356.99
+  Entry Price: 3.1928
+  Unrealized PnL: 663.343126
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1048.013371
+  Cum. Funding: {'allTime': '-3177.678014', 'sinceOpen': '-470.571187', 'sinceChange': '-0.749496'}
+------------------------------
+Position: ZEN
+  Size: -606.98
+  Entry Price: 7.1284
+  Unrealized PnL: 70.400041
+  Liquidation Px: 141178.2502911183
+  Leverage: cross (20x)
+  Margin Used: 212.822362
+  Cum. Funding: {'allTime': '7888.546017', 'sinceOpen': '-0.129042', 'sinceChange': '0.074748'}
+------------------------------
+Position: FIL
+  Size: 178788.2
+  Entry Price: 1.13528
+  Unrealized PnL: -10724.804337
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 9612.547573
+  Cum. Funding: {'allTime': '-19307.499907', 'sinceOpen': '-2788.245324', 'sinceChange': '0.0'}
+------------------------------
+Position: PYTH
+  Size: 3949623.0
+  Entry Price: 0.055766
+  Unrealized PnL: -14954.198381
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 10265.070177
+  Cum. Funding: {'allTime': '-4860.762555', 'sinceOpen': '-634.8506', 'sinceChange': '0.0'}
+------------------------------
+Position: SUSHI
+  Size: -86766.4
+  Entry Price: 0.24129
+  Unrealized PnL: -184.686992
+  Liquidation Px: 987.8160047154
+  Leverage: cross (20x)
+  Margin Used: 1056.033854
+  Cum. Funding: {'allTime': '-3398.752006', 'sinceOpen': '-6.631932', 'sinceChange': '0.0'}
+------------------------------
+Position: IMX
+  Size: 583579.1
+  Entry Price: 0.19789
+  Unrealized PnL: -6534.946315
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 5447.710898
+  Cum. Funding: {'allTime': '-17429.875015', 'sinceOpen': '-5413.472589', 'sinceChange': '1.01876'}
+------------------------------
+Position: kBONK
+  Size: -4890686.0
+  Entry Price: 0.007165
+  Unrealized PnL: -214.651493
+  Liquidation Px: 17.5278835873
+  Leverage: cross (20x)
+  Margin Used: 1762.847768
+  Cum. Funding: {'allTime': '-47167.890784', 'sinceOpen': '-7.051038', 'sinceChange': '0.0'}
+------------------------------
+Position: GMT
+  Size: 4227794.0
+  Entry Price: 0.014713
+  Unrealized PnL: -2549.62654
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2982.708667
+  Cum. Funding: {'allTime': '-28300.228952', 'sinceOpen': '-12228.30307', 'sinceChange': '0.0'}
+------------------------------
+Position: SUPER
+  Size: 554103.0
+  Entry Price: 0.162418
+  Unrealized PnL: -6271.639281
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4186.248165
+  Cum. Funding: {'allTime': '-72640.652522', 'sinceOpen': '-66147.265492', 'sinceChange': '1.049332'}
+------------------------------
+Position: USTC
+  Size: -3234467.0
+  Entry Price: 0.005627
+  Unrealized PnL: 101.469984
+  Liquidation Px: 26.4977871135
+  Leverage: cross (20x)
+  Margin Used: 905.003866
+  Cum. Funding: {'allTime': '-18291.410914', 'sinceOpen': '-21.940152', 'sinceChange': '-0.226816'}
+------------------------------
+Position: JUP
+  Size: -1026708.0
+  Entry Price: 0.186172
+  Unrealized PnL: -5552.105277
+  Liquidation Px: 83.6506724727
+  Leverage: cross (20x)
+  Margin Used: 9834.835932
+  Cum. Funding: {'allTime': '-6460.50042', 'sinceOpen': '23.308796', 'sinceChange': '0.0'}
+------------------------------
+Position: kLUNC
+  Size: 607090.0
+  Entry Price: 0.037335
+  Unrealized PnL: -231.914837
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1121.689838
+  Cum. Funding: {'allTime': '-7128.390364', 'sinceOpen': '-48.715021', 'sinceChange': '0.0'}
+------------------------------
+Position: RSR
+  Size: -13973760.0
+  Entry Price: 0.002052
+  Unrealized PnL: 1861.29166
+  Liquidation Px: 6.1339921081
+  Leverage: cross (20x)
+  Margin Used: 1340.782272
+  Cum. Funding: {'allTime': '-24407.458352', 'sinceOpen': '-8520.159015', 'sinceChange': '0.0'}
+------------------------------
+Position: GALA
+  Size: -579472.0
+  Entry Price: 0.004739
+  Unrealized PnL: -55.258748
+  Liquidation Px: 147.8775845279
+  Leverage: cross (20x)
+  Margin Used: 140.087356
+  Cum. Funding: {'allTime': '-6415.445176', 'sinceOpen': '-0.519089', 'sinceChange': '0.0'}
+------------------------------
+Position: JTO
+  Size: 230858.0
+  Entry Price: 0.292105
+  Unrealized PnL: 1314.717905
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3437.47562
+  Cum. Funding: {'allTime': '-29733.877503', 'sinceOpen': '-2204.039344', 'sinceChange': '0.0'}
+------------------------------
+Position: ACE
+  Size: -197703.6
+  Entry Price: 0.2039
+  Unrealized PnL: -219.957947
+  Liquidation Px: 433.6221845369
+  Leverage: cross (20x)
+  Margin Used: 2027.450418
+  Cum. Funding: {'allTime': '-9594.874786', 'sinceOpen': '881.270076', 'sinceChange': '0.0'}
+------------------------------
+Position: MAV
+  Size: -681865.0
+  Entry Price: 0.020183
+  Unrealized PnL: -268.893872
+  Liquidation Px: 125.6878551215
+  Leverage: cross (20x)
+  Margin Used: 701.570898
+  Cum. Funding: {'allTime': '3070.770139', 'sinceOpen': '-17.909049', 'sinceChange': '-0.175477'}
+------------------------------
+Position: WIF
+  Size: 726711.0
+  Entry Price: 0.253868
+  Unrealized PnL: 3038.440755
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 9376.388677
+  Cum. Funding: {'allTime': '-26162.355228', 'sinceOpen': '1706.142196', 'sinceChange': '0.0'}
+------------------------------
+Position: CAKE
+  Size: 114914.3
+  Entry Price: 1.62756
+  Unrealized PnL: -6144.356176
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 9044.329981
+  Cum. Funding: {'allTime': '-5353.586717', 'sinceOpen': '-2273.739435', 'sinceChange': '0.0'}
+------------------------------
+Position: PEOPLE
+  Size: -2247114.0
+  Entry Price: 0.007701
+  Unrealized PnL: -100.211723
+  Liquidation Px: 38.1402652734
+  Leverage: cross (20x)
+  Margin Used: 870.307252
+  Cum. Funding: {'allTime': '-4094.281576', 'sinceOpen': '-9484.65503', 'sinceChange': '0.0'}
+------------------------------
+Position: ENS
+  Size: -4838.47
+  Entry Price: 6.9415
+  Unrealized PnL: -191.003749
+  Liquidation Px: 17716.7359255142
+  Leverage: cross (20x)
+  Margin Used: 1688.867953
+  Cum. Funding: {'allTime': '-19321.162048', 'sinceOpen': '-187.354138', 'sinceChange': '0.0'}
+------------------------------
+Position: ETC
+  Size: -1299.05
+  Entry Price: 9.7159
+  Unrealized PnL: -116.977024
+  Liquidation Px: 65971.94595955
+  Leverage: cross (20x)
+  Margin Used: 636.924215
+  Cum. Funding: {'allTime': '-8670.851305', 'sinceOpen': '231.136005', 'sinceChange': '0.0'}
+------------------------------
+Position: XAI
+  Size: 4970692.4
+  Entry Price: 0.01416
+  Unrealized PnL: -10889.908435
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2974.959401
+  Cum. Funding: {'allTime': '-36024.269028', 'sinceOpen': '-19430.611885', 'sinceChange': '0.0'}
+------------------------------
+Position: MANTA
+  Size: 20773.5
+  Entry Price: 0.07399
+  Unrealized PnL: 1.737123
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 76.945044
+  Cum. Funding: {'allTime': '-4648.519649', 'sinceOpen': '-0.060276', 'sinceChange': '0.0'}
+------------------------------
+Position: UMA
+  Size: 121971.8
+  Entry Price: 0.61715
+  Unrealized PnL: -5475.825666
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3489.979113
+  Cum. Funding: {'allTime': '34782.337723', 'sinceOpen': '-4519.333914', 'sinceChange': '0.87408'}
+------------------------------
+Position: ONDO
+  Size: 299376.0
+  Entry Price: 0.280037
+  Unrealized PnL: 1036.607741
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4243.6548
+  Cum. Funding: {'allTime': '-8696.62286', 'sinceOpen': '755.308992', 'sinceChange': '0.0'}
+------------------------------
+Position: ALT
+  Size: 8943224.0
+  Entry Price: 0.00997
+  Unrealized PnL: -3242.762866
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4296.324809
+  Cum. Funding: {'allTime': '-20020.544027', 'sinceOpen': '-2531.427841', 'sinceChange': '0.0'}
+------------------------------
+Position: ZETA
+  Size: -403766.6
+  Entry Price: 0.06043
+  Unrealized PnL: -408.10502
+  Liquidation Px: 212.283357197
+  Leverage: cross (20x)
+  Margin Used: 1240.572878
+  Cum. Funding: {'allTime': '-21602.807687', 'sinceOpen': '442.764983', 'sinceChange': '0.0'}
+------------------------------
+Position: DYM
+  Size: 1142976.5
+  Entry Price: 0.04983
+  Unrealized PnL: -3127.964743
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2691.709657
+  Cum. Funding: {'allTime': '-39285.411918', 'sinceOpen': '-33777.172725', 'sinceChange': '0.0'}
+------------------------------
+Position: MAVIA
+  Size: -86332.2
+  Entry Price: 0.04562
+  Unrealized PnL: -43.908349
+  Liquidation Px: 992.5856218055
+  Leverage: cross (20x)
+  Margin Used: 199.125219
+  Cum. Funding: {'allTime': '-22114.049685', 'sinceOpen': '-0.756204', 'sinceChange': '0.0'}
+------------------------------
+Position: W
+  Size: 1436966.2
+  Entry Price: 0.02335
+  Unrealized PnL: 653.591162
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1710.708261
+  Cum. Funding: {'allTime': '-11921.202853', 'sinceOpen': '-86.060431', 'sinceChange': '0.0'}
+------------------------------
+Position: STRK
+  Size: -310370.6
+  Entry Price: 0.05523
+  Unrealized PnL: -513.872071
+  Liquidation Px: 276.1401205458
+  Leverage: cross (20x)
+  Margin Used: 882.849171
+  Cum. Funding: {'allTime': '-18686.129091', 'sinceOpen': '862.850557', 'sinceChange': '0.0'}
+------------------------------
+Position: TAO
+  Size: 265.966
+  Entry Price: 199.952
+  Unrealized PnL: 164.342228
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2667.240031
+  Cum. Funding: {'allTime': '-44807.597366', 'sinceOpen': '-39.888959', 'sinceChange': '-7.363749'}
+------------------------------
+Position: AR
+  Size: -34551.4
+  Entry Price: 2.5052
+  Unrealized PnL: -535.153654
+  Liquidation Px: 2482.5393943062
+  Leverage: cross (20x)
+  Margin Used: 4354.685699
+  Cum. Funding: {'allTime': '-24601.277447', 'sinceOpen': '1837.726782', 'sinceChange': '-1.091824'}
+------------------------------
+Position: kFLOKI
+  Size: 1783353.0
+  Entry Price: 0.034898
+  Unrealized PnL: 1312.788249
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3177.489207
+  Cum. Funding: {'allTime': '-9926.98761', 'sinceOpen': '-213.327796', 'sinceChange': '0.0'}
+------------------------------
+Position: BOME
+  Size: -49862657.0
+  Entry Price: 0.000506
+  Unrealized PnL: 1127.468102
+  Liquidation Px: 1.7189667899
+  Leverage: cross (20x)
+  Margin Used: 1206.676299
+  Cum. Funding: {'allTime': '-5733.185017', 'sinceOpen': '-773.260956', 'sinceChange': '-0.603961'}
+------------------------------
+Position: ETHFI
+  Size: -68731.3
+  Entry Price: 0.49676
+  Unrealized PnL: 42.446946
+  Liquidation Px: 1247.2078798007
+  Leverage: cross (20x)
+  Margin Used: 1705.051724
+  Cum. Funding: {'allTime': '-8106.549325', 'sinceOpen': '20.504382', 'sinceChange': '0.0'}
+------------------------------
+Position: ENA
+  Size: -70384.0
+  Entry Price: 0.141985
+  Unrealized PnL: 97.52422
+  Liquidation Px: 1217.5780561613
+  Leverage: cross (20x)
+  Margin Used: 494.79952
+  Cum. Funding: {'allTime': '-13286.388071', 'sinceOpen': '0.016825', 'sinceChange': '0.0'}
+------------------------------
+Position: MNT
+  Size: 113736.2
+  Entry Price: 0.71129
+  Unrealized PnL: 3610.237102
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4225.527302
+  Cum. Funding: {'allTime': '-12554.890292', 'sinceOpen': '1619.446916', 'sinceChange': '0.0'}
+------------------------------
+Position: TNSR
+  Size: -159839.0
+  Entry Price: 0.20645
+  Unrealized PnL: 25166.300016
+  Liquidation Px: 536.1391877066
+  Leverage: cross (20x)
+  Margin Used: 391.685469
+  Cum. Funding: {'allTime': '7293.402654', 'sinceOpen': '13323.814765', 'sinceChange': '13323.814765'}
+------------------------------
+Position: SAGA
+  Size: -2398393.0
+  Entry Price: 0.0367
+  Unrealized PnL: 1315.845485
+  Liquidation Px: 35.7634648722
+  Leverage: cross (20x)
+  Margin Used: 4336.294544
+  Cum. Funding: {'allTime': '-3222.421416', 'sinceOpen': '1936.623102', 'sinceChange': '0.0'}
+------------------------------
+Position: MERL
+  Size: 879750.0
+  Entry Price: 0.049326
+  Unrealized PnL: -211.273633
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2159.170425
+  Cum. Funding: {'allTime': '-25143.178644', 'sinceOpen': '-17106.850487', 'sinceChange': '0.0'}
+------------------------------
+Position: HBAR
+  Size: -1317710.0
+  Entry Price: 0.090758
+  Unrealized PnL: -3136.876764
+  Liquidation Px: 65.1211936664
+  Leverage: cross (20x)
+  Margin Used: 6136.509584
+  Cum. Funding: {'allTime': '-16694.739509', 'sinceOpen': '-702.030438', 'sinceChange': '-0.308448'}
+------------------------------
+Position: POPCAT
+  Size: -73372.0
+  Entry Price: 0.056513
+  Unrealized PnL: 11.663159
+  Liquidation Px: 1167.9149102316
+  Leverage: cross (20x)
+  Margin Used: 206.743953
+  Cum. Funding: {'allTime': '-21390.884618', 'sinceOpen': '0.328706', 'sinceChange': '0.0'}
+------------------------------
+Position: EIGEN
+  Size: 502498.93
+  Entry Price: 0.2575
+  Unrealized PnL: 655.758381
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6504.848648
+  Cum. Funding: {'allTime': '-12733.987047', 'sinceOpen': '-2008.585054', 'sinceChange': '0.0'}
+------------------------------
+Position: REZ
+  Size: 2870816.0
+  Entry Price: 0.003716
+  Unrealized PnL: 149.761465
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 541.005275
+  Cum. Funding: {'allTime': '-1481.838058', 'sinceOpen': '-33.391989', 'sinceChange': '0.0'}
+------------------------------
+Position: NOT
+  Size: 85578210.0
+  Entry Price: 0.000517
+  Unrealized PnL: -5883.558582
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1921.230814
+  Cum. Funding: {'allTime': '4232.323374', 'sinceOpen': '2.623126', 'sinceChange': '0.961684'}
+------------------------------
+Position: TURBO
+  Size: -415119.0
+  Entry Price: 0.001253
+  Unrealized PnL: 0.010715
+  Liquidation Px: 206.419455767
+  Leverage: cross (20x)
+  Margin Used: 26.007205
+  Cum. Funding: {'allTime': '7763.809012', 'sinceOpen': '0.002298', 'sinceChange': '0.0'}
+------------------------------
+Position: BRETT
+  Size: 3648821.0
+  Entry Price: 0.009564
+  Unrealized PnL: 584.190235
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1774.239211
+  Cum. Funding: {'allTime': '6633.140364', 'sinceOpen': '6.94967', 'sinceChange': '0.444061'}
+------------------------------
+Position: IO
+  Size: -192358.2
+  Entry Price: 0.12298
+  Unrealized PnL: -204.415639
+  Liquidation Px: 445.5852672211
+  Leverage: cross (20x)
+  Margin Used: 1193.101735
+  Cum. Funding: {'allTime': '-18071.254853', 'sinceOpen': '1139.77903', 'sinceChange': '0.0'}
+------------------------------
+Position: ZK
+  Size: -2980900.0
+  Entry Price: 0.025629
+  Unrealized PnL: -738.147122
+  Liquidation Px: 28.7715973913
+  Leverage: cross (20x)
+  Margin Used: 3856.837465
+  Cum. Funding: {'allTime': '-4173.417748', 'sinceOpen': '6727.74411', 'sinceChange': '0.0'}
+------------------------------
+Position: BLAST
+  Size: -156800823.0
+  Entry Price: 0.000716
+  Unrealized PnL: 16619.150464
+  Liquidation Px: 0.5470884755
+  Leverage: cross (20x)
+  Margin Used: 4790.265142
+  Cum. Funding: {'allTime': '4693.42858', 'sinceOpen': '34786.765214', 'sinceChange': '10.020742'}
+------------------------------
+Position: MEW
+  Size: -12994244.0
+  Entry Price: 0.000718
+  Unrealized PnL: -1.900548
+  Liquidation Px: 6.5950324448
+  Leverage: cross (20x)
+  Margin Used: 467.143071
+  Cum. Funding: {'allTime': '1209.787911', 'sinceOpen': '-3.847158', 'sinceChange': '-0.116948'}
+------------------------------
+Position: RENDER
+  Size: -31482.9
+  Entry Price: 1.58471
+  Unrealized PnL: -323.955148
+  Liquidation Px: 2723.3302249778
+  Leverage: cross (20x)
+  Margin Used: 2510.761275
+  Cum. Funding: {'allTime': '-7222.027467', 'sinceOpen': '-533.075404', 'sinceChange': '0.0'}
+------------------------------
+Position: POL
+  Size: 485483.0
+  Entry Price: 0.108088
+  Unrealized PnL: 1801.99839
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2713.84997
+  Cum. Funding: {'allTime': '-7854.161242', 'sinceOpen': '-397.237915', 'sinceChange': '0.0'}
+------------------------------
+Position: CELO
+  Size: 32210.0
+  Entry Price: 0.095813
+  Unrealized PnL: -20.121654
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 153.301884
+  Cum. Funding: {'allTime': '-4034.80822', 'sinceOpen': '-0.029161', 'sinceChange': '0.0'}
+------------------------------
+Position: HMSTR
+  Size: 8595857.0
+  Entry Price: 0.000191
+  Unrealized PnL: 3.30214
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 82.520227
+  Cum. Funding: {'allTime': '1930.418911', 'sinceOpen': '2.100451', 'sinceChange': '0.103149'}
+------------------------------
+Position: SCR
+  Size: -304647.5
+  Entry Price: 0.0618
+  Unrealized PnL: -287.236018
+  Liquidation Px: 281.3324729239
+  Leverage: cross (20x)
+  Margin Used: 955.831531
+  Cum. Funding: {'allTime': '131.257778', 'sinceOpen': '35.328268', 'sinceChange': '0.563436'}
+------------------------------
+Position: kNEIRO
+  Size: 1485796.4
+  Entry Price: 0.09448
+  Unrealized PnL: -9941.213359
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6521.903297
+  Cum. Funding: {'allTime': '-6796.719937', 'sinceOpen': '-148.764882', 'sinceChange': '0.0'}
+------------------------------
+Position: GOAT
+  Size: 1074846.0
+  Entry Price: 0.026334
+  Unrealized PnL: -159.593049
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1407.295867
+  Cum. Funding: {'allTime': '-3524.011894', 'sinceOpen': '-108.376233', 'sinceChange': '0.0'}
+------------------------------
+Position: MOODENG
+  Size: -345037.0
+  Entry Price: 0.055735
+  Unrealized PnL: 206.616098
+  Liquidation Px: 248.3998592021
+  Leverage: cross (20x)
+  Margin Used: 951.215253
+  Cum. Funding: {'allTime': '29281.340469', 'sinceOpen': '7.733458', 'sinceChange': '-0.238075'}
+------------------------------
+Position: GRASS
+  Size: 313146.7
+  Entry Price: 0.22934
+  Unrealized PnL: -3824.833844
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3399.677148
+  Cum. Funding: {'allTime': '-8893.329945', 'sinceOpen': '290.376567', 'sinceChange': '0.0'}
+------------------------------
+Position: PURR
+  Size: 40137.0
+  Entry Price: 0.073162
+  Unrealized PnL: 62.270449
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 149.93979
+  Cum. Funding: {'allTime': '-13061.136726', 'sinceOpen': '0.126256', 'sinceChange': '0.037686'}
+------------------------------
+Position: PNUT
+  Size: -698098.5
+  Entry Price: 0.05725
+  Unrealized PnL: -183.065541
+  Liquidation Px: 122.8025451139
+  Leverage: cross (20x)
+  Margin Used: 2007.731286
+  Cum. Funding: {'allTime': '-1641.497892', 'sinceOpen': '137.042973', 'sinceChange': '0.0'}
+------------------------------
+Position: XLM
+  Size: -114028.0
+  Entry Price: 0.182185
+  Unrealized PnL: 115.821035
+  Liquidation Px: 751.6467566494
+  Leverage: cross (20x)
+  Margin Used: 1032.922638
+  Cum. Funding: {'allTime': '-7424.087184', 'sinceOpen': '0.265721', 'sinceChange': '0.0'}
+------------------------------
+Position: CHILLGUY
+  Size: 3804179.0
+  Entry Price: 0.013366
+  Unrealized PnL: -4398.865175
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2322.451279
+  Cum. Funding: {'allTime': '-4844.950587', 'sinceOpen': '1893.323229', 'sinceChange': '0.0'}
+------------------------------
+Position: SAND
+  Size: 193625.0
+  Entry Price: 0.102841
+  Unrealized PnL: -50.651414
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 993.102625
+  Cum. Funding: {'allTime': '3802.222233', 'sinceOpen': '-140.76298', 'sinceChange': '0.0'}
+------------------------------
+Position: IOTA
+  Size: 666432.0
+  Entry Price: 0.079432
+  Unrealized PnL: -3422.055142
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2475.728236
+  Cum. Funding: {'allTime': '226.512523', 'sinceOpen': '172.257532', 'sinceChange': '0.0'}
+------------------------------
+Position: ALGO
+  Size: -14356.0
+  Entry Price: 0.1066
+  Unrealized PnL: 1.01401
+  Liquidation Px: 5968.9082794046
+  Leverage: cross (20x)
+  Margin Used: 76.467234
+  Cum. Funding: {'allTime': '-769.521688', 'sinceOpen': '-0.009216', 'sinceChange': '-0.019174'}
+------------------------------
+Position: HYPE
+  Size: 7534.48
+  Entry Price: 32.359
+  Unrealized PnL: -53.424754
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 12187.774848
+  Cum. Funding: {'allTime': '-522.517306', 'sinceOpen': '932.400943', 'sinceChange': '0.0'}
+------------------------------
+Position: ME
+  Size: -137041.4
+  Entry Price: 0.1633
+  Unrealized PnL: 361.152013
+  Liquidation Px: 625.4324339666
+  Leverage: cross (20x)
+  Margin Used: 1100.922086
+  Cum. Funding: {'allTime': '17350.19562', 'sinceOpen': '8008.600067', 'sinceChange': '0.0'}
+------------------------------
+Position: MOVE
+  Size: -657879.0
+  Entry Price: 0.027436
+  Unrealized PnL: -75.128632
+  Liquidation Px: 130.2766057874
+  Leverage: cross (20x)
+  Margin Used: 906.261216
+  Cum. Funding: {'allTime': '-27802.49877', 'sinceOpen': '27.984504', 'sinceChange': '0.0'}
+------------------------------
+Position: VIRTUAL
+  Size: -87874.4
+  Entry Price: 0.64443
+  Unrealized PnL: -370.347656
+  Liquidation Px: 975.7690253818
+  Leverage: cross (20x)
+  Margin Used: 2849.986478
+  Cum. Funding: {'allTime': '-5867.258872', 'sinceOpen': '-431.578445', 'sinceChange': '0.0'}
+------------------------------
+Position: PENGU
+  Size: 5422831.0
+  Entry Price: 0.007769
+  Unrealized PnL: 410.090912
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2127.105459
+  Cum. Funding: {'allTime': '-10156.897416', 'sinceOpen': '-12.098683', 'sinceChange': '0.0'}
+------------------------------
+Position: USUAL
+  Size: -1545097.4
+  Entry Price: 0.01961
+  Unrealized PnL: 1101.558673
+  Liquidation Px: 55.4769688017
+  Leverage: cross (20x)
+  Margin Used: 1460.117043
+  Cum. Funding: {'allTime': '416.598836', 'sinceOpen': '7105.898141', 'sinceChange': '0.083779'}
+------------------------------
+Position: FARTCOIN
+  Size: -344320.0
+  Entry Price: 0.22552
+  Unrealized PnL: -118.901564
+  Liquidation Px: 249.0877366196
+  Leverage: cross (20x)
+  Margin Used: 3888.57792
+  Cum. Funding: {'allTime': '-21566.853602', 'sinceOpen': '-548.499708', 'sinceChange': '0.0'}
+------------------------------
+Position: AIXBT
+  Size: 4006942.0
+  Entry Price: 0.025233
+  Unrealized PnL: -3420.76034
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4884.462298
+  Cum. Funding: {'allTime': '-8868.266515', 'sinceOpen': '-689.75168', 'sinceChange': '0.0'}
+------------------------------
+Position: ZEREBRO
+  Size: 2589913.0
+  Entry Price: 0.009218
+  Unrealized PnL: 197.143744
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1203.662066
+  Cum. Funding: {'allTime': '-6425.992258', 'sinceOpen': '78.779574', 'sinceChange': '0.0'}
+------------------------------
+Position: BIO
+  Size: -1009660.0
+  Entry Price: 0.033246
+  Unrealized PnL: 662.655513
+  Liquidation Px: 84.9008802308
+  Leverage: cross (20x)
+  Margin Used: 1645.24097
+  Cum. Funding: {'allTime': '-31308.361925', 'sinceOpen': '1156.23984', 'sinceChange': '0.0'}
+------------------------------
+Position: GRIFFAIN
+  Size: 1503.0
+  Entry Price: 0.011102
+  Unrealized PnL: -0.020658
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 0.833338
+  Cum. Funding: {'allTime': '-10083.826669', 'sinceOpen': '3.439309', 'sinceChange': '0.0'}
+------------------------------
+Position: SPX
+  Size: -35836.3
+  Entry Price: 0.3163
+  Unrealized PnL: 114.382407
+  Liquidation Px: 2391.4114631908
+  Leverage: cross (20x)
+  Margin Used: 561.035194
+  Cum. Funding: {'allTime': '-6619.765538', 'sinceOpen': '-2.835467', 'sinceChange': '0.0'}
+------------------------------
+Position: S
+  Size: 1520405.0
+  Entry Price: 0.05233
+  Unrealized PnL: 1718.915943
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4064.118585
+  Cum. Funding: {'allTime': '747.879377', 'sinceOpen': '-50.295338', 'sinceChange': '0.0'}
+------------------------------
+Position: MORPHO
+  Size: -192539.9
+  Entry Price: 1.16347
+  Unrealized PnL: -10902.115246
+  Liquidation Px: 446.2609352474
+  Leverage: cross (20x)
+  Margin Used: 11745.896599
+  Cum. Funding: {'allTime': '-424.685612', 'sinceOpen': '1369.374612', 'sinceChange': '-2.948267'}
+------------------------------
+Position: TRUMP
+  Size: 46563.6
+  Entry Price: 4.23968
+  Unrealized PnL: -334.367298
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 9854.02185
+  Cum. Funding: {'allTime': '-8095.36261', 'sinceOpen': '-4122.202367', 'sinceChange': '0.0'}
+------------------------------
+Position: MELANIA
+  Size: -34966.6
+  Entry Price: 0.12851
+  Unrealized PnL: 37.394471
+  Liquidation Px: 2450.6979348184
+  Leverage: cross (20x)
+  Margin Used: 222.824658
+  Cum. Funding: {'allTime': '-17999.524715', 'sinceOpen': '0.49731', 'sinceChange': '0.0'}
+------------------------------
+Position: ANIME
+  Size: -9864219.0
+  Entry Price: 0.006048
+  Unrealized PnL: -629.202675
+  Liquidation Px: 8.6928735079
+  Leverage: cross (20x)
+  Margin Used: 3014.505326
+  Cum. Funding: {'allTime': '27249.190518', 'sinceOpen': '17738.284959', 'sinceChange': '0.0'}
+------------------------------
+Position: VINE
+  Size: -2313239.0
+  Entry Price: 0.023545
+  Unrealized PnL: 5197.577605
+  Liquidation Px: 37.0637826839
+  Leverage: cross (20x)
+  Margin Used: 2463.483873
+  Cum. Funding: {'allTime': '-6123.176343', 'sinceOpen': '-943.566171', 'sinceChange': '-0.615466'}
+------------------------------
+Position: VVV
+  Size: 25513.79
+  Entry Price: 2.2075
+  Unrealized PnL: -269.265735
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2802.689831
+  Cum. Funding: {'allTime': '-16212.40726', 'sinceOpen': '-4871.141405', 'sinceChange': '0.0'}
+------------------------------
+Position: BERA
+  Size: -135556.2
+  Entry Price: 0.4655
+  Unrealized PnL: -13.231026
+  Liquidation Px: 632.5880548523
+  Leverage: cross (20x)
+  Margin Used: 3155.748336
+  Cum. Funding: {'allTime': '10343.763102', 'sinceOpen': '24242.867349', 'sinceChange': '-0.791309'}
+------------------------------
+Position: TST
+  Size: -963565.0
+  Entry Price: 0.01174
+  Unrealized PnL: -72.862643
+  Liquidation Px: 88.9400335198
+  Leverage: cross (20x)
+  Margin Used: 569.274202
+  Cum. Funding: {'allTime': '-1439.502165', 'sinceOpen': '-168.857441', 'sinceChange': '0.0'}
+------------------------------
+Position: LAYER
+  Size: -58824.0
+  Entry Price: 0.101848
+  Unrealized PnL: -61.88077
+  Liquidation Px: 1456.7892510549
+  Leverage: cross (20x)
+  Margin Used: 302.64948
+  Cum. Funding: {'allTime': '-41155.636752', 'sinceOpen': '1.011298', 'sinceChange': '-0.075772'}
+------------------------------
+Position: IP
+  Size: -50447.7
+  Entry Price: 1.42572
+  Unrealized PnL: -13.993347
+  Liquidation Px: 1699.9795101591
+  Leverage: cross (20x)
+  Margin Used: 3596.92101
+  Cum. Funding: {'allTime': '23673.960568', 'sinceOpen': '16.882459', 'sinceChange': '0.0'}
+------------------------------
+Position: OM
+  Size: 563774.6
+  Entry Price: 0.05037
+  Unrealized PnL: 289.050176
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1434.524469
+  Cum. Funding: {'allTime': '-13387.960055', 'sinceOpen': '18.987042', 'sinceChange': '0.0'}
+------------------------------
+Position: KAITO
+  Size: -149994.0
+  Entry Price: 0.360049
+  Unrealized PnL: -888.025455
+  Liquidation Px: 571.6429405085
+  Leverage: cross (20x)
+  Margin Used: 2744.665209
+  Cum. Funding: {'allTime': '7370.599683', 'sinceOpen': '20679.241521', 'sinceChange': '0.0'}
+------------------------------
+Position: NIL
+  Size: 282020.0
+  Entry Price: 0.051503
+  Unrealized PnL: -4.092566
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 726.046389
+  Cum. Funding: {'allTime': '-8227.982787', 'sinceOpen': '-6.439931', 'sinceChange': '0.0'}
+------------------------------
+Position: PAXG
+  Size: 16.971
+  Entry Price: 4719.982
+  Unrealized PnL: -739.631105
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3968.15922
+  Cum. Funding: {'allTime': '1363.078873', 'sinceOpen': '2036.786594', 'sinceChange': '0.0'}
+------------------------------
+Position: PROMPT
+  Size: -1366468.0
+  Entry Price: 0.062508
+  Unrealized PnL: 3896.522909
+  Liquidation Px: 62.7673954282
+  Leverage: cross (20x)
+  Margin Used: 4075.969073
+  Cum. Funding: {'allTime': '-667.445971', 'sinceOpen': '-1521.879634', 'sinceChange': '-2.65704'}
+------------------------------
+Position: BABY
+  Size: -111294.0
+  Entry Price: 0.016583
+  Unrealized PnL: -8.842865
+  Liquidation Px: 769.9424264235
+  Leverage: cross (20x)
+  Margin Used: 92.724596
+  Cum. Funding: {'allTime': '4976.0195', 'sinceOpen': '-0.111183', 'sinceChange': '0.0'}
+------------------------------
+Position: WCT
+  Size: 516688.0
+  Entry Price: 0.063901
+  Unrealized PnL: -765.390776
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1612.583248
+  Cum. Funding: {'allTime': '-21910.680158', 'sinceOpen': '-2083.364663', 'sinceChange': '0.0'}
+------------------------------
+Position: HYPER
+  Size: -129477.0
+  Entry Price: 0.107552
+  Unrealized PnL: -105.816081
+  Liquidation Px: 661.9102183163
+  Leverage: cross (20x)
+  Margin Used: 701.571124
+  Cum. Funding: {'allTime': '-46535.634818', 'sinceOpen': '434.333062', 'sinceChange': '0.0'}
+------------------------------
+Position: ZORA
+  Size: -4068299.0
+  Entry Price: 0.026647
+  Unrealized PnL: 1592.064451
+  Liquidation Px: 21.0886503605
+  Leverage: cross (20x)
+  Margin Used: 5340.862927
+  Cum. Funding: {'allTime': '57544.187325', 'sinceOpen': '59175.776795', 'sinceChange': '0.0'}
+------------------------------
+Position: INIT
+  Size: -1147039.0
+  Entry Price: 0.085987
+  Unrealized PnL: 5484.491147
+  Liquidation Px: 74.7849588057
+  Leverage: cross (20x)
+  Margin Used: 4657.322451
+  Cum. Funding: {'allTime': '-4194.042292', 'sinceOpen': '1021.10906', 'sinceChange': '14.06153'}
+------------------------------
+Position: DOOD
+  Size: -6974336.0
+  Entry Price: 0.004326
+  Unrealized PnL: 141.672237
+  Liquidation Px: 12.2905104379
+  Leverage: cross (20x)
+  Margin Used: 1501.57454
+  Cum. Funding: {'allTime': '-14788.198516', 'sinceOpen': '-103.313446', 'sinceChange': '0.0'}
+------------------------------
+Position: NXPC
+  Size: 47256.0
+  Entry Price: 0.371921
+  Unrealized PnL: 347.714096
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 896.162784
+  Cum. Funding: {'allTime': '1910.071453', 'sinceOpen': '30.87385', 'sinceChange': '0.0'}
+------------------------------
+Position: SOPH
+  Size: -2863169.0
+  Entry Price: 0.010925
+  Unrealized PnL: 525.860503
+  Liquidation Px: 29.9384612211
+  Leverage: cross (20x)
+  Margin Used: 1537.808069
+  Cum. Funding: {'allTime': '-24441.093027', 'sinceOpen': '611.325347', 'sinceChange': '4.612836'}
+------------------------------
+Position: RESOLV
+  Size: -1524140.0
+  Entry Price: 0.079009
+  Unrealized PnL: 609.085267
+  Liquidation Px: 56.2992445312
+  Leverage: cross (20x)
+  Margin Used: 5990.63227
+  Cum. Funding: {'allTime': '85791.695001', 'sinceOpen': '74822.031398', 'sinceChange': '0.0'}
+------------------------------
+Position: SYRUP
+  Size: -204191.0
+  Entry Price: 0.294922
+  Unrealized PnL: 331.213287
+  Liquidation Px: 419.940189013
+  Leverage: cross (20x)
+  Margin Used: 2994.461015
+  Cum. Funding: {'allTime': '-511.569894', 'sinceOpen': '352.259541', 'sinceChange': '0.0'}
+------------------------------
+Position: PUMP
+  Size: -53085710.0
+  Entry Price: 0.002489
+  Unrealized PnL: 2394.583232
+  Liquidation Px: 1.6165905926
+  Leverage: cross (20x)
+  Margin Used: 6487.073762
+  Cum. Funding: {'allTime': '-7339.465377', 'sinceOpen': '-2415.730001', 'sinceChange': '0.0'}
+------------------------------
+Position: PROVE
+  Size: -82797.0
+  Entry Price: 0.333768
+  Unrealized PnL: -534.16123
+  Liquidation Px: 1035.2583681751
+  Leverage: cross (20x)
+  Margin Used: 1408.459767
+  Cum. Funding: {'allTime': '-7737.590581', 'sinceOpen': '187.010384', 'sinceChange': '0.902891'}
+------------------------------
+Position: YZY
+  Size: 455582.0
+  Entry Price: 0.376981
+  Unrealized PnL: -20283.387501
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 7573.139586
+  Cum. Funding: {'allTime': '-30499.219184', 'sinceOpen': '-16744.82801', 'sinceChange': '-14648.347382'}
+------------------------------
+Position: XPL
+  Size: -974516.0
+  Entry Price: 0.104433
+  Unrealized PnL: 80.936714
+  Liquidation Px: 88.0332479498
+  Leverage: cross (20x)
+  Margin Used: 5084.53723
+  Cum. Funding: {'allTime': '-5256.909335', 'sinceOpen': '-2555.091062', 'sinceChange': '-0.861169'}
+------------------------------
+Position: WLFI
+  Size: 737730.0
+  Entry Price: 0.129523
+  Unrealized PnL: 536.322939
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4804.466625
+  Cum. Funding: {'allTime': '-10993.709376', 'sinceOpen': '-1577.828936', 'sinceChange': '-9.969463'}
+------------------------------
+Position: LINEA
+  Size: -10232433.0
+  Entry Price: 0.004498
+  Unrealized PnL: 930.066563
+  Liquidation Px: 8.3785764812
+  Leverage: cross (20x)
+  Margin Used: 2255.228233
+  Cum. Funding: {'allTime': '-2623.994628', 'sinceOpen': '-21.411713', 'sinceChange': '0.103494'}
+------------------------------
+Position: SKY
+  Size: -1054513.0
+  Entry Price: 0.060644
+  Unrealized PnL: -2225.235017
+  Liquidation Px: 81.321229684
+  Leverage: cross (20x)
+  Margin Used: 3308.798165
+  Cum. Funding: {'allTime': '1857.510318', 'sinceOpen': '1660.584184', 'sinceChange': '0.0'}
+------------------------------
+Position: ASTER
+  Size: -33732.0
+  Entry Price: 0.568462
+  Unrealized PnL: 75.310897
+  Liquidation Px: 2540.8282338673
+  Leverage: cross (20x)
+  Margin Used: 955.003518
+  Cum. Funding: {'allTime': '-3586.346398', 'sinceOpen': '-0.749229', 'sinceChange': '0.0'}
+------------------------------
+Position: AVNT
+  Size: -202454.0
+  Entry Price: 0.241633
+  Unrealized PnL: -157.218171
+  Liquidation Px: 423.4897546534
+  Leverage: cross (20x)
+  Margin Used: 2453.843707
+  Cum. Funding: {'allTime': '55853.829117', 'sinceOpen': '2209.391949', 'sinceChange': '0.0'}
+------------------------------
+Position: STBL
+  Size: -2577416.0
+  Entry Price: 0.036489
+  Unrealized PnL: 2768.412071
+  Liquidation Px: 33.2811610939
+  Leverage: cross (20x)
+  Margin Used: 4563.959382
+  Cum. Funding: {'allTime': '-11404.182588', 'sinceOpen': '-12200.304322', 'sinceChange': '0.0'}
+------------------------------
+Position: 0G
+  Size: -182656.0
+  Entry Price: 0.638405
+  Unrealized PnL: 558.157136
+  Liquidation Px: 469.7582800677
+  Leverage: cross (20x)
+  Margin Used: 5802.52448
+  Cum. Funding: {'allTime': '30892.35459', 'sinceOpen': '40521.381135', 'sinceChange': '16.405978'}
+------------------------------
+Position: HEMI
+  Size: -11110080.0
+  Entry Price: 0.012779
+  Unrealized PnL: 10623.03627
+  Liquidation Px: 7.7244693459
+  Leverage: cross (20x)
+  Margin Used: 6567.723792
+  Cum. Funding: {'allTime': '10484.206503', 'sinceOpen': '10950.708934', 'sinceChange': '0.0'}
+------------------------------
+Position: APEX
+  Size: -250839.0
+  Entry Price: 0.304307
+  Unrealized PnL: -3956.364263
+  Liquidation Px: 341.9261217816
+  Leverage: cross (20x)
+  Margin Used: 4014.427356
+  Cum. Funding: {'allTime': '-7940.725353', 'sinceOpen': '-2337.824152', 'sinceChange': '0.0'}
+------------------------------
+Position: 2Z
+  Size: -862004.0
+  Entry Price: 0.109656
+  Unrealized PnL: 1203.979719
+  Liquidation Px: 99.5139679949
+  Leverage: cross (20x)
+  Margin Used: 4666.027652
+  Cum. Funding: {'allTime': '5925.334868', 'sinceOpen': '6268.95967', 'sinceChange': '0.0'}
+------------------------------
+Position: ZEC
+  Size: 28.81
+  Entry Price: 295.4152
+  Unrealized PnL: -51.4331
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 422.974015
+  Cum. Funding: {'allTime': '-2136.830176', 'sinceOpen': '0.090435', 'sinceChange': '0.0'}
+------------------------------
+Position: MON
+  Size: -3384296.0
+  Entry Price: 0.018594
+  Unrealized PnL: 139.711634
+  Liquidation Px: 25.3378861536
+  Leverage: cross (20x)
+  Margin Used: 3139.442184
+  Cum. Funding: {'allTime': '-1250.96702', 'sinceOpen': '-1033.394422', 'sinceChange': '0.0'}
+------------------------------
+Position: MET
+  Size: -235045.0
+  Entry Price: 0.233647
+  Unrealized PnL: -912.504292
+  Liquidation Px: 364.7980095441
+  Leverage: cross (20x)
+  Margin Used: 2791.511942
+  Cum. Funding: {'allTime': '-1505.304604', 'sinceOpen': '-894.773166', 'sinceChange': '0.0'}
+------------------------------
+Position: CC
+  Size: -386398.0
+  Entry Price: 0.185419
+  Unrealized PnL: -1518.810317
+  Liquidation Px: 221.9506373629
+  Leverage: cross (20x)
+  Margin Used: 3658.223065
+  Cum. Funding: {'allTime': '-792.801796', 'sinceOpen': '-23.102161', 'sinceChange': '0.0'}
+------------------------------
+Position: ICP
+  Size: 29749.3
+  Entry Price: 2.69516
+  Unrealized PnL: 664.334779
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4042.186137
+  Cum. Funding: {'allTime': '-374.761672', 'sinceOpen': '-260.481521', 'sinceChange': '0.0'}
+------------------------------
+Position: AERO
+  Size: -221558.0
+  Entry Price: 0.389533
+  Unrealized PnL: -2677.855062
+  Liquidation Px: 387.154153939
+  Leverage: cross (20x)
+  Margin Used: 4449.106198
+  Cum. Funding: {'allTime': '-534.190383', 'sinceOpen': '-410.237449', 'sinceChange': '0.0'}
+------------------------------
+Position: STABLE
+  Size: -703895.0
+  Entry Price: 0.030466
+  Unrealized PnL: -14.547647
+  Liquidation Px: 121.7647199672
+  Leverage: cross (20x)
+  Margin Used: 1072.982343
+  Cum. Funding: {'allTime': '-1076.533131', 'sinceOpen': '12.352528', 'sinceChange': '0.0'}
+------------------------------
+Position: FOGO
+  Size: -156619.0
+  Entry Price: 0.034174
+  Unrealized PnL: 48.277852
+  Liquidation Px: 547.1457612008
+  Leverage: cross (20x)
+  Margin Used: 265.202952
+  Cum. Funding: {'allTime': '652.561726', 'sinceOpen': '-1.941363', 'sinceChange': '0.0'}
+------------------------------
+Position: LIT
+  Size: 129776.0
+  Entry Price: 1.556362
+  Unrealized PnL: 7596.75067
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 10478.76312
+  Cum. Funding: {'allTime': '817.532039', 'sinceOpen': '781.337031', 'sinceChange': '0.0'}
+------------------------------
+Position: XMR
+  Size: 244.606
+  Entry Price: 405.596
+  Unrealized PnL: -1258.958236
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4897.623635
+  Cum. Funding: {'allTime': '113.795882', 'sinceOpen': '208.508409', 'sinceChange': '0.0'}
+------------------------------
+Position: AXS
+  Size: -94337.1
+  Entry Price: 1.71916
+  Unrealized PnL: -1437.41278
+  Liquidation Px: 910.0527383256
+  Leverage: cross (20x)
+  Margin Used: 8180.913312
+  Cum. Funding: {'allTime': '43683.06677', 'sinceOpen': '43716.115744', 'sinceChange': '0.0'}
+------------------------------
+Position: DASH
+  Size: 1842.69
+  Entry Price: 44.3049
+  Unrealized PnL: 902.957589
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4127.164927
+  Cum. Funding: {'allTime': '-3282.694063', 'sinceOpen': '-2783.073129', 'sinceChange': '0.0'}
+------------------------------
+Position: SKR
+  Size: 1985561.0
+  Entry Price: 0.018963
+  Unrealized PnL: -675.945364
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1848.855125
+  Cum. Funding: {'allTime': '-475.004306', 'sinceOpen': '-234.876954', 'sinceChange': '0.0'}
+------------------------------
+
+Processing Address: 0x31ca8395cf837de08b24da3f660e77761dfb974b
+Found 189 positions.
+Margin Summary: {
+  "accountValue": "86475274.6631059945",
+  "totalNtlPos": "14464477.4524050001",
+  "totalRawUsd": "90679012.7656310052",
+  "totalMarginUsed": "723223.87256"
+}
+Position: BTC
+  Size: -15.93928
+  Entry Price: 77771.7
+  Unrealized PnL: -16612.802671
+  Liquidation Px: 5441406.9889486795
+  Leverage: cross (20x)
+  Margin Used: 62811.920696
+  Cum. Funding: {'allTime': '176808.164986', 'sinceOpen': '-11156.491635', 'sinceChange': '0.0'}
+------------------------------
+Position: ETH
+  Size: -79.4465
+  Entry Price: 2352.79
+  Unrealized PnL: 420.866114
+  Liquidation Px: 1078239.7190013356
+  Leverage: cross (20x)
+  Margin Used: 9325.032937
+  Cum. Funding: {'allTime': '179884.958687', 'sinceOpen': '75.575855', 'sinceChange': '0.0'}
+------------------------------
+Position: ATOM
+  Size: -66022.95
+  Entry Price: 1.982
+  Unrealized PnL: -209.030255
+  Liquidation Px: 1296.6239760149
+  Leverage: cross (20x)
+  Margin Used: 6553.438017
+  Cum. Funding: {'allTime': '-5415.631325', 'sinceOpen': '3761.072202', 'sinceChange': '0.0'}
+------------------------------
+Position: DYDX
+  Size: 264212.2
+  Entry Price: 0.13764
+  Unrealized PnL: -937.361642
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1771.542801
+  Cum. Funding: {'allTime': '-12023.412438', 'sinceOpen': '1231.789643', 'sinceChange': '0.0'}
+------------------------------
+Position: SOL
+  Size: -12320.91
+  Entry Price: 105.975
+  Unrealized PnL: 17681.080898
+  Liquidation Px: 7042.004130238
+  Leverage: cross (20x)
+  Margin Used: 64401.39657
+  Cum. Funding: {'allTime': '-168852.039823', 'sinceOpen': '-8652.247616', 'sinceChange': '0.0'}
+------------------------------
+Position: AVAX
+  Size: -10055.43
+  Entry Price: 10.0097
+  Unrealized PnL: -1380.045938
+  Liquidation Px: 8510.6160179227
+  Leverage: cross (20x)
+  Margin Used: 5101.62241
+  Cum. Funding: {'allTime': '-39267.30073', 'sinceOpen': '383.250615', 'sinceChange': '0.0'}
+------------------------------
+Position: BNB
+  Size: -302.505
+  Entry Price: 763.423
+  Unrealized PnL: -3105.804808
+  Liquidation Px: 283333.8829782635
+  Leverage: cross (20x)
+  Margin Used: 11702.254672
+  Cum. Funding: {'allTime': '-16421.425488', 'sinceOpen': '89.439282', 'sinceChange': '0.0'}
+------------------------------
+Position: APE
+  Size: -83944.4
+  Entry Price: 0.1491
+  Unrealized PnL: 62.383608
+  Liquidation Px: 1018.3922354329
+  Leverage: cross (20x)
+  Margin Used: 622.699559
+  Cum. Funding: {'allTime': '-4818.434471', 'sinceOpen': '-0.558768', 'sinceChange': '0.0'}
+------------------------------
+Position: OP
+  Size: 59345.6
+  Entry Price: 0.23058
+  Unrealized PnL: -57.314326
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 681.346833
+  Cum. Funding: {'allTime': '-25265.47656', 'sinceOpen': '-0.296774', 'sinceChange': '0.0'}
+------------------------------
+Position: LTC
+  Size: -3273.91
+  Entry Price: 58.9668
+  Unrealized PnL: -4305.763521
+  Liquidation Px: 26168.4740935181
+  Leverage: cross (20x)
+  Margin Used: 9867.892131
+  Cum. Funding: {'allTime': '-26192.800826', 'sinceOpen': '32.899599', 'sinceChange': '0.0'}
+------------------------------
+Position: ARB
+  Size: -105927.3
+  Entry Price: 0.13691
+  Unrealized PnL: -90.84502
+  Liquidation Px: 807.067345066
+  Leverage: cross (20x)
+  Margin Used: 729.680206
+  Cum. Funding: {'allTime': '-13216.466886', 'sinceOpen': '-1416.103156', 'sinceChange': '0.0'}
+------------------------------
+Position: DOGE
+  Size: -1648834.0
+  Entry Price: 0.105309
+  Unrealized PnL: -5210.885786
+  Liquidation Px: 51.9486620247
+  Leverage: cross (20x)
+  Margin Used: 8942.451199
+  Cum. Funding: {'allTime': '-53977.758294', 'sinceOpen': '255.755476', 'sinceChange': '0.0'}
+------------------------------
+Position: INJ
+  Size: -40201.8
+  Entry Price: 3.63299
+  Unrealized PnL: -2179.14901
+  Liquidation Px: 2129.8574505084
+  Leverage: cross (20x)
+  Margin Used: 7411.603848
+  Cum. Funding: {'allTime': '-49253.462796', 'sinceOpen': '-335.857943', 'sinceChange': '0.0'}
+------------------------------
+Position: SUI
+  Size: -202351.5
+  Entry Price: 1.12619
+  Unrealized PnL: -4553.748302
+  Liquidation Px: 423.561536954
+  Leverage: cross (20x)
+  Margin Used: 11622.058402
+  Cum. Funding: {'allTime': '-30705.850767', 'sinceOpen': '-1254.101621', 'sinceChange': '0.0'}
+------------------------------
+Position: kPEPE
+  Size: -27942335.0
+  Entry Price: 0.004289
+  Unrealized PnL: 791.191205
+  Liquidation Px: 3.0632706059
+  Leverage: cross (20x)
+  Margin Used: 5953.114471
+  Cum. Funding: {'allTime': '-67282.095935', 'sinceOpen': '-2.502021', 'sinceChange': '0.0'}
+------------------------------
+Position: CRV
+  Size: 375306.5
+  Entry Price: 0.28405
+  Unrealized PnL: 1288.826956
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 5394.843284
+  Cum. Funding: {'allTime': '166.63815', 'sinceOpen': '331.028042', 'sinceChange': '1.350634'}
+------------------------------
+Position: LDO
+  Size: 157111.3
+  Entry Price: 0.41818
+  Unrealized PnL: 1038.009617
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3336.965456
+  Cum. Funding: {'allTime': '-38505.729789', 'sinceOpen': '2456.849955', 'sinceChange': '0.0'}
+------------------------------
+Position: LINK
+  Size: -1822.5
+  Entry Price: 9.92988
+  Unrealized PnL: 88.54073
+  Liquidation Px: 46910.2221377995
+  Leverage: cross (20x)
+  Margin Used: 900.433462
+  Cum. Funding: {'allTime': '-26127.913735', 'sinceOpen': '0.962647', 'sinceChange': '0.0'}
+------------------------------
+Position: STX
+  Size: -634644.2
+  Entry Price: 0.27499
+  Unrealized PnL: -7743.863235
+  Liquidation Px: 134.9703361208
+  Leverage: cross (20x)
+  Margin Used: 9113.490712
+  Cum. Funding: {'allTime': '-2235.436858', 'sinceOpen': '2066.161283', 'sinceChange': '0.0'}
+------------------------------
+Position: CFX
+  Size: -375756.0
+  Entry Price: 0.0555
+  Unrealized PnL: -205.792459
+  Liquidation Px: 227.5331107133
+  Leverage: cross (20x)
+  Margin Used: 1053.018614
+  Cum. Funding: {'allTime': '-19428.430736', 'sinceOpen': '-21.665967', 'sinceChange': '0.0'}
+------------------------------
+Position: GMX
+  Size: 8468.89
+  Entry Price: 6.3079
+  Unrealized PnL: 1089.789895
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2725.542868
+  Cum. Funding: {'allTime': '-16568.721935', 'sinceOpen': '-2168.11301', 'sinceChange': '0.683068'}
+------------------------------
+Position: SNX
+  Size: -100056.1
+  Entry Price: 0.34434
+  Unrealized PnL: -953.308214
+  Liquidation Px: 854.6333309913
+  Leverage: cross (20x)
+  Margin Used: 1770.342605
+  Cum. Funding: {'allTime': '-26698.489995', 'sinceOpen': '-136.880954', 'sinceChange': '0.0'}
+------------------------------
+Position: XRP
+  Size: -129753.0
+  Entry Price: 1.628138
+  Unrealized PnL: -1590.977125
+  Liquidation Px: 660.3987422109
+  Leverage: cross (20x)
+  Margin Used: 10642.34106
+  Cum. Funding: {'allTime': '-11316.145658', 'sinceOpen': '241.841427', 'sinceChange': '0.0'}
+------------------------------
+Position: BCH
+  Size: -127.312
+  Entry Price: 529.112
+  Unrealized PnL: -940.559806
+  Liquidation Px: 671925.4592252899
+  Leverage: cross (20x)
+  Margin Used: 3415.1444
+  Cum. Funding: {'allTime': '-8716.421492', 'sinceOpen': '9.246384', 'sinceChange': '0.0'}
+------------------------------
+Position: APT
+  Size: 14065.76
+  Entry Price: 1.2855
+  Unrealized PnL: -91.130261
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 899.57568
+  Cum. Funding: {'allTime': '-28419.231577', 'sinceOpen': '0.045099', 'sinceChange': '0.0'}
+------------------------------
+Position: AAVE
+  Size: 426.45
+  Entry Price: 128.5784
+  Unrealized PnL: -105.946815
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2736.316425
+  Cum. Funding: {'allTime': '-25756.832192', 'sinceOpen': '2124.681586', 'sinceChange': '0.039088'}
+------------------------------
+Position: COMP
+  Size: -3420.71
+  Entry Price: 20.9369
+  Unrealized PnL: 3136.673097
+  Liquidation Px: 25007.7772717039
+  Leverage: cross (20x)
+  Margin Used: 3424.13071
+  Cum. Funding: {'allTime': '-4257.812031', 'sinceOpen': '3442.574395', 'sinceChange': '0.0'}
+------------------------------
+Position: WLD
+  Size: -252719.7
+  Entry Price: 0.4008
+  Unrealized PnL: -254.564653
+  Liquidation Px: 338.6258233115
+  Leverage: cross (20x)
+  Margin Used: 5077.265132
+  Cum. Funding: {'allTime': '-28082.739556', 'sinceOpen': '192.110317', 'sinceChange': '0.0'}
+------------------------------
+Position: YGG
+  Size: 296747.0
+  Entry Price: 0.046148
+  Unrealized PnL: 93.110311
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 689.372955
+  Cum. Funding: {'allTime': '-2209.791732', 'sinceOpen': '-9.95428', 'sinceChange': '0.0'}
+------------------------------
+Position: TRX
+  Size: -261598.0
+  Entry Price: 0.283539
+  Unrealized PnL: -15.818318
+  Liquidation Px: 327.0287248744
+  Leverage: cross (20x)
+  Margin Used: 3709.45964
+  Cum. Funding: {'allTime': '-8631.951741', 'sinceOpen': '829.47535', 'sinceChange': '0.0'}
+------------------------------
+Position: kSHIB
+  Size: 19953330.0
+  Entry Price: 0.006782
+  Unrealized PnL: 2167.769032
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6874.919851
+  Cum. Funding: {'allTime': '-10921.20462', 'sinceOpen': '142.896747', 'sinceChange': '0.0'}
+------------------------------
+Position: UNI
+  Size: -6950.0
+  Entry Price: 3.9303
+  Unrealized PnL: -20.095128
+  Liquidation Px: 12302.619700272
+  Leverage: cross (20x)
+  Margin Used: 1366.787
+  Cum. Funding: {'allTime': '-20057.959843', 'sinceOpen': '-163.789716', 'sinceChange': '0.0'}
+------------------------------
+Position: SEI
+  Size: -503759.0
+  Entry Price: 0.086589
+  Unrealized PnL: -1187.102509
+  Liquidation Px: 169.7650633039
+  Leverage: cross (20x)
+  Margin Used: 2240.3674
+  Cum. Funding: {'allTime': '-39581.306477', 'sinceOpen': '130.421369', 'sinceChange': '0.0'}
+------------------------------
+Position: RUNE
+  Size: 186021.9
+  Entry Price: 0.48886
+  Unrealized PnL: -3328.053039
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4380.536712
+  Cum. Funding: {'allTime': '-16688.728813', 'sinceOpen': '4647.112768', 'sinceChange': '0.0'}
+------------------------------
+Position: ZRO
+  Size: 28101.3
+  Entry Price: 1.82139
+  Unrealized PnL: -331.575725
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2542.605624
+  Cum. Funding: {'allTime': '-9403.926472', 'sinceOpen': '7.946399', 'sinceChange': '0.0'}
+------------------------------
+Position: DOT
+  Size: -91233.1
+  Entry Price: 1.5478
+  Unrealized PnL: -555.773594
+  Liquidation Px: 938.4492940718
+  Leverage: cross (20x)
+  Margin Used: 7088.355704
+  Cum. Funding: {'allTime': '-18126.300765', 'sinceOpen': '1335.417785', 'sinceChange': '4.548775'}
+------------------------------
+Position: BANANA
+  Size: 1476.0
+  Entry Price: 5.04467
+  Unrealized PnL: 69.697524
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 375.78222
+  Cum. Funding: {'allTime': '-6222.448042', 'sinceOpen': '0.101747', 'sinceChange': '0.0'}
+------------------------------
+Position: TRB
+  Size: 260.57
+  Entry Price: 16.1031
+  Unrealized PnL: 12.479184
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 210.423303
+  Cum. Funding: {'allTime': '27191.057506', 'sinceOpen': '2.160056', 'sinceChange': '0.0'}
+------------------------------
+Position: FTT
+  Size: -31161.6
+  Entry Price: 0.39918
+  Unrealized PnL: 999.143317
+  Liquidation Px: 2743.3543599649
+  Leverage: cross (20x)
+  Margin Used: 572.002329
+  Cum. Funding: {'allTime': '-1770.094666', 'sinceOpen': '-55.107516', 'sinceChange': '-0.287925'}
+------------------------------
+Position: ARK
+  Size: 13319.0
+  Entry Price: 0.216267
+  Unrealized PnL: -0.238413
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 144.011687
+  Cum. Funding: {'allTime': '18171.214476', 'sinceOpen': '-22.167836', 'sinceChange': '0.0'}
+------------------------------
+Position: BIGTIME
+  Size: 92238.0
+  Entry Price: 0.017828
+  Unrealized PnL: -8.598177
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 81.792046
+  Cum. Funding: {'allTime': '-16120.905298', 'sinceOpen': '0.020278', 'sinceChange': '0.0'}
+------------------------------
+Position: KAS
+  Size: -1374713.0
+  Entry Price: 0.033345
+  Unrealized PnL: -123.3983
+  Liquidation Px: 62.2106830342
+  Leverage: cross (20x)
+  Margin Used: 2298.176457
+  Cum. Funding: {'allTime': '5115.483749', 'sinceOpen': '-596.21783', 'sinceChange': '0.0'}
+------------------------------
+Position: BLUR
+  Size: 2121671.0
+  Entry Price: 0.024229
+  Unrealized PnL: -2874.775453
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2426.661206
+  Cum. Funding: {'allTime': '-11528.462106', 'sinceOpen': '-320.891992', 'sinceChange': '0.0'}
+------------------------------
+Position: TIA
+  Size: -103288.5
+  Entry Price: 0.37034
+  Unrealized PnL: -615.35186
+  Liquidation Px: 827.9211978046
+  Leverage: cross (20x)
+  Margin Used: 1943.373127
+  Cum. Funding: {'allTime': '-43192.892629', 'sinceOpen': '41.726754', 'sinceChange': '0.0'}
+------------------------------
+Position: BSV
+  Size: 7881.01
+  Entry Price: 16.906
+  Unrealized PnL: -10056.233664
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6159.009315
+  Cum. Funding: {'allTime': '-24675.011381', 'sinceOpen': '-23124.364818', 'sinceChange': '1.542215'}
+------------------------------
+Position: ADA
+  Size: -793079.0
+  Entry Price: 0.295587
+  Unrealized PnL: -3539.407254
+  Liquidation Px: 108.0772968782
+  Leverage: cross (20x)
+  Margin Used: 11898.167697
+  Cum. Funding: {'allTime': '-8911.053478', 'sinceOpen': '617.841152', 'sinceChange': '0.0'}
+------------------------------
+Position: TON
+  Size: 69233.0
+  Entry Price: 1.3475
+  Unrealized PnL: 1509.022567
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4740.037345
+  Cum. Funding: {'allTime': '8156.308786', 'sinceOpen': '2064.999871', 'sinceChange': '0.0'}
+------------------------------
+Position: MINA
+  Size: -366075.0
+  Entry Price: 0.071212
+  Unrealized PnL: -494.435067
+  Liquidation Px: 233.5653477487
+  Leverage: cross (20x)
+  Margin Used: 1328.175011
+  Cum. Funding: {'allTime': '-12086.876313', 'sinceOpen': '50.189917', 'sinceChange': '0.0'}
+------------------------------
+Position: POLYX
+  Size: 1007746.0
+  Entry Price: 0.048851
+  Unrealized PnL: -58.047058
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2458.597916
+  Cum. Funding: {'allTime': '-26665.795134', 'sinceOpen': '-24847.755626', 'sinceChange': '0.0'}
+------------------------------
+Position: GAS
+  Size: -36717.3
+  Entry Price: 1.86208
+  Unrealized PnL: -573.405288
+  Liquidation Px: 2329.8231419821
+  Leverage: cross (20x)
+  Margin Used: 3447.20371
+  Cum. Funding: {'allTime': '20367.85582', 'sinceOpen': '13990.274677', 'sinceChange': '47.277292'}
+------------------------------
+Position: PENDLE
+  Size: 105336.0
+  Entry Price: 1.586933
+  Unrealized PnL: 1207.857626
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 8418.45312
+  Cum. Funding: {'allTime': '5807.578915', 'sinceOpen': '3749.816075', 'sinceChange': '0.0'}
+------------------------------
+Position: FET
+  Size: -542762.0
+  Entry Price: 0.186536
+  Unrealized PnL: 345.526264
+  Liquidation Px: 157.6690531627
+  Leverage: cross (20x)
+  Margin Used: 5044.97279
+  Cum. Funding: {'allTime': '-6013.594859', 'sinceOpen': '1800.238243', 'sinceChange': '12.550515'}
+------------------------------
+Position: NEAR
+  Size: 93037.5
+  Entry Price: 1.19505
+  Unrealized PnL: 2311.105266
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 5674.822312
+  Cum. Funding: {'allTime': '-20107.618165', 'sinceOpen': '1858.877259', 'sinceChange': '0.0'}
+------------------------------
+Position: MEME
+  Size: 82823708.0
+  Entry Price: 0.000885
+  Unrealized PnL: -3996.309126
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3466.172179
+  Cum. Funding: {'allTime': '-15665.481179', 'sinceOpen': '-7480.368372', 'sinceChange': '0.0'}
+------------------------------
+Position: ORDI
+  Size: -3138.91
+  Entry Price: 3.0957
+  Unrealized PnL: -39.880561
+  Liquidation Px: 27234.1763474024
+  Leverage: cross (20x)
+  Margin Used: 487.865086
+  Cum. Funding: {'allTime': '-38416.466127', 'sinceOpen': '-28.777694', 'sinceChange': '-0.122221'}
+------------------------------
+Position: NEO
+  Size: -3803.57
+  Entry Price: 3.1973
+  Unrealized PnL: -379.835661
+  Liquidation Px: 22475.8351516849
+  Leverage: cross (20x)
+  Margin Used: 627.05655
+  Cum. Funding: {'allTime': '-2377.970362', 'sinceOpen': '96.893671', 'sinceChange': '0.0'}
+------------------------------
+Position: ZEN
+  Size: 4908.57
+  Entry Price: 7.0843
+  Unrealized PnL: -352.626282
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1721.067356
+  Cum. Funding: {'allTime': '-11256.651686', 'sinceOpen': '0.297072', 'sinceChange': '0.0'}
+------------------------------
+Position: FIL
+  Size: -139616.9
+  Entry Price: 1.12962
+  Unrealized PnL: 7585.042029
+  Liquidation Px: 613.2925256861
+  Leverage: cross (20x)
+  Margin Used: 7506.502628
+  Cum. Funding: {'allTime': '-33840.379383', 'sinceOpen': '2448.435624', 'sinceChange': '0.0'}
+------------------------------
+Position: PYTH
+  Size: -3613829.0
+  Entry Price: 0.056304
+  Unrealized PnL: 15628.850195
+  Liquidation Px: 23.7044193315
+  Leverage: cross (20x)
+  Margin Used: 9392.341571
+  Cum. Funding: {'allTime': '-4015.303425', 'sinceOpen': '562.230115', 'sinceChange': '0.0'}
+------------------------------
+Position: SUSHI
+  Size: 137552.9
+  Entry Price: 0.23936
+  Unrealized PnL: 557.934098
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1674.156345
+  Cum. Funding: {'allTime': '-7463.521668', 'sinceOpen': '-27.773383', 'sinceChange': '0.0'}
+------------------------------
+Position: IMX
+  Size: -465778.3
+  Entry Price: 0.19052
+  Unrealized PnL: 1781.493963
+  Liquidation Px: 183.6986222533
+  Leverage: cross (20x)
+  Margin Used: 4348.04043
+  Cum. Funding: {'allTime': '-133.196342', 'sinceOpen': '4247.551883', 'sinceChange': '0.0'}
+------------------------------
+Position: kBONK
+  Size: 7107665.0
+  Entry Price: 0.007129
+  Unrealized PnL: 563.301147
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2561.957849
+  Cum. Funding: {'allTime': '-17878.47928', 'sinceOpen': '-40.040388', 'sinceChange': '0.0'}
+------------------------------
+Position: GMT
+  Size: -4029532.0
+  Entry Price: 0.014584
+  Unrealized PnL: 1913.890509
+  Liquidation Px: 21.2264669628
+  Leverage: cross (20x)
+  Margin Used: 2842.834826
+  Cum. Funding: {'allTime': '15604.304529', 'sinceOpen': '8374.329894', 'sinceChange': '0.0'}
+------------------------------
+Position: SUPER
+  Size: -575123.0
+  Entry Price: 0.159897
+  Unrealized PnL: 5059.910789
+  Liquidation Px: 148.772996841
+  Leverage: cross (20x)
+  Margin Used: 4345.054265
+  Cum. Funding: {'allTime': '53962.458719', 'sinceOpen': '55847.430727', 'sinceChange': '0.0'}
+------------------------------
+Position: USTC
+  Size: 4357851.0
+  Entry Price: 0.005628
+  Unrealized PnL: -141.414791
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1219.326709
+  Cum. Funding: {'allTime': '14415.263137', 'sinceOpen': '-10.023554', 'sinceChange': '0.305594'}
+------------------------------
+Position: JUP
+  Size: 1004576.0
+  Entry Price: 0.187429
+  Unrealized PnL: 4169.018041
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 9622.833504
+  Cum. Funding: {'allTime': '-9250.979952', 'sinceOpen': '-186.132758', 'sinceChange': '0.0'}
+------------------------------
+Position: kLUNC
+  Size: 90926.0
+  Entry Price: 0.037447
+  Unrealized PnL: -45.005669
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 167.999423
+  Cum. Funding: {'allTime': '-13665.505003', 'sinceOpen': '-0.275137', 'sinceChange': '0.0'}
+------------------------------
+Position: RSR
+  Size: 22898892.0
+  Entry Price: 0.002125
+  Unrealized PnL: -4724.094559
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2197.148687
+  Cum. Funding: {'allTime': '13195.327875', 'sinceOpen': '6336.978946', 'sinceChange': '0.0'}
+------------------------------
+Position: GALA
+  Size: 3022730.0
+  Entry Price: 0.004807
+  Unrealized PnL: 84.618599
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 730.744977
+  Cum. Funding: {'allTime': '-3546.412746', 'sinceOpen': '111.377123', 'sinceChange': '0.0'}
+------------------------------
+Position: JTO
+  Size: -272119.0
+  Entry Price: 0.29418
+  Unrealized PnL: -984.809344
+  Liquidation Px: 314.4099023409
+  Leverage: cross (20x)
+  Margin Used: 4051.85191
+  Cum. Funding: {'allTime': '-3396.376754', 'sinceOpen': '1525.308482', 'sinceChange': '0.0'}
+------------------------------
+Position: ACE
+  Size: 149544.69
+  Entry Price: 0.2062
+  Unrealized PnL: -172.460146
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1533.580795
+  Cum. Funding: {'allTime': '3057.971514', 'sinceOpen': '-676.341757', 'sinceChange': '0.0'}
+------------------------------
+Position: MAV
+  Size: -35788.0
+  Entry Price: 0.020298
+  Unrealized PnL: -9.990625
+  Liquidation Px: 2388.4153241968
+  Leverage: cross (20x)
+  Margin Used: 36.822273
+  Cum. Funding: {'allTime': '-4317.403434', 'sinceOpen': '-1.265189', 'sinceChange': '-0.00921'}
+------------------------------
+Position: WIF
+  Size: -679357.0
+  Entry Price: 0.253861
+  Unrealized PnL: -2845.653404
+  Liquidation Px: 126.0768333155
+  Leverage: cross (20x)
+  Margin Used: 8765.403692
+  Cum. Funding: {'allTime': '-14159.270277', 'sinceOpen': '-1795.182216', 'sinceChange': '0.0'}
+------------------------------
+Position: CAKE
+  Size: -110376.1
+  Entry Price: 1.61978
+  Unrealized PnL: 5042.081338
+  Liquidation Px: 775.9797111503
+  Leverage: cross (20x)
+  Margin Used: 8687.15095
+  Cum. Funding: {'allTime': '-10719.648752', 'sinceOpen': '587.560979', 'sinceChange': '0.0'}
+------------------------------
+Position: PEOPLE
+  Size: 3675584.0
+  Entry Price: 0.007811
+  Unrealized PnL: -241.098624
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1423.553683
+  Cum. Funding: {'allTime': '2137.428775', 'sinceOpen': '9809.525307', 'sinceChange': '0.355934'}
+------------------------------
+Position: ENS
+  Size: 8399.7
+  Entry Price: 7.008
+  Unrealized PnL: -227.352288
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2931.915285
+  Cum. Funding: {'allTime': '-8543.355075', 'sinceOpen': '497.750546', 'sinceChange': '0.0'}
+------------------------------
+Position: ETC
+  Size: 2482.61
+  Entry Price: 9.7021
+  Unrealized PnL: 257.895364
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1217.223683
+  Cum. Funding: {'allTime': '-10439.720613', 'sinceOpen': '-279.980117', 'sinceChange': '0.0'}
+------------------------------
+Position: XAI
+  Size: -4764563.1
+  Entry Price: 0.01395
+  Unrealized PnL: 9452.535511
+  Liquidation Px: 17.95188797
+  Leverage: cross (20x)
+  Margin Used: 2851.591015
+  Cum. Funding: {'allTime': '5737.832408', 'sinceOpen': '16622.754846', 'sinceChange': '0.0'}
+------------------------------
+Position: MANTA
+  Size: 84457.2
+  Entry Price: 0.0735
+  Unrealized PnL: 48.939047
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 312.829468
+  Cum. Funding: {'allTime': '-5630.907503', 'sinceOpen': '-2.448033', 'sinceChange': '-0.027124'}
+------------------------------
+Position: UMA
+  Size: -124040.5
+  Entry Price: 0.62111
+  Unrealized PnL: 6059.725525
+  Liquidation Px: 689.6687339492
+  Leverage: cross (20x)
+  Margin Used: 3549.170826
+  Cum. Funding: {'allTime': '24250.37527', 'sinceOpen': '393.231117', 'sinceChange': '0.0'}
+------------------------------
+Position: ONDO
+  Size: -262310.0
+  Entry Price: 0.282174
+  Unrealized PnL: -347.681371
+  Liquidation Px: 326.1417256753
+  Leverage: cross (20x)
+  Margin Used: 3718.24425
+  Cum. Funding: {'allTime': '-15604.625126', 'sinceOpen': '-727.914169', 'sinceChange': '0.0'}
+------------------------------
+Position: ALT
+  Size: -7651506.0
+  Entry Price: 0.010077
+  Unrealized PnL: 3591.83287
+  Liquidation Px: 11.1807253169
+  Leverage: cross (20x)
+  Margin Used: 3675.783482
+  Cum. Funding: {'allTime': '-2216.784709', 'sinceOpen': '3179.546927', 'sinceChange': '0.0'}
+------------------------------
+Position: ZETA
+  Size: 581411.2
+  Entry Price: 0.06122
+  Unrealized PnL: 133.14452
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1786.385912
+  Cum. Funding: {'allTime': '4368.620006', 'sinceOpen': '-3463.567537', 'sinceChange': '0.0'}
+------------------------------
+Position: DYM
+  Size: -1058878.1
+  Entry Price: 0.04957
+  Unrealized PnL: 2623.734527
+  Liquidation Px: 80.7701512907
+  Leverage: cross (20x)
+  Margin Used: 2493.657925
+  Cum. Funding: {'allTime': '37608.808738', 'sinceOpen': '37439.864061', 'sinceChange': '1.363468'}
+------------------------------
+Position: MAVIA
+  Size: -470387.9
+  Entry Price: 0.04544
+  Unrealized PnL: -321.351059
+  Liquidation Px: 181.759713995
+  Leverage: cross (20x)
+  Margin Used: 1084.949691
+  Cum. Funding: {'allTime': '2275.957116', 'sinceOpen': '-164.793502', 'sinceChange': '-1.285893'}
+------------------------------
+Position: W
+  Size: -1032583.7
+  Entry Price: 0.02321
+  Unrealized PnL: -616.444132
+  Liquidation Px: 82.8024469055
+  Leverage: cross (20x)
+  Margin Used: 1229.290894
+  Cum. Funding: {'allTime': '1832.147544', 'sinceOpen': '11.905632', 'sinceChange': '0.0'}
+------------------------------
+Position: STRK
+  Size: 640699.8
+  Entry Price: 0.05571
+  Unrealized PnL: 755.228859
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1822.470581
+  Cum. Funding: {'allTime': '-5987.664764', 'sinceOpen': '-784.260942', 'sinceChange': '0.0'}
+------------------------------
+Position: TAO
+  Size: -146.897
+  Entry Price: 199.882
+  Unrealized PnL: -100.970716
+  Liquidation Px: 582076.7905959905
+  Leverage: cross (20x)
+  Margin Used: 1473.156564
+  Cum. Funding: {'allTime': '-4301.472048', 'sinceOpen': '31.435498', 'sinceChange': '4.067109'}
+------------------------------
+Position: AR
+  Size: 40195.26
+  Entry Price: 2.523
+  Unrealized PnL: -94.727271
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 5066.009594
+  Cum. Funding: {'allTime': '-25741.212261', 'sinceOpen': '-2044.334296', 'sinceChange': '0.0'}
+------------------------------
+Position: kFLOKI
+  Size: -1349932.0
+  Entry Price: 0.034587
+  Unrealized PnL: -1413.435948
+  Liquidation Px: 63.3542845149
+  Leverage: cross (20x)
+  Margin Used: 2405.241341
+  Cum. Funding: {'allTime': '-5802.219578', 'sinceOpen': '100.203027', 'sinceChange': '0.0'}
+------------------------------
+Position: BOME
+  Size: 56985970.0
+  Entry Price: 0.000511
+  Unrealized PnL: -1582.07606
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1379.060474
+  Cum. Funding: {'allTime': '-675.57476', 'sinceOpen': '852.922982', 'sinceChange': '0.344765'}
+------------------------------
+Position: ETHFI
+  Size: 107002.9
+  Entry Price: 0.4948
+  Unrealized PnL: 143.811892
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2654.474441
+  Cum. Funding: {'allTime': '923.426526', 'sinceOpen': '148.893131', 'sinceChange': '0.485133'}
+------------------------------
+Position: ENA
+  Size: 93741.0
+  Entry Price: 0.141963
+  Unrealized PnL: -127.857209
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 658.99923
+  Cum. Funding: {'allTime': '-994.828139', 'sinceOpen': '-7.977888', 'sinceChange': '0.0'}
+------------------------------
+Position: MNT
+  Size: -114038.3
+  Entry Price: 0.71509
+  Unrealized PnL: -3187.3241
+  Liquidation Px: 750.2795656838
+  Leverage: cross (20x)
+  Margin Used: 4236.750921
+  Cum. Funding: {'allTime': '-7014.027264', 'sinceOpen': '-1946.141258', 'sinceChange': '0.0'}
+------------------------------
+Position: TNSR
+  Size: 159839.0
+  Entry Price: 0.23316
+  Unrealized PnL: -29435.889495
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 391.685469
+  Cum. Funding: {'allTime': '-3616.779149', 'sinceOpen': '-13323.814765', 'sinceChange': '-13323.814765'}
+------------------------------
+Position: SAGA
+  Size: 2471153.4
+  Entry Price: 0.03731
+  Unrealized PnL: -2847.832269
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4467.845347
+  Cum. Funding: {'allTime': '-1162.922814', 'sinceOpen': '176.120249', 'sinceChange': '1.118814'}
+------------------------------
+Position: MERL
+  Size: -1165519.0
+  Entry Price: 0.04887
+  Unrealized PnL: -251.477057
+  Liquidation Px: 73.3862612643
+  Leverage: cross (20x)
+  Margin Used: 2860.533281
+  Cum. Funding: {'allTime': '4783.787863', 'sinceOpen': '17944.482207', 'sinceChange': '4.043485'}
+------------------------------
+Position: HBAR
+  Size: 1427425.0
+  Entry Price: 0.091173
+  Unrealized PnL: 2805.913018
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 6647.446853
+  Cum. Funding: {'allTime': '7842.446304', 'sinceOpen': '682.384009', 'sinceChange': '0.0'}
+------------------------------
+Position: POPCAT
+  Size: 217465.0
+  Entry Price: 0.056396
+  Unrealized PnL: -8.976317
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 612.762003
+  Cum. Funding: {'allTime': '-15921.246473', 'sinceOpen': '-126.133073', 'sinceChange': '-0.992435'}
+------------------------------
+Position: EIGEN
+  Size: -479454.71
+  Entry Price: 0.257
+  Unrealized PnL: -885.613909
+  Liquidation Px: 178.5361582981
+  Leverage: cross (20x)
+  Margin Used: 6206.54122
+  Cum. Funding: {'allTime': '-1093.582791', 'sinceOpen': '1857.688977', 'sinceChange': '-1.554631'}
+------------------------------
+Position: REZ
+  Size: -1334697.0
+  Entry Price: 0.003744
+  Unrealized PnL: -33.262116
+  Liquidation Px: 64.0451740357
+  Leverage: cross (20x)
+  Margin Used: 251.523649
+  Cum. Funding: {'allTime': '-2199.712499', 'sinceOpen': '31.22991', 'sinceChange': '-0.062914'}
+------------------------------
+Position: NOT
+  Size: -59491892.0
+  Entry Price: 0.000491
+  Unrealized PnL: 2538.422445
+  Liquidation Px: 1.4372140499
+  Leverage: cross (20x)
+  Margin Used: 1335.592975
+  Cum. Funding: {'allTime': '-7770.325666', 'sinceOpen': '-318.852945', 'sinceChange': '-0.668539'}
+------------------------------
+Position: TURBO
+  Size: 745270.0
+  Entry Price: 0.001248
+  Unrealized PnL: 3.667882
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 46.691165
+  Cum. Funding: {'allTime': '-10165.200662', 'sinceOpen': '-0.409875', 'sinceChange': '0.0'}
+------------------------------
+Position: BRETT
+  Size: -2839808.0
+  Entry Price: 0.009762
+  Unrealized PnL: 107.219546
+  Liquidation Px: 30.108897612
+  Leverage: cross (20x)
+  Margin Used: 1380.85664
+  Cum. Funding: {'allTime': '-20871.346921', 'sinceOpen': '-1.237229', 'sinceChange': '0.0'}
+------------------------------
+Position: IO
+  Size: 335968.9
+  Entry Price: 0.12292
+  Unrealized PnL: 377.998761
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2083.847102
+  Cum. Funding: {'allTime': '5570.112758', 'sinceOpen': '-2107.74832', 'sinceChange': '-2.660306'}
+------------------------------
+Position: ZK
+  Size: 2210271.0
+  Entry Price: 0.025624
+  Unrealized PnL: 557.937802
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2859.759133
+  Cum. Funding: {'allTime': '-14534.661346', 'sinceOpen': '-3939.789619', 'sinceChange': '0.0'}
+------------------------------
+Position: BLAST
+  Size: 142184648.0
+  Entry Price: 0.000693
+  Unrealized PnL: -11753.043414
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4343.740996
+  Cum. Funding: {'allTime': '18683.174847', 'sinceOpen': '-26798.632949', 'sinceChange': '-9.08666'}
+------------------------------
+Position: MEW
+  Size: 11211965.0
+  Entry Price: 0.000709
+  Unrealized PnL: 103.262098
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 403.070141
+  Cum. Funding: {'allTime': '-6411.257344', 'sinceOpen': '-16.100174', 'sinceChange': '0.100907'}
+------------------------------
+Position: RENDER
+  Size: 51324.4
+  Entry Price: 1.58414
+  Unrealized PnL: 557.085442
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4093.1209
+  Cum. Funding: {'allTime': '-5770.210706', 'sinceOpen': '241.685413', 'sinceChange': '0.0'}
+------------------------------
+Position: POL
+  Size: -456963.0
+  Entry Price: 0.106152
+  Unrealized PnL: -2580.691747
+  Liquidation Px: 187.1638614949
+  Leverage: cross (20x)
+  Margin Used: 2554.42317
+  Cum. Funding: {'allTime': '-2079.638531', 'sinceOpen': '333.551598', 'sinceChange': '0.0'}
+------------------------------
+Position: CELO
+  Size: 96854.0
+  Entry Price: 0.095163
+  Unrealized PnL: 2.479565
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 460.97177
+  Cum. Funding: {'allTime': '1526.965816', 'sinceOpen': '-6.158949', 'sinceChange': '0.0'}
+------------------------------
+Position: HMSTR
+  Size: -105310065.0
+  Entry Price: 0.000211
+  Unrealized PnL: 2094.740942
+  Liquidation Px: 0.8118510867
+  Leverage: cross (20x)
+  Margin Used: 1010.976624
+  Cum. Funding: {'allTime': '-4277.873332', 'sinceOpen': '-609.654544', 'sinceChange': '-2.008786'}
+------------------------------
+Position: SCR
+  Size: 277203.1
+  Entry Price: 0.06271
+  Unrealized PnL: 10.759716
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 869.724726
+  Cum. Funding: {'allTime': '-3171.167626', 'sinceOpen': '-56.467744', 'sinceChange': '-0.512678'}
+------------------------------
+Position: kNEIRO
+  Size: -1370017.0
+  Entry Price: 0.09868
+  Unrealized PnL: 14926.475138
+  Liquidation Px: 62.4781626573
+  Leverage: cross (20x)
+  Margin Used: 6013.689621
+  Cum. Funding: {'allTime': '-5356.493094', 'sinceOpen': '-199.520333', 'sinceChange': '-0.689449'}
+------------------------------
+Position: GOAT
+  Size: -968380.0
+  Entry Price: 0.026099
+  Unrealized PnL: -84.240816
+  Liquidation Px: 88.2930555934
+  Leverage: cross (20x)
+  Margin Used: 1267.899934
+  Cum. Funding: {'allTime': '-12912.524898', 'sinceOpen': '37.504688', 'sinceChange': '0.0'}
+------------------------------
+Position: MOODENG
+  Size: 542750.0
+  Entry Price: 0.054457
+  Unrealized PnL: 368.766215
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1496.280337
+  Cum. Funding: {'allTime': '-29043.809536', 'sinceOpen': '-47.977475', 'sinceChange': '0.0'}
+------------------------------
+Position: GRASS
+  Size: -393325.6
+  Entry Price: 0.22101
+  Unrealized PnL: 1528.558013
+  Liquidation Px: 217.5329395402
+  Leverage: cross (20x)
+  Margin Used: 4270.139376
+  Cum. Funding: {'allTime': '474.042818', 'sinceOpen': '-330.476263', 'sinceChange': '0.0'}
+------------------------------
+Position: PURR
+  Size: -227310.0
+  Entry Price: 0.070619
+  Unrealized PnL: -930.61224
+  Liquidation Px: 376.1068779034
+  Leverage: cross (20x)
+  Margin Used: 849.161967
+  Cum. Funding: {'allTime': '-16473.049869', 'sinceOpen': '-215.313216', 'sinceChange': '-0.213429'}
+------------------------------
+Position: PNUT
+  Size: 686505.1
+  Entry Price: 0.057
+  Unrealized PnL: 355.657337
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1974.388667
+  Cum. Funding: {'allTime': '-2277.391678', 'sinceOpen': '-162.524943', 'sinceChange': '0.0'}
+------------------------------
+Position: XLM
+  Size: 150296.0
+  Entry Price: 0.182051
+  Unrealized PnL: -132.437218
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1361.456316
+  Cum. Funding: {'allTime': '5499.61269', 'sinceOpen': '-0.436326', 'sinceChange': '0.0'}
+------------------------------
+Position: CHILLGUY
+  Size: -3482554.0
+  Entry Price: 0.012998
+  Unrealized PnL: 2745.200541
+  Liquidation Px: 24.5562288944
+  Leverage: cross (20x)
+  Margin Used: 2126.099217
+  Cum. Funding: {'allTime': '-166.634814', 'sinceOpen': '-1913.149503', 'sinceChange': '0.0'}
+------------------------------
+Position: SAND
+  Size: -43621.0
+  Entry Price: 0.102735
+  Unrealized PnL: 6.780629
+  Liquidation Px: 1959.6145393061
+  Leverage: cross (20x)
+  Margin Used: 223.732109
+  Cum. Funding: {'allTime': '-6496.593466', 'sinceOpen': '73.236146', 'sinceChange': '0.0'}
+------------------------------
+Position: IOTA
+  Size: -292625.0
+  Entry Price: 0.0764
+  Unrealized PnL: 615.373081
+  Liquidation Px: 292.1746693862
+  Leverage: cross (20x)
+  Margin Used: 1087.072612
+  Cum. Funding: {'allTime': '-6051.948917', 'sinceOpen': '-775.946802', 'sinceChange': '0.350492'}
+------------------------------
+Position: ALGO
+  Size: 76953.0
+  Entry Price: 0.103691
+  Unrealized PnL: 218.455066
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 409.890154
+  Cum. Funding: {'allTime': '-3186.010546', 'sinceOpen': '-9.840397', 'sinceChange': '0.0'}
+------------------------------
+Position: HYPE
+  Size: -5810.16
+  Entry Price: 32.2093
+  Unrealized PnL: -828.668064
+  Liquidation Px: 14743.8007685175
+  Leverage: cross (20x)
+  Margin Used: 9398.514816
+  Cum. Funding: {'allTime': '-453.327813', 'sinceOpen': '-985.261415', 'sinceChange': '0.0'}
+------------------------------
+Position: ME
+  Size: 185517.6
+  Entry Price: 0.16535
+  Unrealized PnL: -868.48501
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1490.355639
+  Cum. Funding: {'allTime': '-21792.014383', 'sinceOpen': '-812.683978', 'sinceChange': '0.373354'}
+------------------------------
+Position: MOVE
+  Size: 572472.0
+  Entry Price: 0.027433
+  Unrealized PnL: 67.062011
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 788.608803
+  Cum. Funding: {'allTime': '17857.296048', 'sinceOpen': '-314.482555', 'sinceChange': '0.0'}
+------------------------------
+Position: VIRTUAL
+  Size: 89964.1
+  Entry Price: 0.64081
+  Unrealized PnL: 704.596899
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2917.760673
+  Cum. Funding: {'allTime': '832.717126', 'sinceOpen': '310.260222', 'sinceChange': '0.0'}
+------------------------------
+Position: PENGU
+  Size: -4436906.0
+  Entry Price: 0.007646
+  Unrealized PnL: -879.947208
+  Liquidation Px: 19.2725919153
+  Leverage: cross (20x)
+  Margin Used: 1740.376378
+  Cum. Funding: {'allTime': '4090.128658', 'sinceOpen': '10.934816', 'sinceChange': '0.0'}
+------------------------------
+Position: USUAL
+  Size: 985782.7
+  Entry Price: 0.01929
+  Unrealized PnL: -385.090334
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 931.564651
+  Cum. Funding: {'allTime': '-5663.811114', 'sinceOpen': '-7367.224144', 'sinceChange': '-0.053451'}
+------------------------------
+Position: FARTCOIN
+  Size: 328570.1
+  Entry Price: 0.2254
+  Unrealized PnL: 153.582414
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3710.706424
+  Cum. Funding: {'allTime': '12749.62517', 'sinceOpen': '513.205639', 'sinceChange': '0.0'}
+------------------------------
+Position: AIXBT
+  Size: -3507991.0
+  Entry Price: 0.025174
+  Unrealized PnL: 2788.484394
+  Liquidation Px: 24.3904263145
+  Leverage: cross (20x)
+  Margin Used: 4276.241029
+  Cum. Funding: {'allTime': '6945.572576', 'sinceOpen': '414.056694', 'sinceChange': '-0.71989'}
+------------------------------
+Position: ZEREBRO
+  Size: -881643.0
+  Entry Price: 0.009247
+  Unrealized PnL: -42.218814
+  Liquidation Px: 96.9599555019
+  Leverage: cross (20x)
+  Margin Used: 409.743584
+  Cum. Funding: {'allTime': '3513.640427', 'sinceOpen': '-8.379441', 'sinceChange': '0.0'}
+------------------------------
+Position: BIO
+  Size: 1051629.0
+  Entry Price: 0.033959
+  Unrealized PnL: -1439.86355
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1713.629455
+  Cum. Funding: {'allTime': '2791.939776', 'sinceOpen': '-1046.748001', 'sinceChange': '0.0'}
+------------------------------
+Position: GRIFFAIN
+  Size: -1430344.0
+  Entry Price: 0.011086
+  Unrealized PnL: -3.267553
+  Liquidation Px: 59.7700499051
+  Leverage: cross (20x)
+  Margin Used: 793.05423
+  Cum. Funding: {'allTime': '8583.67464', 'sinceOpen': '-45.719589', 'sinceChange': '0.0'}
+------------------------------
+Position: SPX
+  Size: 44341.1
+  Entry Price: 0.31708
+  Unrealized PnL: -176.46517
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 694.182091
+  Cum. Funding: {'allTime': '3634.936846', 'sinceOpen': '0.644585', 'sinceChange': '0.0'}
+------------------------------
+Position: S
+  Size: -1059480.0
+  Entry Price: 0.051974
+  Unrealized PnL: -1574.632029
+  Liquidation Px: 80.7306528081
+  Leverage: cross (20x)
+  Margin Used: 2832.043014
+  Cum. Funding: {'allTime': '-5125.89511', 'sinceOpen': '-38.346707', 'sinceChange': '0.0'}
+------------------------------
+Position: MORPHO
+  Size: 212239.0
+  Entry Price: 1.16438
+  Unrealized PnL: 11824.293565
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 12947.640195
+  Cum. Funding: {'allTime': '-1613.599733', 'sinceOpen': '-2825.782013', 'sinceChange': '0.0'}
+------------------------------
+Position: TRUMP
+  Size: -45378.6
+  Entry Price: 4.25291
+  Unrealized PnL: 926.575065
+  Liquidation Px: 1887.8488120257
+  Leverage: cross (20x)
+  Margin Used: 9603.246225
+  Cum. Funding: {'allTime': '18191.639178', 'sinceOpen': '4047.837684', 'sinceChange': '0.0'}
+------------------------------
+Position: MELANIA
+  Size: 23259.8
+  Entry Price: 0.12753
+  Unrealized PnL: -2.084468
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 148.223075
+  Cum. Funding: {'allTime': '7926.901191', 'sinceOpen': '-0.007466', 'sinceChange': '0.0'}
+------------------------------
+Position: ANIME
+  Size: 11207140.0
+  Entry Price: 0.006003
+  Unrealized PnL: 1210.756574
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3424.901984
+  Cum. Funding: {'allTime': '-30578.931039', 'sinceOpen': '-23290.969871', 'sinceChange': '0.0'}
+------------------------------
+Position: VINE
+  Size: 1459653.0
+  Entry Price: 0.023948
+  Unrealized PnL: -3867.802928
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1554.457462
+  Cum. Funding: {'allTime': '4352.366563', 'sinceOpen': '1686.846978', 'sinceChange': '0.0'}
+------------------------------
+Position: VVV
+  Size: -30748.04
+  Entry Price: 2.189
+  Unrealized PnL: -243.185293
+  Liquidation Px: 2782.0773168231
+  Leverage: cross (20x)
+  Margin Used: 3377.672194
+  Cum. Funding: {'allTime': '8953.890079', 'sinceOpen': '6996.134122', 'sinceChange': '0.0'}
+------------------------------
+Position: BERA
+  Size: 76160.2
+  Entry Price: 0.46911
+  Unrealized PnL: -267.431819
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1773.009456
+  Cum. Funding: {'allTime': '5141.605373', 'sinceOpen': '-15025.359744', 'sinceChange': '0.0'}
+------------------------------
+Position: TST
+  Size: 368660.0
+  Entry Price: 0.011455
+  Unrealized PnL: 133.030629
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 217.804328
+  Cum. Funding: {'allTime': '-6469.187683', 'sinceOpen': '79.071344', 'sinceChange': '0.0'}
+------------------------------
+Position: LAYER
+  Size: 147559.0
+  Entry Price: 0.103286
+  Unrealized PnL: -56.981617
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 759.191055
+  Cum. Funding: {'allTime': '5513.567501', 'sinceOpen': '-18.072844', 'sinceChange': '0.0'}
+------------------------------
+Position: IP
+  Size: 24024.1
+  Entry Price: 1.44409
+  Unrealized PnL: -434.779984
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1712.91833
+  Cum. Funding: {'allTime': '-10633.410074', 'sinceOpen': '0.581046', 'sinceChange': '0.0'}
+------------------------------
+Position: OM
+  Size: -871790.7
+  Entry Price: 0.05163
+  Unrealized PnL: 645.171588
+  Liquidation Px: 98.0972114128
+  Leverage: cross (20x)
+  Margin Used: 2218.271436
+  Cum. Funding: {'allTime': '21065.616737', 'sinceOpen': '2497.967668', 'sinceChange': '0.0'}
+------------------------------
+Position: KAITO
+  Size: 213433.0
+  Entry Price: 0.361485
+  Unrealized PnL: 957.141027
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3905.50375
+  Cum. Funding: {'allTime': '13152.81029', 'sinceOpen': '-348.963682', 'sinceChange': '0.0'}
+------------------------------
+Position: NIL
+  Size: -181179.0
+  Entry Price: 0.051427
+  Unrealized PnL: -11.147954
+  Liquidation Px: 471.8273083659
+  Leverage: cross (20x)
+  Margin Used: 466.436276
+  Cum. Funding: {'allTime': '5646.961381', 'sinceOpen': '4.454162', 'sinceChange': '0.0'}
+------------------------------
+Position: PAXG
+  Size: -16.089
+  Entry Price: 4728.138
+  Unrealized PnL: 832.424951
+  Liquidation Px: 5317366.50981976
+  Leverage: cross (20x)
+  Margin Used: 3761.92998
+  Cum. Funding: {'allTime': '-2494.911471', 'sinceOpen': '-2115.696706', 'sinceChange': '0.0'}
+------------------------------
+Position: PROMPT
+  Size: 909014.0
+  Entry Price: 0.062064
+  Unrealized PnL: -2188.833483
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2711.452409
+  Cum. Funding: {'allTime': '-677.734249', 'sinceOpen': '566.117788', 'sinceChange': '1.76754'}
+------------------------------
+Position: BABY
+  Size: -1060118.0
+  Entry Price: 0.016456
+  Unrealized PnL: -218.942879
+  Liquidation Px: 80.6453016769
+  Leverage: cross (20x)
+  Margin Used: 883.237311
+  Cum. Funding: {'allTime': '-2693.102711', 'sinceOpen': '93.990838', 'sinceChange': '-0.221326'}
+------------------------------
+Position: WCT
+  Size: -590319.0
+  Entry Price: 0.064166
+  Unrealized PnL: 1030.825567
+  Liquidation Px: 144.8584898824
+  Leverage: cross (20x)
+  Margin Used: 1842.385599
+  Cum. Funding: {'allTime': '12492.549709', 'sinceOpen': '2100.965353', 'sinceChange': '2.040622'}
+------------------------------
+Position: HYPER
+  Size: 159606.0
+  Entry Price: 0.107651
+  Unrealized PnL: 114.615374
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 864.825111
+  Cum. Funding: {'allTime': '11580.402704', 'sinceOpen': '-330.109711', 'sinceChange': '-0.557948'}
+------------------------------
+Position: ZORA
+  Size: 3350446.0
+  Entry Price: 0.026212
+  Unrealized PnL: 145.235866
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4398.465508
+  Cum. Funding: {'allTime': '-45307.920025', 'sinceOpen': '-46675.439656', 'sinceChange': '0.0'}
+------------------------------
+Position: INIT
+  Size: 639346.0
+  Entry Price: 0.084046
+  Unrealized PnL: -1816.056489
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2595.936563
+  Cum. Funding: {'allTime': '2469.903906', 'sinceOpen': '-1063.410005', 'sinceChange': '0.0'}
+------------------------------
+Position: DOOD
+  Size: 2608851.0
+  Entry Price: 0.004241
+  Unrealized PnL: 167.017506
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 561.68562
+  Cum. Funding: {'allTime': '3920.092443', 'sinceOpen': '23.639446', 'sinceChange': '0.0'}
+------------------------------
+Position: NXPC
+  Size: -31262.0
+  Entry Price: 0.370766
+  Unrealized PnL: -266.157153
+  Liquidation Px: 2734.5572333264
+  Leverage: cross (20x)
+  Margin Used: 592.852568
+  Cum. Funding: {'allTime': '-2253.381855', 'sinceOpen': '-58.302611', 'sinceChange': '0.0'}
+------------------------------
+Position: SOPH
+  Size: 682077.0
+  Entry Price: 0.010727
+  Unrealized PnL: 9.783754
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 366.343556
+  Cum. Funding: {'allTime': '9407.834119', 'sinceOpen': '-14.508951', 'sinceChange': '0.0'}
+------------------------------
+Position: RESOLV
+  Size: 799878.0
+  Entry Price: 0.079082
+  Unrealized PnL: -378.141201
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3143.920479
+  Cum. Funding: {'allTime': '-82941.943496', 'sinceOpen': '-76357.13767', 'sinceChange': '0.0'}
+------------------------------
+Position: SYRUP
+  Size: 167092.0
+  Entry Price: 0.295241
+  Unrealized PnL: -324.415381
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2450.40418
+  Cum. Funding: {'allTime': '-375.608785', 'sinceOpen': '-599.509357', 'sinceChange': '0.0'}
+------------------------------
+Position: PUMP
+  Size: 42278884.0
+  Entry Price: 0.002485
+  Unrealized PnL: -1753.488678
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 5166.479624
+  Cum. Funding: {'allTime': '7784.887954', 'sinceOpen': '2035.701608', 'sinceChange': '0.0'}
+------------------------------
+Position: PROVE
+  Size: 75394.0
+  Entry Price: 0.334798
+  Unrealized PnL: 408.726992
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1282.527334
+  Cum. Funding: {'allTime': '6075.597246', 'sinceOpen': '-31.45375', 'sinceChange': '0.0'}
+------------------------------
+Position: YZY
+  Size: -455582.0
+  Entry Price: 0.371662
+  Unrealized PnL: 17859.99385
+  Liquidation Px: 187.9515300618
+  Leverage: cross (20x)
+  Margin Used: 7573.139586
+  Cum. Funding: {'allTime': '27369.240233', 'sinceOpen': '16667.8635', 'sinceChange': '16278.262897'}
+------------------------------
+Position: XPL
+  Size: 805285.0
+  Entry Price: 0.104054
+  Unrealized PnL: 238.08652
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4201.574487
+  Cum. Funding: {'allTime': '3608.932417', 'sinceOpen': '2164.928178', 'sinceChange': '0.0'}
+------------------------------
+Position: WLFI
+  Size: -573431.0
+  Entry Price: 0.129534
+  Unrealized PnL: -410.448042
+  Liquidation Px: 149.1906795493
+  Leverage: cross (20x)
+  Margin Used: 3734.469387
+  Cum. Funding: {'allTime': '10450.711614', 'sinceOpen': '1385.453718', 'sinceChange': '0.0'}
+------------------------------
+Position: LINEA
+  Size: 7979778.0
+  Entry Price: 0.004447
+  Unrealized PnL: -313.139376
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1758.743071
+  Cum. Funding: {'allTime': '2116.503322', 'sinceOpen': '-56.01525', 'sinceChange': '0.0'}
+------------------------------
+Position: SKY
+  Size: 921034.0
+  Entry Price: 0.060922
+  Unrealized PnL: 1687.65248
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2889.974433
+  Cum. Funding: {'allTime': '-1923.280565', 'sinceOpen': '-1758.483425', 'sinceChange': '-3.421218'}
+------------------------------
+Position: ASTER
+  Size: 29763.0
+  Entry Price: 0.569013
+  Unrealized PnL: -82.85011
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 842.635174
+  Cum. Funding: {'allTime': '1849.443809', 'sinceOpen': '0.64139', 'sinceChange': '0.0'}
+------------------------------
+Position: AVNT
+  Size: 142076.0
+  Entry Price: 0.240633
+  Unrealized PnL: 252.398192
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 1722.032158
+  Cum. Funding: {'allTime': '-37776.888592', 'sinceOpen': '-1187.508297', 'sinceChange': '0.0'}
+------------------------------
+Position: STBL
+  Size: 2520825.0
+  Entry Price: 0.03606
+  Unrealized PnL: -1626.692269
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4463.750868
+  Cum. Funding: {'allTime': '10488.322938', 'sinceOpen': '12079.540321', 'sinceChange': '0.0'}
+------------------------------
+Position: 0G
+  Size: 138486.0
+  Entry Price: 0.648757
+  Unrealized PnL: -1856.762707
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4399.354005
+  Cum. Funding: {'allTime': '-30085.073611', 'sinceOpen': '-27135.796966', 'sinceChange': '0.0'}
+------------------------------
+Position: HEMI
+  Size: 8263194.0
+  Entry Price: 0.012517
+  Unrealized PnL: -5737.34119
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4884.787133
+  Cum. Funding: {'allTime': '-8911.792044', 'sinceOpen': '-9179.052473', 'sinceChange': '0.0'}
+------------------------------
+Position: APEX
+  Size: 186721.0
+  Entry Price: 0.31182
+  Unrealized PnL: 1542.296112
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2988.282884
+  Cum. Funding: {'allTime': '2777.769762', 'sinceOpen': '814.223811', 'sinceChange': '0.0'}
+------------------------------
+Position: 2Z
+  Size: 752503.0
+  Entry Price: 0.109954
+  Unrealized PnL: -1275.37973
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4073.298739
+  Cum. Funding: {'allTime': '-4297.940806', 'sinceOpen': '-4638.318118', 'sinceChange': '-3.080749'}
+------------------------------
+Position: ZEC
+  Size: 35.01
+  Entry Price: 295.9395
+  Unrealized PnL: -80.857
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 513.999315
+  Cum. Funding: {'allTime': '-2675.786201', 'sinceOpen': '0.112012', 'sinceChange': '0.0'}
+------------------------------
+Position: MON
+  Size: 3566587.0
+  Entry Price: 0.018617
+  Unrealized PnL: -231.287055
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3308.54443
+  Cum. Funding: {'allTime': '1153.331316', 'sinceOpen': '1002.350766', 'sinceChange': '0.0'}
+------------------------------
+Position: MET
+  Size: 259308.0
+  Entry Price: 0.234373
+  Unrealized PnL: 818.532192
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 3079.671462
+  Cum. Funding: {'allTime': '1423.601315', 'sinceOpen': '722.996638', 'sinceChange': '0.771603'}
+------------------------------
+Position: CC
+  Size: -20501.0
+  Entry Price: 0.190361
+  Unrealized PnL: 20.733053
+  Liquidation Px: 4169.5406585649
+  Leverage: cross (20x)
+  Margin Used: 194.093217
+  Cum. Funding: {'allTime': '127.132023', 'sinceOpen': '-0.24803', 'sinceChange': '0.0'}
+------------------------------
+Position: ICP
+  Size: -26076.0
+  Entry Price: 2.67635
+  Unrealized PnL: -1072.872995
+  Liquidation Px: 3280.6693015374
+  Leverage: cross (20x)
+  Margin Used: 3543.0765
+  Cum. Funding: {'allTime': '-18.042692', 'sinceOpen': '182.957543', 'sinceChange': '1.437858'}
+------------------------------
+Position: AERO
+  Size: 219897.0
+  Entry Price: 0.392387
+  Unrealized PnL: 2030.109136
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 4415.751657
+  Cum. Funding: {'allTime': '-165.396554', 'sinceOpen': '-42.305278', 'sinceChange': '0.0'}
+------------------------------
+Position: STABLE
+  Size: 1516594.0
+  Entry Price: 0.030185
+  Unrealized PnL: 456.582921
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 2311.820063
+  Cum. Funding: {'allTime': '765.412606', 'sinceOpen': '-28.01707', 'sinceChange': '0.0'}
+------------------------------
+Position: FOGO
+  Size: 396079.0
+  Entry Price: 0.033882
+  Unrealized PnL: -6.515729
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 670.68057
+  Cum. Funding: {'allTime': '-223.855243', 'sinceOpen': '-157.7863', 'sinceChange': '0.0'}
+------------------------------
+Position: LIT
+  Size: -133591.0
+  Entry Price: 1.559625
+  Unrealized PnL: -7384.194468
+  Liquidation Px: 641.4474574095
+  Leverage: cross (20x)
+  Margin Used: 10786.805295
+  Cum. Funding: {'allTime': '-880.67559', 'sinceOpen': '-802.810516', 'sinceChange': '0.0'}
+------------------------------
+Position: XMR
+  Size: -103.215
+  Entry Price: 405.563
+  Unrealized PnL: 527.770417
+  Liquidation Px: 828534.6473249005
+  Leverage: cross (20x)
+  Margin Used: 2066.622337
+  Cum. Funding: {'allTime': '-160.48261', 'sinceOpen': '-31.34194', 'sinceChange': '0.0'}
+------------------------------
+Position: AXS
+  Size: 96486.8
+  Entry Price: 1.72036
+  Unrealized PnL: 1354.64973
+  Liquidation Px: None
+  Leverage: cross (20x)
+  Margin Used: 8367.335296
+  Cum. Funding: {'allTime': '-38888.956512', 'sinceOpen': '-38092.731264', 'sinceChange': '0.0'}
+------------------------------
+Position: DASH
+  Size: -1591.51
+  Entry Price: 44.3295
+  Unrealized PnL: -740.694124
+  Liquidation Px: 53752.1994001543
+  Leverage: cross (20x)
+  Margin Used: 3564.584522
+  Cum. Funding: {'allTime': '210.582358', 'sinceOpen': '1375.723347', 'sinceChange': '0.0'}
+------------------------------
+Position: SKR
+  Size: -2600244.0
+  Entry Price: 0.018953
+  Unrealized PnL: 858.700288
+  Liquidation Px: 32.8908731338
+  Leverage: cross (20x)
+  Margin Used: 2421.2172
+  Cum. Funding: {'allTime': '747.179352', 'sinceOpen': '487.896411', 'sinceChange': '0.0'}
+------------------------------

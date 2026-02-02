@@ -1,8 +1,9 @@
-from sqlalchemy import Column, String, Float, DateTime, ForeignKey, Numeric
+from sqlalchemy import Column, String, Float, DateTime, ForeignKey, Numeric, Integer, Text, JSON
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.sql import func
 from src.infrastructure.database.session import Base
 import uuid
+import enum
 
 class AssetModel(Base):
     __tablename__ = "assets"
@@ -16,7 +17,7 @@ class AssetModel(Base):
 
 # --- Crypto Forwards Schema Models ---
 from sqlalchemy import Integer, BigInteger, Date, Enum, Identity, Index
-import enum
+# import enum  <-- removed redundant import
 
 class CryptoAssetSymbol(str, enum.Enum):
     BTC = "BTC"
@@ -54,7 +55,7 @@ class RunDetails(Base):
     
     expiry_str = Column(String)
     expiry_date = Column(Date, nullable=False)
-    days_to_expiry = Column(Integer, nullable=False) # Check constraint >= 0 handled by logic or can be added via CheckConstraint
+    days_to_expiry = Column(Integer, nullable=False)
     future_price = Column(Numeric(20, 8), nullable=False)
     open_interest = Column(Numeric(30, 2), nullable=False)
     spot_price = Column(Numeric(20, 8), nullable=False)
@@ -62,8 +63,4 @@ class RunDetails(Base):
     annualized_pct = Column(Numeric(10, 6), nullable=False)
     curve = Column(Enum(CurveShape, name="curve_shape", schema="crypto_forwards"), nullable=False)
     instrument_name = Column(String)
-
-
-
-
 
