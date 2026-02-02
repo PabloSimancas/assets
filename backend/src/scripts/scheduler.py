@@ -89,28 +89,33 @@ def check_missed_run():
     Checks if we missed the 08:00 UTC run for Deribit.
     """
     logger.info("Checking for missed daily runs... (Deribit Disabled)")
-    # try:
-    #     now_utc = datetime.now(timezone.utc)
-    #     target_time = now_utc.replace(hour=8, minute=0, second=0, microsecond=0)
-    #
-    #     if now_utc < target_time:
-    #         logger.info("Current time is before 08:00 UTC. Waiting for scheduled run.")
-    #         return
-    #
-    #     engine = create_engine(DATABASE_URL)
-    #     with engine.connect() as conn:
-    #         query = text("SELECT COUNT(*) FROM crypto_forwards.run_main WHERE ran_at_utc >= :target_time")
-    #         count = conn.execute(query, {"target_time": target_time}).scalar()
-    #         
-    #         if count == 0:
-    #             logger.warning(f"Missed scheduled run for {target_time.date()}. Running Deribit immediately...")
-    #             run_daily_deribit()
-    #         else:
-    #             logger.info("Deribit data for today already exists.")
-    #             
-    # except Exception as e:
-    #     logger.error(f"Error checking missed run: {e}")
     pass
+
+def should_run_hyperliquid_on_startup():
+    """
+    Checks if Hyperliquid was run recently (within the last 55 minutes).
+    Returns True if we should run, False if recent data already exists.
+    This prevents duplicate runs when container restarts near the hour mark.
+    """
+    try:
+        engine = create_engine(DATABASE_URL)
+        with engine.connect() as conn:
+            # Check if any bronze data was scraped in the last 55 minutes
+            query = text("""
+                SELECT COUNT(*) FROM bronze.hyperliquid_vaults 
+                WHERE scraped_at >= NOW() - INTERVAL '55 minutes'
+            """)
+            count = conn.execute(query).scalar()
+            
+            if count > 0:
+                logger.info(f"Found {count} Hyperliquid scrapes in the last 55 minutes. Skipping startup run.")
+                return False
+            else:
+                logger.info("No recent Hyperliquid data found. Will run on startup.")
+                return True
+    except Exception as e:
+        logger.warning(f"Could not check for recent Hyperliquid runs: {e}. Running anyway.")
+        return True
 
 # Ensure schema exists on scheduler start (idempotent)
 if __name__ == "__main__":
@@ -137,9 +142,12 @@ if __name__ == "__main__":
     # Check for missed run on startup
     check_missed_run()
 
-    # Run Hyperliquid immediately on startup (per user request)
-    logger.info("Triggering initial Hyperliquid run...")
-    run_hourly_hyperliquid()
+    # Run Hyperliquid on startup ONLY if no recent data exists (prevents duplicates)
+    if should_run_hyperliquid_on_startup():
+        logger.info("Triggering initial Hyperliquid run...")
+        run_hourly_hyperliquid()
+    else:
+        logger.info("Skipping initial Hyperliquid run (recent data exists).")
 
     logger.info("Waiting for scheduled jobs...")
 
