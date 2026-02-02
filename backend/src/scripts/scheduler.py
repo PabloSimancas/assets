@@ -9,8 +9,8 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from datetime import datetime, timezone, timedelta
 from sqlalchemy import create_engine, text
-from src.scrapers.deribit import DeribitScraper
-from src.pipelines.deribit_pipeline import DeribitPipeline
+# from src.scrapers.deribit import DeribitScraper
+# from src.pipelines.deribit_pipeline import DeribitPipeline
 from src.scrapers.hyperliquid import HyperliquidScraper
 from src.pipelines.hyperliquid_pipeline import HyperliquidPipeline
 
@@ -39,24 +39,25 @@ if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 def run_daily_deribit():
-    logger.info("Starting Daily Job: Deribit Pipeline")
-    try:
-        # 1. BRONZE: Ingest Raw Data
-        logger.info("Step 1: Running Deribit Scrapers (Bronze)")
-        scraper = DeribitScraper(currency="BTC")
-        scraper.run()
-        
-        scraper_eth = DeribitScraper(currency="ETH")
-        scraper_eth.run()
-
-        # 2. SILVER & GOLD: Process
-        logger.info("Step 2: Running Deribit Pipeline (Silver -> Gold)")
-        pipeline = DeribitPipeline()
-        pipeline.run()
-        
-        logger.info("Daily Deribit Job executed successfully.")
-    except Exception as e:
-        logger.error(f"Failed to run daily Deribit job: {e}")
+    logger.info("Starting Daily Job: Deribit Pipeline - DISABLED (Legacy models removed)")
+    # try:
+    #     # 1. BRONZE: Ingest Raw Data
+    #     logger.info("Step 1: Running Deribit Scrapers (Bronze)")
+    #     scraper = DeribitScraper(currency="BTC")
+    #     scraper.run()
+    #     
+    #     scraper_eth = DeribitScraper(currency="ETH")
+    #     scraper_eth.run()
+    #
+    #     # 2. SILVER & GOLD: Process
+    #     logger.info("Step 2: Running Deribit Pipeline (Silver -> Gold)")
+    #     pipeline = DeribitPipeline()
+    #     pipeline.run()
+    #     
+    #     logger.info("Daily Deribit Job executed successfully.")
+    # except Exception as e:
+    #     logger.error(f"Failed to run daily Deribit job: {e}")
+    pass
 
 def run_hourly_hyperliquid():
     logger.info("Starting Hourly Job: Hyperliquid Pipeline")
@@ -81,28 +82,29 @@ def check_missed_run():
     """
     Checks if we missed the 08:00 UTC run for Deribit.
     """
-    logger.info("Checking for missed daily runs...")
-    try:
-        now_utc = datetime.now(timezone.utc)
-        target_time = now_utc.replace(hour=8, minute=0, second=0, microsecond=0)
-
-        if now_utc < target_time:
-            logger.info("Current time is before 08:00 UTC. Waiting for scheduled run.")
-            return
-
-        engine = create_engine(DATABASE_URL)
-        with engine.connect() as conn:
-            query = text("SELECT COUNT(*) FROM crypto_forwards.run_main WHERE ran_at_utc >= :target_time")
-            count = conn.execute(query, {"target_time": target_time}).scalar()
-            
-            if count == 0:
-                logger.warning(f"Missed scheduled run for {target_time.date()}. Running Deribit immediately...")
-                run_daily_deribit()
-            else:
-                logger.info("Deribit data for today already exists.")
-                
-    except Exception as e:
-        logger.error(f"Error checking missed run: {e}")
+    logger.info("Checking for missed daily runs... (Deribit Disabled)")
+    # try:
+    #     now_utc = datetime.now(timezone.utc)
+    #     target_time = now_utc.replace(hour=8, minute=0, second=0, microsecond=0)
+    #
+    #     if now_utc < target_time:
+    #         logger.info("Current time is before 08:00 UTC. Waiting for scheduled run.")
+    #         return
+    #
+    #     engine = create_engine(DATABASE_URL)
+    #     with engine.connect() as conn:
+    #         query = text("SELECT COUNT(*) FROM crypto_forwards.run_main WHERE ran_at_utc >= :target_time")
+    #         count = conn.execute(query, {"target_time": target_time}).scalar()
+    #         
+    #         if count == 0:
+    #             logger.warning(f"Missed scheduled run for {target_time.date()}. Running Deribit immediately...")
+    #             run_daily_deribit()
+    #         else:
+    #             logger.info("Deribit data for today already exists.")
+    #             
+    # except Exception as e:
+    #     logger.error(f"Error checking missed run: {e}")
+    pass
 
 # Ensure schema exists on scheduler start (idempotent)
 try:
@@ -118,7 +120,7 @@ except Exception as e:
     logger.error(f"Failed to ensure DB schemas: {e}")
 
 # Schedule the jobs
-schedule.every().day.at("08:00").do(run_daily_deribit)
+# schedule.every().day.at("08:00").do(run_daily_deribit)
 schedule.every().hour.do(run_hourly_hyperliquid)
 
 logger.info("Scheduler started.")
