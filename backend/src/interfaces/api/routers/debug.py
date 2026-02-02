@@ -82,9 +82,20 @@ async def trigger_fetch(symbol: str):
 async def get_scheduler_logs():
     return read_logs("logs/scheduler.log")
 
+@router.get("/logs/scheduler-stderr")
+async def get_scheduler_stderr():
+    return read_logs("logs/scheduler_stderr.log")
+
 @router.get("/logs/fetch")
 async def get_fetch_logs():
     return read_logs("logs/fetch_market.log")
+
+@router.get("/logs/list")
+async def list_logs():
+    import os
+    if not os.path.exists("logs"):
+        return {"error": "logs directory does not exist"}
+    return {"files": os.listdir("logs")}
 
 def read_logs(filepath):
     import os
