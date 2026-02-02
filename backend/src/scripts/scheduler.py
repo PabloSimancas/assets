@@ -107,34 +107,36 @@ def check_missed_run():
     pass
 
 # Ensure schema exists on scheduler start (idempotent)
-try:
-    from src.infrastructure.database.session import Base
-    from src.infrastructure.database.scraping_models import HyperliquidVault
-    engine = create_engine(DATABASE_URL)
-    with engine.connect() as conn:
-        conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
-        conn.commit()
-    Base.metadata.create_all(bind=engine)
-    logger.info("Ensured DB schemas exist.")
-except Exception as e:
-    logger.error(f"Failed to ensure DB schemas: {e}")
+if __name__ == "__main__":
+    # Ensure schema exists on scheduler start (idempotent)
+    try:
+        from src.infrastructure.database.session import Base
+        from src.infrastructure.database.scraping_models import HyperliquidVault
+        engine = create_engine(DATABASE_URL)
+        with engine.connect() as conn:
+            conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
+            conn.commit()
+        Base.metadata.create_all(bind=engine)
+        logger.info("Ensured DB schemas exist.")
+    except Exception as e:
+        logger.error(f"Failed to ensure DB schemas: {e}")
 
-# Schedule the jobs
-# schedule.every().day.at("08:00").do(run_daily_deribit)
-schedule.every().hour.do(run_hourly_hyperliquid)
+    # Schedule the jobs
+    # schedule.every().day.at("08:00").do(run_daily_deribit)
+    schedule.every().hour.do(run_hourly_hyperliquid)
 
-logger.info("Scheduler started.")
+    logger.info("Scheduler started.")
 
-# Check for missed run on startup
-check_missed_run()
+    # Check for missed run on startup
+    check_missed_run()
 
-# Run Hyperliquid immediately on startup (per user request)
-logger.info("Triggering initial Hyperliquid run...")
-run_hourly_hyperliquid()
+    # Run Hyperliquid immediately on startup (per user request)
+    logger.info("Triggering initial Hyperliquid run...")
+    run_hourly_hyperliquid()
 
-logger.info("Waiting for scheduled jobs...")
+    logger.info("Waiting for scheduled jobs...")
 
-while True:
-    schedule.run_pending()
-    sys.stdout.flush()
-    time.sleep(60)
+    while True:
+        schedule.run_pending()
+        sys.stdout.flush()
+        time.sleep(60)
