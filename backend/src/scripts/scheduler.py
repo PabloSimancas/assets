@@ -25,7 +25,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Database Config (Matches fetch_market_data.py)
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@db:5432/assets_db")
+# Database Config (Matches fetch_market_data.py)
+try:
+    DATABASE_URL = os.environ["DATABASE_URL"]
+except KeyError:
+    logger.critical("DATABASE_URL environment variable is NOT set. Scheduler cannot run.")
+    sys.exit(1)
+
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
