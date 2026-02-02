@@ -19,7 +19,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - SCHEDULER: %(message)s',
     handlers=[
         logging.FileHandler(f"{log_dir}/scheduler.log"),
-        logging.StreamHandler()
+        logging.StreamHandler(sys.stdout)
     ]
 )
 logger = logging.getLogger(__name__)
@@ -122,15 +122,14 @@ logger.info("Scheduler started.")
 
 # Check for missed run on startup
 check_missed_run()
-# Optional: Run hyperliquid immediately on startup too?
-# User said "trigger it in scheduler.py". Usually implies running strictly on schedule.
-# But for "testing pipeline", maybe running it once is good.
-# checking missed run handles deribit. 
-# Let's run Hyperliquid once on startup to ensure data freshness on deploy?
-# Or maybe not, user didn't ask explicitly. 
+
+# Run Hyperliquid immediately on startup (per user request)
+logger.info("Triggering initial Hyperliquid run...")
+run_hourly_hyperliquid()
 
 logger.info("Waiting for scheduled jobs...")
 
 while True:
     schedule.run_pending()
+    sys.stdout.flush()
     time.sleep(60)
