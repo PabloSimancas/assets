@@ -63,7 +63,7 @@ def run_hourly_hyperliquid():
         # Ensure schema exists (lightweight check or rely on startup)
         
         hl_scraper = HyperliquidScraper(vault_address="0xdfc24b077bc1425ad1dea75bcb6f8158e10df303")
-        hl_scraper.run() # This now saves to hyperliquid_vaults schema
+        hl_scraper.run() # This now saves to bronze.raw_vaults schema
 
         # Silver/Gold Pipeline
         logger.info("Step 2: Running Hyperliquid Pipeline")
@@ -107,7 +107,7 @@ try:
     from src.infrastructure.database.scraping_models import HyperliquidVault
     engine = create_engine(DATABASE_URL)
     with engine.connect() as conn:
-        conn.execute(text("CREATE SCHEMA IF NOT EXISTS hyperliquid_vaults;"))
+        conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
         conn.commit()
     Base.metadata.create_all(bind=engine)
     logger.info("Ensured DB schemas exist.")

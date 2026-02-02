@@ -1,33 +1,54 @@
 from src.infrastructure.database.session import engine, Base
 from src.infrastructure.database.silver_models import SilverHyperliquidPosition
+from src.infrastructure.database.scraping_models import HyperliquidVault
 from sqlalchemy import text, inspect
 
 def recreate_hyperliquid_tables():
-    print("Recreating Silver Hyperliquid Position table...")
+    print("--- Recreating Hyperliquid Tables to fix Schema Structure ---")
     
-    # Create schema if not exists
     with engine.connect() as conn:
+        # 1. Cleanup Legacy Schema
+        print("Dropping legacy schema 'hyperliquid_vaults'...")
+        conn.execute(text("DROP SCHEMA IF EXISTS hyperliquid_vaults CASCADE"))
+        
+        # 2. Ensure Bronze Schema & Tables
+        print("Ensuring 'bronze' schema...")
+        conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze"))
+        
+        # 3. Ensure Silver Schema
+        print("Ensuring 'silver' schema...")
         conn.execute(text("CREATE SCHEMA IF NOT EXISTS silver"))
-        conn.commit()
-
-    # Drop specific table if exists
-    # We use engine.connect to execute raw SQL for safety or use metadata.drop_all with specific tables
-    with engine.connect() as conn:
+        
+        # 4. Clean Silver Table (Restart)
+        print("Dropping silver.hyperliquid_positions...")
         conn.execute(text("DROP TABLE IF EXISTS silver.hyperliquid_positions CASCADE"))
+        
         conn.commit()
-        print("Dropped silver.hyperliquid_positions")
 
-    # Create tables
-    # We only want to create this specific table to avoid messing up others
-    SilverHyperliquidPosition.__table__.create(bind=engine)
-    print("Created silver.hyperliquid_positions with new schema.")
+    # 5. Create Tables (SQLAlchemy handles schema based on model __table_args__)
+    print("Creating tables...")
+    # This will create bronze.raw_vaults (if missing) and silver.hyperliquid_positions
+    Base.metadata.create_all(bind=engine)
+    
+    print("Tables created.")
 
     # verify columns
     inspector = inspect(engine)
-    columns = inspector.get_columns('hyperliquid_positions', schema='silver')
-    print("\nVerifying columns in silver.hyperliquid_positions:")
-    for col in columns:
-        print(f" - {col['name']} ({col['type']})")
+    
+    print("\nVerifying 'bronze' schema:")
+    bronze_tables = inspector.get_table_names(schema='bronze')
+    print(f"Tables: {bronze_tables}")
+    
+    if 'raw_vaults' in bronze_tables:
+        cols = inspector.get_columns('raw_vaults', schema='bronze')
+        print(f" - raw_vaults columns: {[c['name'] for c in cols]}")
+
+    print("\nVerifying 'silver' schema:")
+    if 'hyperliquid_positions' in inspector.get_table_names(schema='silver'):
+        columns = inspector.get_columns('hyperliquid_positions', schema='silver')
+        print(" - hyperliquid_positions columns:")
+        for col in columns:
+            print(f"   - {col['name']} ({col['type']})")
 
 if __name__ == "__main__":
     recreate_hyperliquid_tables()

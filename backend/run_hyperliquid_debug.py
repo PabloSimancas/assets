@@ -27,7 +27,7 @@ def test_pipeline():
     
     try:
         with engine.connect() as conn:
-            conn.execute(text("CREATE SCHEMA IF NOT EXISTS hyperliquid_vaults;"))
+            conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
             conn.commit()
         
         Base.metadata.create_all(bind=engine)
@@ -77,7 +77,7 @@ def test_pipeline():
     if new_items:
         logger.info("Sample Silver Data:")
         for item in new_items:
-            logger.info(f"Time: {item.timestamp}, Coin: {item.coin}, Size: {item.position_size}, Val: {item.position_value}")
+            logger.info(f"Time: {item.timestamp}, Coin: {item.coin}, Size: {item.position_size}, Val: {item.position_value}, MarkPx: {item.mark_price}")
     else:
         logger.warning("No silver items found.")
 

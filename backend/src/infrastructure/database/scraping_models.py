@@ -22,7 +22,7 @@ class HyperliquidVault(Base):
     __tablename__ = "raw_vaults"
     __table_args__ = (
         Index("idx_hl_vaults_ingested", "vault_address", "ingested_at"),
-        {"schema": "hyperliquid_vaults"}
+        {"schema": "bronze"}
     )
 
     id = Column(Integer, Identity(always=True), primary_key=True)

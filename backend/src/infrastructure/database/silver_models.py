@@ -30,6 +30,7 @@ class SilverHyperliquidPosition(Base):
     
     # Financial Data
     entry_price = Column(Numeric(30, 8))
+    mark_price = Column(Numeric(30, 8)) # Derived: val / size
     position_size = Column(Numeric(30, 8)) # szi
     position_value = Column(Numeric(30, 8)) 
     margin_used = Column(Numeric(30, 8))

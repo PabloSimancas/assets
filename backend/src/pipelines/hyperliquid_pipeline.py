@@ -92,6 +92,7 @@ class HyperliquidPipeline:
                         user_address=user_addr,
                         coin=coin,
                         entry_price=float(entry) if entry else 0,
+                        mark_price=float(pos.get("positionValue", 0)) / abs(float(szi)) if szi and float(szi) != 0 else 0,
                         position_size=float(szi) if szi else 0,
                         # position_value not explicitly in raw sometimes? 
                         # positions_detailed.txt shows "positionValue": "1289273.3020200001"
