@@ -5,7 +5,7 @@ import random
 from datetime import datetime
 from typing import Optional, Dict, Any
 from src.infrastructure.database.session import SessionLocal
-from src.infrastructure.database.scraping_models import WebScrape
+
 
 class BaseScraper:
     def __init__(self, source_identifier: str, base_url: str = ""):
@@ -34,25 +34,11 @@ class BaseScraper:
 
     def save_raw(self, url: str, content: str, metadata: Dict[str, Any] = None):
         """
-        Saves the raw content to the Bronze layer (database).
+        Saves the raw content. 
+        DEPRECATED: Subclasses should implement their own saving logic to specific Bronze tables.
+        This base implementation previously used WebScrape (now removed).
         """
-        db = SessionLocal()
-        try:
-            scrape = WebScrape(
-                source_identifier=self.source_identifier,
-                url=url,
-                raw_content=content,
-                response_metadata=metadata,
-                processed_to_silver=False
-            )
-            db.add(scrape)
-            db.commit()
-            self.logger.info(f"Saved raw data for {url} to bronze.web_scrapes")
-        except Exception as e:
-            self.logger.error(f"Database error saving raw scrape: {e}")
-            db.rollback()
-        finally:
-            db.close()
+        self.logger.warning("BaseScraper.save_raw called. No action taken as Generic WebScrape is deprecated.")
 
     def run(self):
         """
