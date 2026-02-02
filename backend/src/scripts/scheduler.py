@@ -13,6 +13,7 @@ from sqlalchemy import create_engine, text
 # from src.pipelines.deribit_pipeline import DeribitPipeline
 from src.scrapers.hyperliquid import HyperliquidScraper
 from src.pipelines.hyperliquid_pipeline import HyperliquidPipeline
+from src.pipelines.hyperliquid_aggregated_pipeline import HyperliquidAggregatedPipeline
 
 # Setup Logging
 log_dir = "logs"
@@ -74,6 +75,11 @@ def run_hourly_hyperliquid():
         hl_pipeline = HyperliquidPipeline()
         hl_pipeline.run()
 
+        # Step 3: Aggregated Pipeline (calculates direction & scaled values)
+        logger.info("Step 3: Running Hyperliquid Aggregated Pipeline")
+        agg_pipeline = HyperliquidAggregatedPipeline()
+        agg_pipeline.run()
+
         logger.info("Hourly Hyperliquid Job executed successfully.")
     except Exception as e:
         logger.error(f"Failed to run hourly Hyperliquid job: {e}")
@@ -115,6 +121,7 @@ if __name__ == "__main__":
         engine = create_engine(DATABASE_URL)
         with engine.connect() as conn:
             conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
+            conn.execute(text("CREATE SCHEMA IF NOT EXISTS silver;"))
             conn.commit()
         Base.metadata.create_all(bind=engine)
         logger.info("Ensured DB schemas exist.")
