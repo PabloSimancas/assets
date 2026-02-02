@@ -140,3 +140,206 @@ async def check_processes():
     except Exception as e:
         return {"error": str(e)}
 
+
+# =========== DATA LAYER EXTRACTION ENDPOINTS ===========
+
+@router.get("/layers/bronze")
+async def get_bronze_data(limit: int = 100, db: Session = Depends(get_db)):
+    """
+    Get raw data from the Bronze layer (bronze.raw_vaults).
+    Returns the unprocessed Hyperliquid vault data.
+    """
+    try:
+        query = text("""
+            SELECT id, vault_address, url, raw_content, response_metadata, 
+                   ingested_at, processed_to_silver
+            FROM bronze.raw_vaults
+            ORDER BY ingested_at DESC
+            LIMIT :limit
+        """)
+        result = db.execute(query, {"limit": limit}).mappings().all()
+        
+        # Convert to list of dicts
+        data = []
+        for row in result:
+            row_dict = dict(row)
+            # Convert datetime to string for JSON serialization
+            if row_dict.get("ingested_at"):
+                row_dict["ingested_at"] = str(row_dict["ingested_at"])
+            data.append(row_dict)
+            
+        return {
+            "layer": "bronze",
+            "table": "bronze.raw_vaults",
+            "count": len(data),
+            "data": data
+        }
+    except Exception as e:
+        return {"error": str(e), "layer": "bronze"}
+
+
+@router.get("/layers/silver/positions")
+async def get_silver_positions(limit: int = 100, db: Session = Depends(get_db)):
+    """
+    Get parsed position data from the Silver layer (bronze.hyperliquid_positions).
+    Contains parsed and normalized position data.
+    """
+    try:
+        query = text("""
+            SELECT id, vault_address, user_address, coin, entry_price, mark_price,
+                   position_size, position_value, margin_used, unrealized_pnl,
+                   return_on_equity, liquidation_px, max_leverage, leverage_type,
+                   leverage_value, cum_funding_all_time, cum_funding_since_open,
+                   cum_funding_since_change, timestamp, source_origin
+            FROM bronze.hyperliquid_positions
+            ORDER BY timestamp DESC
+            LIMIT :limit
+        """)
+        result = db.execute(query, {"limit": limit}).mappings().all()
+        
+        data = []
+        for row in result:
+            row_dict = dict(row)
+            if row_dict.get("timestamp"):
+                row_dict["timestamp"] = str(row_dict["timestamp"])
+            # Convert Decimal types to float for JSON serialization
+            for key, value in row_dict.items():
+                if hasattr(value, '__float__'):
+                    row_dict[key] = float(value) if value is not None else None
+            data.append(row_dict)
+            
+        return {
+            "layer": "silver",
+            "table": "bronze.hyperliquid_positions",
+            "count": len(data),
+            "data": data
+        }
+    except Exception as e:
+        return {"error": str(e), "layer": "silver/positions"}
+
+
+@router.get("/layers/silver/aggregated")
+async def get_silver_aggregated(limit: int = 100, db: Session = Depends(get_db)):
+    """
+    Get aggregated data from the Silver layer (silver.hyperliquid_aggregated).
+    Contains calculated fields like direction and scaled values.
+    """
+    try:
+        query = text("""
+            SELECT id, source_position_id, vault_address, user_address, coin,
+                   entry_price, mark_price, position_size, position_value,
+                   margin_used, unrealized_pnl, direction,
+                   pos_value_millions_long, pos_value_millions_short,
+                   margin_thousands_long, margin_thousands_short,
+                   timestamp, processed_at
+            FROM silver.hyperliquid_aggregated
+            ORDER BY timestamp DESC
+            LIMIT :limit
+        """)
+        result = db.execute(query, {"limit": limit}).mappings().all()
+        
+        data = []
+        for row in result:
+            row_dict = dict(row)
+            if row_dict.get("timestamp"):
+                row_dict["timestamp"] = str(row_dict["timestamp"])
+            if row_dict.get("processed_at"):
+                row_dict["processed_at"] = str(row_dict["processed_at"])
+            # Convert Decimal types to float for JSON serialization
+            for key, value in row_dict.items():
+                if hasattr(value, '__float__'):
+                    row_dict[key] = float(value) if value is not None else None
+            data.append(row_dict)
+            
+        return {
+            "layer": "silver",
+            "table": "silver.hyperliquid_aggregated",
+            "count": len(data),
+            "data": data
+        }
+    except Exception as e:
+        return {"error": str(e), "layer": "silver/aggregated"}
+
+
+@router.get("/layers/gold")
+async def get_gold_data(limit: int = 100, db: Session = Depends(get_db)):
+    """
+    Get summarized data from the Gold layer (gold.hyperliquid_summary view).
+    Contains aggregated financial metrics by timestamp.
+    """
+    try:
+        query = text("""
+            SELECT timestamp, total_position_value_millions,
+                   longs_position_value_millions, shorts_position_value_millions,
+                   longs_margin_thousands, shorts_margin_thousands,
+                   net_margin_thousands, position_count
+            FROM gold.hyperliquid_summary
+            ORDER BY timestamp DESC
+            LIMIT :limit
+        """)
+        result = db.execute(query, {"limit": limit}).mappings().all()
+        
+        data = []
+        for row in result:
+            row_dict = dict(row)
+            if row_dict.get("timestamp"):
+                row_dict["timestamp"] = str(row_dict["timestamp"])
+            # Convert Decimal types to float for JSON serialization
+            for key, value in row_dict.items():
+                if hasattr(value, '__float__'):
+                    row_dict[key] = float(value) if value is not None else None
+            data.append(row_dict)
+            
+        return {
+            "layer": "gold",
+            "table": "gold.hyperliquid_summary",
+            "count": len(data),
+            "data": data
+        }
+    except Exception as e:
+        return {"error": str(e), "layer": "gold"}
+
+
+@router.get("/layers/all")
+async def get_all_layers(limit: int = 10, db: Session = Depends(get_db)):
+    """
+    Get a sample of data from all layers (bronze, silver, gold).
+    Useful for debugging the entire pipeline at once.
+    """
+    results = {
+        "bronze": None,
+        "silver_positions": None,
+        "silver_aggregated": None,
+        "gold": None
+    }
+    
+    # Bronze
+    try:
+        bronze_result = await get_bronze_data(limit=limit, db=db)
+        results["bronze"] = bronze_result
+    except Exception as e:
+        results["bronze"] = {"error": str(e)}
+    
+    # Silver positions
+    try:
+        silver_pos_result = await get_silver_positions(limit=limit, db=db)
+        results["silver_positions"] = silver_pos_result
+    except Exception as e:
+        results["silver_positions"] = {"error": str(e)}
+    
+    # Silver aggregated
+    try:
+        silver_agg_result = await get_silver_aggregated(limit=limit, db=db)
+        results["silver_aggregated"] = silver_agg_result
+    except Exception as e:
+        results["silver_aggregated"] = {"error": str(e)}
+    
+    # Gold
+    try:
+        gold_result = await get_gold_data(limit=limit, db=db)
+        results["gold"] = gold_result
+    except Exception as e:
+        results["gold"] = {"error": str(e)}
+    
+    return results
+
