@@ -120,9 +120,9 @@ def migrate():
                     session_timestamp,
                     ROUND((SUM(long_value) + SUM(short_value)) / 1000000.0, 4) AS total_position_value_millions,
                     ROUND(SUM(long_value) / 1000000.0, 4) AS longs_position_value_millions,
-                    ROUND(SUM(short_value) / 1000000.0, 4) AS shorts_position_value_millions,
+                    ROUND(ABS(SUM(short_value)) / 1000000.0, 4) AS shorts_position_value_millions,
                     ROUND(SUM(long_margin) / 1000.0, 4) AS longs_margin_thousands,
-                    ROUND(SUM(short_margin) / 1000.0, 4) AS shorts_margin_thousands,
+                    ROUND(ABS(SUM(short_margin)) / 1000.0, 4) AS shorts_margin_thousands,
                     ROUND((SUM(long_margin) + SUM(short_margin)) / 1000.0, 4) AS net_margin_thousands,
                     COUNT(*) AS position_count
                 FROM gold.hyperliquid_net_assets
