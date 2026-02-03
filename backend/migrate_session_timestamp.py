@@ -76,12 +76,12 @@ def migrate():
                 CREATE OR REPLACE VIEW gold.hyperliquid_summary AS
                 SELECT 
                     session_timestamp,
-                    SUM(COALESCE(pos_value_millions_long, 0)) + SUM(COALESCE(pos_value_millions_short, 0)) AS total_position_value_millions,
-                    SUM(COALESCE(pos_value_millions_long, 0)) AS longs_position_value_millions,
-                    SUM(COALESCE(pos_value_millions_short, 0)) AS shorts_position_value_millions,
-                    SUM(COALESCE(margin_thousands_long, 0)) AS longs_margin_thousands,
-                    SUM(COALESCE(margin_thousands_short, 0)) AS shorts_margin_thousands,
-                    SUM(COALESCE(margin_thousands_long, 0)) + SUM(COALESCE(margin_thousands_short, 0)) AS net_margin_thousands,
+                    ROUND(SUM(COALESCE(pos_value_millions_long, 0)) + SUM(COALESCE(pos_value_millions_short, 0)), 4) AS total_position_value_millions,
+                    ROUND(SUM(COALESCE(pos_value_millions_long, 0)), 4) AS longs_position_value_millions,
+                    ROUND(SUM(COALESCE(pos_value_millions_short, 0)), 4) AS shorts_position_value_millions,
+                    ROUND(SUM(COALESCE(margin_thousands_long, 0)), 4) AS longs_margin_thousands,
+                    ROUND(SUM(COALESCE(margin_thousands_short, 0)), 4) AS shorts_margin_thousands,
+                    ROUND(SUM(COALESCE(margin_thousands_long, 0)) + SUM(COALESCE(margin_thousands_short, 0)), 4) AS net_margin_thousands,
                     COUNT(*) AS position_count
                 FROM silver.hyperliquid_aggregated
                 GROUP BY session_timestamp
@@ -103,7 +103,7 @@ def migrate():
                     SUM(margin_used) AS total_margin_used,
                     SUM(unrealized_pnl) AS net_unrealized_pnl,
                     SUM(CASE WHEN direction = 1 THEN position_value ELSE 0 END) AS long_value,
-                    SUM(CASE WHEN direction = -1 THEN ABS(position_value) ELSE 0 END) AS short_value,
+                    SUM(CASE WHEN direction = -1 THEN position_value ELSE 0 END) AS short_value,
                     SUM(CASE WHEN direction = 1 THEN margin_used ELSE 0 END) AS long_margin,
                     SUM(CASE WHEN direction = -1 THEN margin_used ELSE 0 END) AS short_margin,
                     COUNT(*) AS position_count
@@ -118,12 +118,12 @@ def migrate():
                 CREATE OR REPLACE VIEW gold.hyperliquid_summary_net_positions AS
                 SELECT 
                     session_timestamp,
-                    (SUM(long_value) + SUM(short_value)) / 1000000.0 AS total_position_value_millions,
-                    SUM(long_value) / 1000000.0 AS longs_position_value_millions,
-                    SUM(short_value) / 1000000.0 AS shorts_position_value_millions,
-                    SUM(long_margin) / 1000.0 AS longs_margin_thousands,
-                    SUM(short_margin) / 1000.0 AS shorts_margin_thousands,
-                    (SUM(long_margin) + SUM(short_margin)) / 1000.0 AS net_margin_thousands,
+                    ROUND((SUM(long_value) + SUM(short_value)) / 1000000.0, 4) AS total_position_value_millions,
+                    ROUND(SUM(long_value) / 1000000.0, 4) AS longs_position_value_millions,
+                    ROUND(SUM(short_value) / 1000000.0, 4) AS shorts_position_value_millions,
+                    ROUND(SUM(long_margin) / 1000.0, 4) AS longs_margin_thousands,
+                    ROUND(SUM(short_margin) / 1000.0, 4) AS shorts_margin_thousands,
+                    ROUND((SUM(long_margin) + SUM(short_margin)) / 1000.0, 4) AS net_margin_thousands,
                     COUNT(*) AS position_count
                 FROM gold.hyperliquid_net_assets
                 GROUP BY session_timestamp
