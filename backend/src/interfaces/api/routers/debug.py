@@ -265,16 +265,16 @@ async def get_silver_aggregated(limit: int = 100, db: Session = Depends(get_db))
 async def get_gold_data(limit: int = 100, db: Session = Depends(get_db)):
     """
     Get summarized data from the Gold layer (gold.hyperliquid_summary view).
-    Contains aggregated financial metrics by timestamp.
+    Contains aggregated financial metrics by session_timestamp.
     """
     try:
         query = text("""
-            SELECT timestamp, total_position_value_millions,
+            SELECT session_timestamp, total_position_value_millions,
                    longs_position_value_millions, shorts_position_value_millions,
                    longs_margin_thousands, shorts_margin_thousands,
                    net_margin_thousands, position_count
             FROM gold.hyperliquid_summary
-            ORDER BY timestamp DESC
+            ORDER BY session_timestamp DESC
             LIMIT :limit
         """)
         result = db.execute(query, {"limit": limit}).mappings().all()
@@ -282,8 +282,8 @@ async def get_gold_data(limit: int = 100, db: Session = Depends(get_db)):
         data = []
         for row in result:
             row_dict = dict(row)
-            if row_dict.get("timestamp"):
-                row_dict["timestamp"] = str(row_dict["timestamp"])
+            if row_dict.get("session_timestamp"):
+                row_dict["session_timestamp"] = str(row_dict["session_timestamp"])
             # Convert Decimal types to float for JSON serialization
             for key, value in row_dict.items():
                 if hasattr(value, '__float__'):

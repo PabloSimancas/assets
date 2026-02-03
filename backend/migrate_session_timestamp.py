@@ -103,9 +103,9 @@ def migrate():
                     SUM(margin_used) AS total_margin_used,
                     SUM(unrealized_pnl) AS net_unrealized_pnl,
                     SUM(CASE WHEN direction = 1 THEN position_value ELSE 0 END) AS long_value,
-                    SUM(CASE WHEN direction = -1 THEN position_value ELSE 0 END) AS short_value,
+                    SUM(CASE WHEN direction = -1 THEN -position_value ELSE 0 END) AS short_value,
                     SUM(CASE WHEN direction = 1 THEN margin_used ELSE 0 END) AS long_margin,
-                    SUM(CASE WHEN direction = -1 THEN margin_used ELSE 0 END) AS short_margin,
+                    SUM(CASE WHEN direction = -1 THEN -margin_used ELSE 0 END) AS short_margin,
                     COUNT(*) AS position_count
                 FROM silver.hyperliquid_aggregated
                 GROUP BY session_timestamp, coin
