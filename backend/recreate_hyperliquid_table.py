@@ -20,6 +20,8 @@ def recreate_hyperliquid_tables():
         # 3. Move Positions to Bronze (Drop old silver location)
         print("Dropping silver.hyperliquid_positions (moving to bronze)...")
         conn.execute(text("DROP TABLE IF EXISTS silver.hyperliquid_positions CASCADE"))
+        print("Dropping bronze.raw_vaults (cleanup)...")
+        conn.execute(text("DROP TABLE IF EXISTS bronze.raw_vaults CASCADE"))
         print("Dropping bronze.hyperliquid_positions (cleanup)...")
         conn.execute(text("DROP TABLE IF EXISTS bronze.hyperliquid_positions CASCADE"))
         print("Dropping silver.hyperliquid_aggregated...")
