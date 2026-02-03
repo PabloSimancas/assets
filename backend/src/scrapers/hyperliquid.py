@@ -16,6 +16,10 @@ class HyperliquidScraper(BaseScraper):
     def run(self):
         self.logger.info(f"Starting Hyperliquid Scraper for Vault: {self.vault_address}")
         
+        # Initialize a shared timestamp for this entire scraping session
+        # This ensures all data points from this scrape cycle can be aggregated together
+        session_timestamp = datetime.utcnow()
+        
         # 1. Fetch Vault Details (Parent)
         endpoint = "/info"
         url = self.base_url + endpoint
@@ -33,6 +37,7 @@ class HyperliquidScraper(BaseScraper):
             metadata = {
                 "type": "vault_details",
                 "vault_address": self.vault_address,
+                "session_timestamp": session_timestamp.isoformat(),
                 "timestamp": datetime.utcnow().isoformat(),
                 "status_code": response.status_code
             }
@@ -59,7 +64,7 @@ class HyperliquidScraper(BaseScraper):
                     self.logger.info(f"Found {len(child_addresses)} child addresses. Scraping positions for each.")
                     
                     for child_addr in child_addresses:
-                        self._scrape_child_positions(child_addr)
+                        self._scrape_child_positions(child_addr, session_timestamp)
                         time.sleep(0.5) # Rate limit politeness
 
             except json.JSONDecodeError:
@@ -70,7 +75,7 @@ class HyperliquidScraper(BaseScraper):
         except Exception as e:
             self.logger.error(f"Failed to fetch Hyperliquid vault: {e}")
 
-    def _scrape_child_positions(self, user_address: str):
+    def _scrape_child_positions(self, user_address: str, session_timestamp: datetime):
         """Helper to scrape clearinghouse state for a specific child address."""
         url = self.base_url + "/info"
         payload = {
@@ -86,7 +91,8 @@ class HyperliquidScraper(BaseScraper):
                 "type": "child_clearinghouse_state",
                 "parent_vault": self.vault_address,
                 "user_address": user_address,
-                "timestamp": datetime.utcnow().isoformat(),
+                "session_timestamp": session_timestamp.isoformat(),  # Shared session time
+                "timestamp": datetime.utcnow().isoformat(),  # Individual scrape time
                 "status_code": response.status_code
             }
             

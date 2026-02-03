@@ -108,6 +108,10 @@ class HyperliquidPipeline:
                     cf_open = cum_funding.get("sinceOpen")
                     cf_chg = cum_funding.get("sinceChange")
 
+                    # Extract timestamps (session for grouping, individual for audit)
+                    session_ts = datetime.fromisoformat(metadata.get("session_timestamp", metadata["timestamp"]))
+                    individual_ts = datetime.fromisoformat(metadata["timestamp"])
+
                     silver_pos = SilverHyperliquidPosition(
                         vault_address=vault_addr,
                         user_address=user_addr,
@@ -131,7 +135,8 @@ class HyperliquidPipeline:
                         cum_funding_since_open=float(cf_open) if cf_open else 0,
                         cum_funding_since_change=float(cf_chg) if cf_chg else 0,
 
-                        timestamp=timestamp,
+                        session_timestamp=session_ts,
+                        timestamp=individual_ts,
                         source_origin="hyperliquid"
                     )
                     self.db.add(silver_pos)

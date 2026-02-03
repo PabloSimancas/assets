@@ -8,6 +8,7 @@ class SilverHyperliquidPosition(Base):
     __tablename__ = "hyperliquid_positions"
     __table_args__ = (
         Index("idx_hl_pos_vault_time", "vault_address", "timestamp"),
+        Index("idx_hl_pos_session", "vault_address", "session_timestamp"),
         {"schema": "bronze"}
     )
 
@@ -37,7 +38,8 @@ class SilverHyperliquidPosition(Base):
     cum_funding_since_change = Column(Numeric(30, 8))
     
     # Metadata
-    timestamp = Column(DateTime(timezone=True), nullable=False)
+    session_timestamp = Column(DateTime(timezone=False), nullable=False, index=True)  # Shared across all children in same scrape
+    timestamp = Column(DateTime(timezone=False), nullable=False)  # Individual scrape time for audit
     source_origin = Column(String(50)) # hyperliquid
     
 class SilverHyperliquidAggregated(Base):
@@ -48,6 +50,7 @@ class SilverHyperliquidAggregated(Base):
     __tablename__ = "hyperliquid_aggregated"
     __table_args__ = (
         Index("idx_hl_agg_vault_time", "vault_address", "timestamp"),
+        Index("idx_hl_agg_session", "vault_address", "session_timestamp"),
         Index("idx_hl_agg_source_id", "source_position_id"),
         {"schema": "silver"}
     )
@@ -78,6 +81,7 @@ class SilverHyperliquidAggregated(Base):
     margin_thousands_short = Column(Numeric(20, 6), nullable=True)
     
     # Metadata
-    timestamp = Column(DateTime(timezone=True), nullable=False)
+    session_timestamp = Column(DateTime(timezone=False), nullable=False, index=True)  # Shared across all children in same scrape
+    timestamp = Column(DateTime(timezone=False), nullable=False)  # Individual scrape time for audit
     processed_at = Column(DateTime(timezone=True), server_default=func.now())
 

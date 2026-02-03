@@ -110,6 +110,7 @@ class HyperliquidAggregatedPipeline:
                     margin_thousands_long=margin_thousands_long,
                     margin_thousands_short=margin_thousands_short,
                     
+                    session_timestamp=pos.session_timestamp,
                     timestamp=pos.timestamp
                 )
                 self.db.add(aggregated)
