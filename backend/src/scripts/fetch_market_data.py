@@ -137,6 +137,7 @@ def process_asset(symbol):
 
 def save_to_db(symbol, spot, data):
     try:
+        logger.info(f"DEBUG: Saving to DB. URL starts with: {DATABASE_URL[:20]}...")
         with engine.begin() as conn:
             # Insert Main Run
             result = conn.execute(
