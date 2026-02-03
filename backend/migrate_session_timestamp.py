@@ -108,6 +108,26 @@ def migrate():
             """))
             print("   ✅ hyperliquid_net_assets created")
             
+            # Net position summary view
+            conn.execute(text("""
+                CREATE OR REPLACE VIEW gold.hyperliquid_summary_net_positions AS
+                SELECT 
+                    session_timestamp,
+                    -- Position values (millions) - computed from net positions
+                    SUM(CASE WHEN net_position_value > 0 THEN net_position_value ELSE 0 END) / 1000000.0 AS longs_position_value_millions,
+                    SUM(CASE WHEN net_position_value < 0 THEN net_position_value ELSE 0 END) / 1000000.0 AS shorts_position_value_millions,
+                    SUM(net_position_value) / 1000000.0 AS total_position_value_millions,
+                    -- Margin values (thousands)
+                    SUM(total_margin_used) / 1000.0 AS net_margin_thousands,
+                    -- Metadata
+                    COUNT(*) AS asset_count,
+                    SUM(position_count) AS total_position_count
+                FROM gold.hyperliquid_net_assets
+                GROUP BY session_timestamp
+                ORDER BY session_timestamp DESC
+            """))
+            print("   ✅ hyperliquid_summary_net_positions created")
+            
             conn.commit()
         except Exception as e:
             print(f"   ❌ Error: {e}")
