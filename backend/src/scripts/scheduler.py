@@ -9,8 +9,7 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from datetime import datetime, timezone, timedelta
 from sqlalchemy import create_engine, text
-# from src.scrapers.deribit import DeribitScraper
-# from src.pipelines.deribit_pipeline import DeribitPipeline
+from src.scripts.fetch_market_data import main as run_fetch_market_data
 from src.scrapers.hyperliquid import HyperliquidScraper
 from src.pipelines.hyperliquid_pipeline import HyperliquidPipeline
 from src.pipelines.hyperliquid_aggregated_pipeline import HyperliquidAggregatedPipeline
@@ -40,25 +39,12 @@ if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 def run_daily_deribit():
-    logger.info("Starting Daily Job: Deribit Pipeline - DISABLED (Legacy models removed)")
-    # try:
-    #     # 1. BRONZE: Ingest Raw Data
-    #     logger.info("Step 1: Running Deribit Scrapers (Bronze)")
-    #     scraper = DeribitScraper(currency="BTC")
-    #     scraper.run()
-    #     
-    #     scraper_eth = DeribitScraper(currency="ETH")
-    #     scraper_eth.run()
-    #
-    #     # 2. SILVER & GOLD: Process
-    #     logger.info("Step 2: Running Deribit Pipeline (Silver -> Gold)")
-    #     pipeline = DeribitPipeline()
-    #     pipeline.run()
-    #     
-    #     logger.info("Daily Deribit Job executed successfully.")
-    # except Exception as e:
-    #     logger.error(f"Failed to run daily Deribit job: {e}")
-    pass
+    logger.info("Starting Daily Job: Deribit / Crypto Forwards Fetch")
+    try:
+        run_fetch_market_data()
+        logger.info("Daily Deribit Job executed successfully.")
+    except Exception as e:
+        logger.error(f"Failed to run daily Deribit job: {e}")
 
 def run_hourly_hyperliquid():
     logger.info("Starting Hourly Job: Hyperliquid Pipeline")
@@ -90,8 +76,27 @@ def check_missed_run():
     """
     Checks if we missed the 08:00 UTC run for Deribit.
     """
-    logger.info("Checking for missed daily runs... (Deribit Disabled)")
-    pass
+    logger.info("Checking for missed daily runs...")
+    try:
+        engine = create_engine(DATABASE_URL)
+        with engine.connect() as conn:
+            # Check if we have data for 'today' (UTC)
+            today = datetime.now(timezone.utc).date()
+            query = text("SELECT COUNT(*) FROM crypto_forwards.run_main WHERE ran_at_utc::date = :today")
+            count = conn.execute(query, {"today": today}).scalar()
+            
+            if count == 0:
+                # If it's past 08:00 UTC, we missed it
+                now_utc = datetime.now(timezone.utc)
+                if now_utc.hour >= 8:
+                    logger.warning(f"Missed scheduled run for {today}. Running immediately...")
+                    run_daily_deribit()
+                else:
+                    logger.info(f"Scheduled run for {today} is still in the future (at 08:00 UTC).")
+            else:
+                logger.info(f"Data for {today} already exists. No catch-up needed.")
+    except Exception as e:
+        logger.warning(f"Could not check for missed runs: {e}. (This is normal if schema doesn't exist yet).")
 
 def should_run_hyperliquid_on_startup():
     """
@@ -102,10 +107,9 @@ def should_run_hyperliquid_on_startup():
     try:
         engine = create_engine(DATABASE_URL)
         with engine.connect() as conn:
-            # Check if any bronze data was scraped in the last 55 minutes
             query = text("""
-                SELECT COUNT(*) FROM bronze.hyperliquid_vaults 
-                WHERE scraped_at >= NOW() - INTERVAL '55 minutes'
+                SELECT COUNT(*) FROM bronze.raw_vaults 
+                WHERE ingested_at >= NOW() - INTERVAL '55 minutes'
             """)
             count = conn.execute(query).scalar()
             
@@ -127,11 +131,13 @@ if __name__ == "__main__":
         from src.infrastructure.database.scraping_models import HyperliquidVault
         from src.infrastructure.database.silver_models import SilverHyperliquidPosition, SilverHyperliquidAggregated
         from src.infrastructure.database.gold_models import create_gold_views
+        from src.infrastructure.database.models import RunMain, RunDetails
         engine = create_engine(DATABASE_URL)
         with engine.connect() as conn:
             conn.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
             conn.execute(text("CREATE SCHEMA IF NOT EXISTS silver;"))
             conn.execute(text("CREATE SCHEMA IF NOT EXISTS gold;"))
+            conn.execute(text("CREATE SCHEMA IF NOT EXISTS crypto_forwards;"))
             conn.commit()
         Base.metadata.create_all(bind=engine)
         # Create gold views (no tables for gold layer, only views)
@@ -141,7 +147,7 @@ if __name__ == "__main__":
         logger.error(f"Failed to ensure DB schemas: {e}")
 
     # Schedule the jobs
-    # schedule.every().day.at("08:00").do(run_daily_deribit)
+    schedule.every().day.at("08:00").do(run_daily_deribit)
     schedule.every().hour.do(run_hourly_hyperliquid)
 
     logger.info("Scheduler started.")
