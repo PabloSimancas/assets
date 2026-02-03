@@ -104,7 +104,7 @@ def migrate():
                     COUNT(*) AS position_count
                 FROM silver.hyperliquid_aggregated
                 GROUP BY session_timestamp, coin
-                ORDER BY session_timestamp DESC, ABS(net_position_value) DESC
+                ORDER BY session_timestamp DESC, ABS(SUM(position_value)) DESC
             """))
             print("   ✅ hyperliquid_net_assets created")
             
