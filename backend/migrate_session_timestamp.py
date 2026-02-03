@@ -101,6 +101,8 @@ def migrate():
                     SUM(unrealized_pnl) AS net_unrealized_pnl,
                     SUM(CASE WHEN direction = 1 THEN position_value ELSE 0 END) AS long_value,
                     SUM(CASE WHEN direction = -1 THEN ABS(position_value) ELSE 0 END) AS short_value,
+                    SUM(CASE WHEN direction = 1 THEN margin_used ELSE 0 END) AS long_margin,
+                    SUM(CASE WHEN direction = -1 THEN margin_used ELSE 0 END) AS short_margin,
                     COUNT(*) AS position_count
                 FROM silver.hyperliquid_aggregated
                 GROUP BY session_timestamp, coin
@@ -108,20 +110,18 @@ def migrate():
             """))
             print("   ✅ hyperliquid_net_assets created")
             
-            # Net position summary view
+            # Net position summary view - same columns as original summary
             conn.execute(text("""
                 CREATE OR REPLACE VIEW gold.hyperliquid_summary_net_positions AS
                 SELECT 
                     session_timestamp,
-                    -- Position values (millions) - computed from net positions
-                    SUM(CASE WHEN net_position_value > 0 THEN net_position_value ELSE 0 END) / 1000000.0 AS longs_position_value_millions,
-                    SUM(CASE WHEN net_position_value < 0 THEN net_position_value ELSE 0 END) / 1000000.0 AS shorts_position_value_millions,
-                    SUM(net_position_value) / 1000000.0 AS total_position_value_millions,
-                    -- Margin values (thousands)
-                    SUM(total_margin_used) / 1000.0 AS net_margin_thousands,
-                    -- Metadata
-                    COUNT(*) AS asset_count,
-                    SUM(position_count) AS total_position_count
+                    (SUM(long_value) + SUM(short_value)) / 1000000.0 AS total_position_value_millions,
+                    SUM(long_value) / 1000000.0 AS longs_position_value_millions,
+                    SUM(short_value) / 1000000.0 AS shorts_position_value_millions,
+                    SUM(long_margin) / 1000.0 AS longs_margin_thousands,
+                    SUM(short_margin) / 1000.0 AS shorts_margin_thousands,
+                    (SUM(long_margin) + SUM(short_margin)) / 1000.0 AS net_margin_thousands,
+                    COUNT(*) AS position_count
                 FROM gold.hyperliquid_net_assets
                 GROUP BY session_timestamp
                 ORDER BY session_timestamp DESC
