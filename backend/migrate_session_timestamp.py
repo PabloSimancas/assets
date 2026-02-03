@@ -89,6 +89,9 @@ def migrate():
             """))
             print("   ✅ hyperliquid_summary created")
             
+            # Drop existing net_assets view to avoid column conflicts
+            conn.execute(text("DROP VIEW IF EXISTS gold.hyperliquid_net_assets CASCADE"))
+            
             # Net assets view
             conn.execute(text("""
                 CREATE OR REPLACE VIEW gold.hyperliquid_net_assets AS
