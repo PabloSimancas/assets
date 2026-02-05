@@ -38,13 +38,13 @@ except KeyError:
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
-def run_daily_deribit():
-    logger.info("Starting Daily Job: Deribit / Crypto Forwards Fetch")
+def run_3hourly_deribit():
+    logger.info("Starting 3-Hourly Job: Deribit / Crypto Forwards Fetch")
     try:
         run_fetch_market_data()
-        logger.info("Daily Deribit Job executed successfully.")
+        logger.info("3-Hourly Deribit Job executed successfully.")
     except Exception as e:
-        logger.error(f"Failed to run daily Deribit job: {e}")
+        logger.error(f"Failed to run 3-hourly Deribit job: {e}")
 
 def run_hourly_hyperliquid():
     logger.info("Starting Hourly Job: Hyperliquid Pipeline")
@@ -74,27 +74,24 @@ def run_hourly_hyperliquid():
 
 def check_missed_run():
     """
-    Checks if we missed the 08:00 UTC run for Deribit.
+    Checks if we missed a 3-hourly run for Deribit (no data in last 3 hours).
     """
-    logger.info("Checking for missed daily runs...")
+    logger.info("Checking for missed 3-hourly runs...")
     try:
         engine = create_engine(DATABASE_URL)
         with engine.connect() as conn:
-            # Check if we have data for 'today' (UTC)
-            today = datetime.now(timezone.utc).date()
-            query = text("SELECT COUNT(*) FROM crypto_forwards.run_main WHERE ran_at_utc::date = :today")
-            count = conn.execute(query, {"today": today}).scalar()
+            # Check if we have data within the last 3 hours
+            query = text("""
+                SELECT COUNT(*) FROM crypto_forwards.run_main 
+                WHERE ran_at_utc >= NOW() - INTERVAL '3 hours'
+            """)
+            count = conn.execute(query).scalar()
             
             if count == 0:
-                # If it's past 08:00 UTC, we missed it
-                now_utc = datetime.now(timezone.utc)
-                if now_utc.hour >= 8:
-                    logger.warning(f"Missed scheduled run for {today}. Running immediately...")
-                    run_daily_deribit()
-                else:
-                    logger.info(f"Scheduled run for {today} is still in the future (at 08:00 UTC).")
+                logger.warning("No Deribit data in the last 3 hours. Running immediately...")
+                run_3hourly_deribit()
             else:
-                logger.info(f"Data for {today} already exists. No catch-up needed.")
+                logger.info(f"Found {count} Deribit records in the last 3 hours. No catch-up needed.")
     except Exception as e:
         logger.warning(f"Could not check for missed runs: {e}. (This is normal if schema doesn't exist yet).")
 
@@ -147,7 +144,7 @@ if __name__ == "__main__":
         logger.error(f"Failed to ensure DB schemas: {e}")
 
     # Schedule the jobs
-    schedule.every().day.at("08:00").do(run_daily_deribit)
+    schedule.every(3).hours.do(run_3hourly_deribit)
     schedule.every().hour.do(run_hourly_hyperliquid)
 
     logger.info("Scheduler started.")
